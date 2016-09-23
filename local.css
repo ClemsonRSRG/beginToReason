@@ -1,0 +1,21 @@
+div {
+    overflow: auto;
+}
+
+td {
+    overflow: auto;
+}
+
+#create, #teach {
+    height: 100%;
+}
+
+#create {
+    float: right;
+    width: 70%;
+}
+
+#teach {
+    float: left;
+    width: 30%;
+}

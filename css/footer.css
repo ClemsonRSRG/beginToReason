@@ -1,0 +1,76 @@
+#footer {
+    width: 100%;
+    height: 50px;
+    flex: 0 0 auto;
+
+    background-color: #152b39;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    border-top: solid 1px #0b161d;
+
+    z-index: 300;
+}
+
+#footer > * {
+    flex: 1 0 auto;
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#leftFooter {
+    flex-basis: 0px;
+    padding-left: 0px;
+
+    justify-content: flex-start;
+}
+
+#centerFooter {
+    flex-basis: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    justify-content: center;
+}
+
+#rightFooter {
+    flex-basis: 0px;
+    padding-right: 20px;
+
+    justify-content: flex-end;
+}
+
+#lessonButton {
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    font-family: Arial;
+    font-size: 16px;
+    color: white;
+
+    background-color: #152b39;
+
+    pointer-events: auto;
+    cursor: pointer;
+
+    border: none;
+    text-decoration: none;
+
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+}
+
+#lessonButton:hover {
+    background-color: #0b161d;
+}
+
+#lessonButton:focus {
+    outline: none;
+}

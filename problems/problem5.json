@@ -1,0 +1,17 @@
+{
+  "code": "problems/problem5.code",
+
+  "lesson": "Lesson 5 - If Statements",
+  "module": "CPSC 2151 - Section 5",
+
+  "previousLesson": "problems/problem4.json",
+  "nextLesson": "problems/problem6.json",
+
+  "learningObjective": "If-then statements create multiple paths of execution in our code. To be certain about the behavior of our programs, we must consider the outcomes of all branching paths.",
+
+  "problemStatement": "Follow the branching paths of Main; what is certain about J regardless of execution path?",
+
+  "lines": [12],
+
+  "checks": [["Confirm J >= 0;", "Confirm J > -1"]]
+}

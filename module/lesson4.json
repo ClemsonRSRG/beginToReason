@@ -1,0 +1,13 @@
+{
+  "code": "code/example4",
+
+  "lesson": "Lesson 4 - If Statements",
+  "module": "CPSC 2151 - Section #",
+
+  "previousLesson": "module/lesson3.json",
+  "nextLesson": "module/lesson5.json",
+
+  "learningObjective": "If-then statements create multiple paths of execution in our code. To be certain about the behavior of our programs, we must consider the outcomes of all branching paths.",
+
+  "problemStatement": "Follow the branching paths of Main; what is certain about I regardless of execution path?"
+}

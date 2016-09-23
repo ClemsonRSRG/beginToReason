@@ -1,0 +1,49 @@
+#login {
+    margin-right: 15px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border: solid 1px black;
+    text-decoration: none;
+    background-color: #27ae60;
+
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+
+    color: white;
+    font-weight: bolder;
+
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#login:hover {
+    background-color: #2ecc71; /* Green */
+}
+
+#signUp {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border: solid 1px black;
+    text-decoration: none;
+    background-color: #2980b9;
+
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+
+    color: white;
+    font-weight: bolder;
+
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#signUp:hover {
+    background-color: #3498db; /* Green */
+}

@@ -1,0 +1,53 @@
+#header {
+    /* Sizing Properties */
+    width: 100%;
+    height: 50px;
+    flex: 0 0 auto;
+
+    /* Display Properties */
+    background-color: #152b39;
+    border-bottom: solid 1px #0b161d;
+
+    /* Content Properties */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#header > * {
+    /* Sizing Properties */
+    flex: 1 0 0;
+
+    /* Positioning Properties */
+    margin-top: auto;
+    margin-bottom: auto;
+
+    /* Content Properties */
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#leftHeader {
+    /* Positioning Properties */
+    margin-left: 16px;
+
+    /* Content Properties */
+    justify-content: flex-start;
+}
+
+#centerHeader {
+    /* Positioning Properties */
+    margin-left: 16px;
+    margin-right: 16px;
+
+    /* Content Properties */
+    justify-content: center;
+}
+
+#rightHeader {
+    /* Positioning Properties */
+    margin-right: 16px;
+
+    /* Content Properties */
+    justify-content: flex-end;
+}

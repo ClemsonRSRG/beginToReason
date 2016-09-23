@@ -1,0 +1,13 @@
+{
+  "code": "BStack",
+
+  "lesson": "Lesson 2 - If-Else",
+  "module": "The Basics",
+
+  "previousLesson": "lesson1.json",
+  "nextLesson": "lesson2.json",
+
+  "learningObjective": "objective text blah blah blah",
+
+  "problemStatement": "problem statement text blah blah blah"
+}

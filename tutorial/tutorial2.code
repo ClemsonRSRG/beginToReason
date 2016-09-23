@@ -1,0 +1,13 @@
+Facility CPSC_2151;
+    Operation Main();
+    Procedure
+        Var I: Integer;
+        Read(I);
+
+        Remember; -- Value of I here is remembered as #I 
+
+        I := I + 1;
+
+        Confirm I = /*expression*/; -- Replace /* expression */ with the value of I here
+    end Main;
+end CPSC_2151;

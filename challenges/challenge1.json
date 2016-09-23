@@ -1,0 +1,17 @@
+{
+  "code": "challenges/challenge1.code",
+
+  "lesson": "Challenge 1 - Loop Statement",
+  "module": "CPSC 2151 - Section 5",
+
+  "previousLesson": "problems/problem6.json",
+  "nextLesson": "challenges/challenge2.json",
+
+  "learningObjective": "This code involves the use of an if statement and a while loop.",
+
+  "problemStatement": "What is always true about the relationship between I and K at the given point (inside the if statement)?",
+
+  "lines": [19],
+
+  "checks": [["Confirm I = K;"]]
+}

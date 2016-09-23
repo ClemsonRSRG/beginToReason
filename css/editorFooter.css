@@ -1,0 +1,43 @@
+#editorFooter {
+    width: 100%;
+    height: 59px;
+    flex: 0 0 auto;
+
+    background-color: #2a3034;
+    border-top: solid 1px #0b0e10;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#editorFooter > * {
+    flex: 1 0 auto;
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#leftEditorFooter {
+    flex-basis: 0px;
+    padding-left: 20px;
+
+    justify-content: flex-start;
+}
+
+#centerEditorFooter {
+    flex-basis: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    justify-content: center;
+}
+
+#rightEditorFooter {
+    flex-basis: 0px;
+    padding-right: 20px;
+
+    justify-content: flex-end;
+}

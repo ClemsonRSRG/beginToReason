@@ -1,0 +1,133 @@
+html, body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#master {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#feedback {
+    position: absolute;
+
+    width: 30vw;
+    height: 30vh;
+    background-color: #1abc9c;
+
+    right: 50px;
+    bottom: 95px;
+
+    opacity: 0.6;
+
+    font-family: "Courier New";
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    z-index: 200;
+
+    box-sizing: border-box;
+    border: 20px;
+}
+
+#feedbackText.feedback {
+    margin: auto;
+}
+
+#header, #footer {
+    width: 100%;
+    height: 45px;
+    flex-grow: 0;
+
+    background-color: #16a085;
+
+    display: flex;
+    flex-flow: row nowrap;
+ }
+
+.header, .footer {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    font-family: "Courier New";
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+
+    flex: 1 0 auto;
+    flex-basis: 0;
+}
+
+#left.header, #left.footer {
+    padding-left: 20px;
+    text-align: left;
+}
+
+#right.header, #right.footer {
+    padding-right: 20px;
+    text-align: right;
+}
+
+#center.header, #center.footer {
+    text-align: center;
+}
+
+#content {
+    width: 100%;
+    flex: 1 0 auto;
+
+    background-color: #1abc9c;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#lesson.content {
+    flex: 1 0 auto;
+
+    background-color: #95a5a6;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    z-index: 201;
+}
+#response.content {
+    flex: 5 0 auto;
+}
+
+#packageName.lesson {
+    width: 100%;
+    height: 35px;
+    flex: 0 0 auto;
+}
+#description.lesson {
+    widht: 100%;
+    flex: 1 0 auto;
+
+    background-color: #bdc3c7;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    font-family: "Courier New";
+    color: black;
+    font-size: 16px;
+}
+#helpOptions.lesson {
+    width: 100%;
+    height: 35px;
+    flex: 0 0 auto;
+}

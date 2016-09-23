@@ -1,0 +1,13 @@
+{
+  "code": "code/example5",
+
+  "lesson": "Lesson 5 - If Statements",
+  "module": "CPSC 2151 - Section #",
+
+  "previousLesson": "module/lesson4.json",
+  "nextLesson": "",
+
+  "learningObjective": "In Lesson 3, we explored code that calculated the maximum of two values. The following is an extension of that code.",
+
+  "problemStatement": "What is always true about the relationship between K and #I after the execution of Main? Between K and #J? Between K and #K?"
+}

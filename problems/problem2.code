@@ -1,0 +1,12 @@
+Facility CPSC_2151;
+    Operation Main();
+    Procedure
+        Var I, J, K: Integer;
+        Read(I);
+        Read(J);
+        Remember;
+        I := I + 1;
+        J := J - 1;
+        Confirm I + J = /*expression*/;
+    end Main;
+end CPSC_2151;

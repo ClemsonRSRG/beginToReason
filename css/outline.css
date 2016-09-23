@@ -1,0 +1,85 @@
+#outline {
+    position: absolute;
+
+    background-color: #0b161d;
+
+    left: -360px;
+    width: 360px;
+    top: 51px;
+    bottom: 51px;
+
+    z-index: 303;
+}
+
+#shades {
+    position: absolute;
+
+    background-color: #0b161d;
+    opacity: 0.0;
+
+    visibility: hidden;
+
+    left: 0px;
+    right: 0px;
+    top: 51px;
+    bottom: 51px;
+
+    z-index: 302;
+}
+
+.packageName {
+    width: auto;
+    color: white;
+
+    padding-top: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+
+    font-family: Arial;
+    font-size: 20px;
+
+    border-bottom: solid 1px white;
+}
+
+.moduleName {
+    width: auto;
+    color: #2980b9;
+
+    padding-top: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 5px;
+
+    font-family: Arial;
+    font-size: 16px;
+}
+
+.lessonName {
+    width: auto;
+    color: white;
+
+    padding-top: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 5px;
+
+    font-family: Arial;
+    font-size: 16px;
+
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.lessonName:hover {
+    background-color: #7f8c8d;
+}
+
+.moduleBuffer {
+    width: auto;
+    height: 5px;
+    border-bottom: solid 1px white;
+}

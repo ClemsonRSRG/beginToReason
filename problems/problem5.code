@@ -1,0 +1,14 @@
+Facility CPSC_2151;
+    Operation Main();
+    Procedure
+        Var I, J: Integer;
+        Read(I);
+
+        If I <= 0 then
+            I := - I;
+        end;
+        J := I;
+
+        Confirm J /*conditional*/ /*expression*/;
+    end Main;
+end CPSC_2151;

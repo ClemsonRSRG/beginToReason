@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>byDesign - Web IDE</title>
+
+    <!-- Jquery Inclusion -->
+    <script src="jquery-2.2.0.min.js"></script>
+
+    <!-- Ace Editor Inclusion -->
+    <script src="ace-builds/src-noconflict/ace.js"></script>
+
+    <link href="local.css" rel="stylesheet">
+
+    <link href="create/create.css" rel="stylesheet">
+    <link href="teach/teach.css" rel="stylesheet">
+
+    <script src="create/javascript/createResize.js"></script>
+    <script src="create/javascript/format.js"></script>
+    <script src="create/javascript/inject.js"></script>
+    <script src="create/javascript/markers.js"></script>
+    <script src="create/javascript/vc.js"></script>
+
+    <script src="teach/javascript/teachResize.js"></script>
+    <script src="teach/javascript/inject.js"></script>
+    <script src="teach/javascript/loadLesson.js"></script>
+
+    <script src="backend/sendData.js"></script>
+    <script src="backend/time.js"></script>
+</head>
+<body>
+
+<div id="teach"></div>
+<div id="create"></div>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        injectCreate("create");
+        injectTeach("teach");
+
+        teachResize();
+        createResize();
+    });
+
+    window.addEventListener('keydown', function (event) {
+        if(event.keyCode == 13) createEditor.setReadOnly(true);
+        else if(event.keyCode == 90 && event.ctrlKey) createEditor.setReadOnly(false);
+        else {
+            createEditor.setReadOnly(false);
+            checkLines();
+        }
+    });
+</script>
+
+</html>

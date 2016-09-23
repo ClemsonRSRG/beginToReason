@@ -1,0 +1,34 @@
+#verifyCode, #resetCode {
+    /* Display Properties */
+    font-family: Arial;
+    color: white;
+    font-size: 16px;
+    padding: 5px 16px;
+    border: solid 1px black;
+    text-decoration: none;
+
+    /* Transition Properties */
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+
+    /* Cursor Properties */
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#verifyCode {
+    margin-right: 16px;
+    background-color: #27ae60;
+}
+
+#verifyCode:hover {
+    background-color: #2ecc71; /* Green */
+}
+
+#resetCode {
+    background-color: #c0392b;
+}
+
+#resetCode:hover {
+    background-color: #e74c3c; /* Green */
+}

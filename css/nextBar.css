@@ -1,0 +1,55 @@
+#nextBar {
+	display: flex;
+	flex-flow: row nowrap;
+
+	position: absolute;
+	right: 0px;
+	left: 360px;
+	bottom: 0px;
+	height: 51px;
+
+	background-color: #27ae60;
+
+	z-index: 299;
+
+    visibility: hidden;
+}
+
+#leftNextBar {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    flex: 1 0 auto;
+    flex-basis: 0px;
+    padding-left: 20px;
+
+    justify-content: flex-start;
+}
+
+#nextButton {
+    margin-right: 15px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    border: solid 1px black;
+    text-decoration: none;
+    background-color: #27ae60;
+
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+
+    color: white;
+    font-weight: bolder;
+
+    pointer-events: auto;
+    cursor: pointer;
+
+    max-height: 35px;
+}
+
+#nextButton:hover {
+    background-color: #2ecc71; /* Green */
+}

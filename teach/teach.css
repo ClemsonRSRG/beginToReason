@@ -1,0 +1,114 @@
+html, body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+div {
+    overflow: hidden;
+}
+
+#header.teach , #footer.teach {
+    width: 100%;
+    height: 70px;
+
+    background: darkseagreen;
+
+    box-sizing: border-box;
+    border: 6px solid seagreen;
+}
+
+#headette.teach, #footette.teach {
+    width: 100%;
+    height: 35px;
+
+    background: #BEBEBE;
+
+    box-sizing: border-box;
+    border-left: 6px solid seagreen;
+    border-right: 6px solid seagreen;
+}
+
+#objective.teach {
+    width: 100%;
+
+    box-sizing: border-box;
+    border: 6px solid seagreen;
+}
+
+#problem.teach {
+    width: 100%;
+
+    box-sizing: border-box;
+    border-bottom: 6px solid seagreen;
+    border-left: 6px solid seagreen;
+    border-right: 6px solid seagreen;
+}
+
+#previous.teach {
+    float: left;
+
+    width: 50%;
+    height: 100%;
+
+    box-sizing: border-box;
+    border-right: 3px solid seagreen;
+}
+
+#next.teach {
+    float: right;
+
+    width: 50%;
+    height: 100%;
+
+    box-sizing: border-box;
+    border-left: 3px solid seagreen;
+}
+
+.teach table {
+    width: 100%;
+
+    text-align: center;
+    vertical-align: middle;
+
+    font-family: "Courier New";
+    color: ghostwhite;
+    font-weight: bolder;
+    font-size: 14pt;
+}
+
+#objective.teach table, #problem.teach table {
+    text-align: left;
+}
+
+#objective.teach th,
+#objective.teach td,
+#problem.teach th,
+#problem.teach td {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#objective.teach th, #problem.teach th {
+    color: black;
+}
+
+#objective.teach td, #problem.teach td {
+    color: black;
+    font-weight: normal;
+    padding-bottom: 5px;
+}
+
+#header.teach:hover, #footer.teach:hover {
+    background: #5FA473;
+    cursor: pointer;
+}
+
+#previous.teach:hover, #next.teach:hover {
+    background: darkgrey;
+    cursor: pointer;
+}

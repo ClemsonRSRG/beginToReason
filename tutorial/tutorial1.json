@@ -1,0 +1,17 @@
+{
+  "code": "tutorial/tutorial1.code",
+
+  "lesson": "Tutorial 1 - Relating Values of Variables</b>",
+  "module": "CPSC 2151 - Section 5",
+
+  "previousLesson": "",
+  "nextLesson": "tutorial/tutorial2.json",
+
+  "learningObjective": "In analyzing code, sometimes we need to relate variable values to values remembered at an earlier point in program execution. The <b>Remember</b> construct is useful for this.  When using <b>Remember</b>, the value of 'I' at the remembered point is '#I'.",
+
+  "problemStatement": "Analyze the following code and state the relationship between the value of 'I' at the end and its remembered value.  Replace /* conditional */ with one of =, <, >, <=, >=.  DO NOT EDIT THE CODE IN ANY OTHER WAY.",
+
+  "lines": [10],
+
+  "checks": [["Confirm I > #I;", "Confirm I >= #I;"]]
+}

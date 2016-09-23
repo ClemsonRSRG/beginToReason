@@ -1,0 +1,30 @@
+Facility CPSC_2151;
+   Operation Main();
+    Procedure
+        Var I, J, K: Integer;
+        Read(I);
+        Read(J);
+        Read(K);
+
+        Remember;
+
+        If I <= K then
+            While (I /= K)
+                changing I;
+                decreasing K + (-I);
+            do
+                I := I + 1;
+            end;
+
+        else
+            While (I /= K)
+                changing I;
+                decreasing I;
+            do
+                I := I - 1;
+            end;
+        end;
+
+        Confirm I = /* expression */;
+    end Main;
+end CPSC_2151;
