@@ -12,7 +12,7 @@
 
   "problemStatement": "What is always true about the relationship between K and I at the end of the code? Between K and J?",
 
-  "lines": [13, 14],
+  "lines": [11, 14, 15],
 
-  "checks": [["Confirm K >= I"], ["Confirm K >= J"]]
+  "checks": [["Confirm K >= J"], ["Confirm K >= I"], ["Confirm K >= J"]]
 }

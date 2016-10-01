@@ -14,5 +14,5 @@
 
   "lines": [13, 14],
 
-  "checks": [["Confirm I = #I + #J;", "Confirm I = #I+#J", "Confirm I = #I+ #J", "Confirm I = #I +#J", "Confirm I = #J + #I", "Confirm I = #J+#I", "Confirm I = #J+ #I", "Confirm I + #J +#I"], ["Confirm J = #I;"]]
+  "checks": [["Confirm I = #I + #J;", "Confirm I = #I+#J", "Confirm I = #I+ #J", "Confirm I = #I +#J", "Confirm I = #J + #I", "Confirm I = #J+#I", "Confirm I = #J+ #I", "Confirm I = #J +#I"], ["Confirm J = #I;"]]
 }

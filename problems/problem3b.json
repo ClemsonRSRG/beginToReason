@@ -12,7 +12,12 @@
 
   "problemStatement": "What is true about the new value of I at the end? What is true about the new value of J at the end?",
 
-  "lines": [14, 15],
+  "lines": [11, 12, 16, 17],
 
-  "checks": [["Confirm I = #J;"], ["Confirm J = #I;"]]
+  "checks": [
+    ["Confirm I = #I + J", "Confirm I = #I + #J", "Confirm I = #I+J", "Confirm I = #I+#J", "Confirm I = #I+ J", "Confirm I = #I +J", "Confirm I = J + #I", "Confirm I = #J + #I", "Confirm I = J+#I", "Confirm I = #J+#I", "Confirm I = J+ #I", "Confirm I = #J+ #I", "Confirm I = J +#I", "Confirm I = #J +#I"],
+    ["Confirm J = #J;"],
+    ["Confirm I = #I + #J;", "Confirm I = #I+#J", "Confirm I = #I+ #J", "Confirm I = #I +#J", "Confirm I = #J + #I", "Confirm I = #J+#I", "Confirm I = #J+ #I", "Confirm I = #J +#I"],
+    ["Confirm J = #I"]
+  ]
 }
