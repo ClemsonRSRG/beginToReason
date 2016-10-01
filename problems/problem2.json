@@ -5,7 +5,8 @@
   "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "problems/problem1.json",
-  "nextLesson": "problems/problem3.json",
+  "nextLessonOnSuccess": "problems/problem3.json",
+  "nextLessonOnFailure": "problems/problem2.json",
 
   "learningObjective": "An assignment takes the evaluation of an expression and gives it to a variable. But what is the relationship between the values of variables after a <b>series</b> of assignments?",
 

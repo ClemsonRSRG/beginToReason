@@ -1,18 +1,18 @@
 {
-  "code": "problems/problem3.code",
+  "code": "problems/problem3a.code",
 
   "lesson": "Lesson 3 - Assignments with a purpose",
   "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "problems/problem2.json",
-  "nextLessonOnSuccess": "problems/problem4.json",
-  "nextLessonOnFailure": "problems/problem3.json",
+  "nextLessonOnSuccess": "problems/problem3aa.json",
+  "nextLessonOnFailure": "problems/problem3b.json",
 
   "learningObjective": "In computing, we care about time AND space efficiency. The following is a function which uses a sequence of computations to achieve a very common operation using no more space than necessary.",
 
   "problemStatement": "What is true about the new value of I at the end? What is true about the new value of J at the end?",
 
-  "lines": [14, 15],
+  "lines": [13, 14],
 
-  "checks": [["Confirm I = #J;"], ["Confirm J = #I;"]]
+  "checks": [["Confirm I = #I + #J;", "Confirm I = #I+#J", "Confirm I = #I+ #J", "Confirm I = #I +#J", "Confirm I = #J + #I", "Confirm I = #J+#I", "Confirm I = #J+ #I", "Confirm I + #J +#I"], ["Confirm J = #I;"]]
 }

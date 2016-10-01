@@ -5,7 +5,8 @@
   "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "",
-  "nextLesson": "tutorial/tutorial2.json",
+  "nextLessonOnFailure": "tutorial/tutorial1.json",
+  "nextLessonOnSuccess": "tutorial/tutorial2.json",
 
   "learningObjective": "In analyzing code, sometimes we need to relate variable values to values remembered at an earlier point in program execution. The <b>Remember</b> construct is useful for this.  When using <b>Remember</b>, the value of 'I' at the remembered point is '#I'.",
 

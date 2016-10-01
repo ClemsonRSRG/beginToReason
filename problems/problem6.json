@@ -5,7 +5,8 @@
   "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "problems/problem5.json",
-  "nextLesson": "challenges/challenge1.json",
+  "nextLessonOnSuccess": "challenges/challenge1.json",
+  "nextLessonOnFailure": "problems/problem6.json",
 
   "learningObjective": "In Lesson 3, we explored code that calculated the maximum of two values using an if statement. This lesson explores code with multiple if statements.",
 

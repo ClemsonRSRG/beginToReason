@@ -5,7 +5,8 @@
   "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "challenges/challenge2.json",
-  "nextLesson": "",
+  "nextLessonOnSuccess": "",
+  "nextLessonOnFailure": "",
 
   "learningObjective": "Thank you for participating in this research study. Please inform your instructor that you have completed all of the lessons.",
 

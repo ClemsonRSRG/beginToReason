@@ -20,16 +20,28 @@ function loadLesson(filePath) {
     });
 }
 
-function nextLesson() {
+function nextLessonButton() {
     if(!approved) {
 	alert("You may only progress when your code has been approved.");
 	createEditor.focus();
         return;
     }
-    if(currentLesson.nextLesson == "") return;
 
+    nextLessonAndSuccess();
+}
+
+function nextLessonAndFailure() {
+    if(currentLesson.nextLessonOnFailure == "") return;
+    
     resetTime();
-    loadLesson(currentLesson.nextLesson);
+    loadLesson(currentLesson.nextLessonOnFailure);
+}
+
+function nextLessonAndSuccess() {
+    if(currentLesson.nextLessonOnSuccess == "") return;
+    
+    resetTime();
+    loadLesson(currentLesson.nextLessonOnSuccess);
 }
 
 function prevLesson() {

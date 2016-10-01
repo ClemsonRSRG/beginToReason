@@ -75,7 +75,7 @@ function verifyVCs(content) {
         if(doChecks() && succeed) {
             approved = true;
             alert("Your answer was verified and was semantically meaningful. You may move on to the next lesson.");
-            createEditor.focus();
+            nextLessonAndSuccess();
         }
         if(!doChecks() && succeed) {
             approved = false;

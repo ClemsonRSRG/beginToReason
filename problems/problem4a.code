@@ -1,0 +1,17 @@
+Facility CPSC_2151;
+    Operation Main();
+    Procedure
+        Var I, J, K: Integer;
+        Read(I);
+        Read(J);
+
+        K := J;
+        If I >= K then
+            K := I;
+            Confirm K /*conditional*/ J;
+        end;
+
+        Confirm K /*conditional*/ I;
+        Confirm K /*conditional*/ J;
+    end Main;
+end CPSC_2151;

@@ -1,12 +1,12 @@
 {
-  "code": "problems/problem1.code",
+  "code": "problems/problem1a.code",
 
   "lesson": "Lesson 1 - Sequence of assignments",
   "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "tutorial/tutorial2.json",
   "nextLessonOnSuccess": "problems/problem2.json",
-  "nextLessonOnFailure": "problems/problem1.json",
+  "nextLessonOnFailure": "problems/problem1b.json",
 
   "learningObjective": "The goal is to understand the effect of a sequence of assignments.  Whenever we want to remember the state of a variable (e.g., I), we could always just use a second variable (e.g., J), instead of using <b>Remember</b>.",
 
@@ -14,5 +14,5 @@
 
   "lines": [10],
 
-  "checks": [["Confirm I < J;", "Confirm I <= J"]]
+  "checks": [["Confirm I > J;", "Confirm I >= J"]]
 }

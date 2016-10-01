@@ -5,7 +5,8 @@
   "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "problems/problem6.json",
-  "nextLesson": "challenges/challenge2.json",
+  "nextLessonOnSuccess": "challenges/challenge2.json",
+  "nextLessonOnFailure": "challenges/challenge1.json",
 
   "learningObjective": "This code involves the use of an if statement and a while loop.",
 
