@@ -6,7 +6,7 @@
 
   "previousLesson": "problems/problem1.json",
   "nextLessonOnSuccess": "problems/problem3.json",
-  "nextLessonOnFailure": "problems/problem2.json",
+  "nextLessonOnFailure": "problems/problem2a.json",
 
   "learningObjective": "An assignment takes the evaluation of an expression and gives it to a variable. But what is the relationship between the values of variables after a <b>series</b> of assignments?",
 

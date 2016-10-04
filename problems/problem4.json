@@ -6,7 +6,7 @@
 
   "previousLesson": "problems/problem3.json",
   "nextLessonOnSuccess": "problems/problem5.json",
-  "nextLessonOnFailure": "problems/problem4.json",
+  "nextLessonOnFailure": "problems/problem4a.json",
 
   "learningObjective": "If-then statements create multiple paths of execution in our code. To be certain about the behavior of our programs, we must consider the outcomes of all branching paths.",
 
