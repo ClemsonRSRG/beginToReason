@@ -6,7 +6,7 @@
 
   "previousLesson": "tutorial/tutorial2.json",
   "nextLessonOnSuccess": "problems/problem2.json",
-  "nextLessonOnFailure": "problems/problem1.json",
+  "nextLessonOnFailure": "problems/problem1a.json",
 
   "learningObjective": "The goal is to understand the effect of a sequence of assignments.  Whenever we want to remember the state of a variable (e.g., I), we could always just use a second variable (e.g., J), instead of using <b>Remember</b>.",
 
