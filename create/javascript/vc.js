@@ -84,7 +84,7 @@ function verifyVCs(content) {
         }
 	if(!succeed) {
             alert("Your answer was syntactically correct but unverifiable; the statement you are trying to prove is not true.");
-            createEditor.focus();
+            nextLessonAndFailure();
 	}
 
         sendData();
