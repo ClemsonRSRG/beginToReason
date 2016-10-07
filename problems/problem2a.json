@@ -10,7 +10,7 @@
 
   "learningObjective": "An assignment takes the evaluation of an expression and gives it to a variable. But what is the relationship between the values of variables after a <b>series</b> of assignments?",
 
-  "problemStatement": "What is always true about the sum of variables of I and J at the end in terms of their remembered values after the reads?",
+  "referenceMaterial": "What is always true about the sum of variables of I and J at the end in terms of their remembered values after the reads?",
 
   "lines": [9, 12, 14],
 

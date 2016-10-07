@@ -10,7 +10,7 @@
 
   "learningObjective": "If-then statements create multiple paths of execution in our code. To be certain about the behavior of our programs, we must consider the outcomes of all branching paths.",
 
-  "problemStatement": "What is always true about the relationship between K and I at the end of the code? Between K and J?",
+  "referenceMaterial": "What is always true about the relationship between K and I at the end of the code? Between K and J?",
 
   "lines": [11, 14, 15],
 
