@@ -8,9 +8,9 @@
   "nextLessonOnSuccess": "problems/problem3.json",
   "nextLessonOnFailure": "problems/problem2a.json",
 
-  "learningObjective": "An assignment takes the evaluation of an expression and gives it to a variable. But what is the relationship between the values of variables after a <b>series</b> of assignments?",
+  "learningObjective": "<ol><li>On lines 11, 15, and 16 enter an expression to replace /* expression */ so that all 3 Confirm statements evaluate to true</li></ol>",
 
-  "referenceMaterial": "What is always true about the sum of variables of I and J at the end in terms of their remembered values after the reads?",
+  "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote>",
 
   "lines": [9, 12, 14],
 

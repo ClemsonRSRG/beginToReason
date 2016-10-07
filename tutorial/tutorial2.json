@@ -8,9 +8,9 @@
   "nextLessonOnFailure": "problems/problem2.json",
   "nextLessonOnSuccess": "problems/problem1.json",
 
-  "learningObjective": "Last lesson, you expressed a relationship between two values, I and #I. Alternatively, it is necessary to express the value, given a relationship.  Here, we give you an expression (e.g., I) and a conditional (e.g., =) and ask to write an expression.",
+  "learningObjective": "Consider a similar function as to last lesson. What is I equal to at the end of function execution?",
 
-  "problemStatement": "Consider a similar function as to last lesson. What is I equal to at the end of function execution?",
+  "referenceMaterial": "Last lesson, you expressed a relationship between two values, I and #I. Alternatively, it is necessary to express the value, given a relationship.  Here, we give you an expression (e.g., I) and a conditional (e.g., =) and ask to write an expression.",
 
   "lines": [11],
 

@@ -8,9 +8,9 @@
   "nextLessonOnSuccess": "challenges/challenge1.json",
   "nextLessonOnFailure": "problems/problem6.json",
 
-  "learningObjective": "In Lesson 3, we explored code that calculated the maximum of two values using an if statement. This lesson explores code with multiple if statements.",
+  "learningObjective": "What is always true about the relationship between K and #I after the execution of Main? Between K and #J? Between K and #K?",
 
-  "referenceMaterial": "What is always true about the relationship between K and #I after the execution of Main? Between K and #J? Between K and #K?",
+  "referenceMaterial": "In Lesson 3, we explored code that calculated the maximum of two values using an if statement. This lesson explores code with multiple if statements.",
 
   "lines": [18],
 

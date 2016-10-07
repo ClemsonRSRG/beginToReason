@@ -8,9 +8,9 @@
   "nextLessonOnSuccess": "problems/problem6.json",
   "nextLessonOnFailure": "problems/problem5.json",
 
-  "learningObjective": "If-then statements create multiple paths of execution in our code. To be certain about the behavior of our programs, we must consider the outcomes of all branching paths.",
+  "learningObjective": "Follow the branching paths of Main; what is certain about J regardless of execution path?",
 
-  "referenceMaterial": "Follow the branching paths of Main; what is certain about J regardless of execution path?",
+  "referenceMaterial": "If-then statements create multiple paths of execution in our code. To be certain about the behavior of our programs, we must consider the outcomes of all branching paths.",
 
   "lines": [12],
 

@@ -8,9 +8,9 @@
   "nextLessonOnSuccess": "problems/problem5.json",
   "nextLessonOnFailure": "problems/problem4a.json",
 
-  "learningObjective": "If-then statements create multiple paths of execution in our code. To be certain about the behavior of our programs, we must consider the outcomes of all branching paths.",
+  "learningObjective": "<ol><li>On lines 13 and 14 choose a relational operator to replace /* conditional */ so that the Confirm statements evaluate to true</li></ol>",
 
-  "referenceMaterial": "What is always true about the relationship between K and I at the end of the code? Between K and J?",
+  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote>",
 
   "lines": [13, 14],
 

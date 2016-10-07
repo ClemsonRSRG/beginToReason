@@ -8,9 +8,9 @@
   "nextLessonOnSuccess": "problems/problem2.json",
   "nextLessonOnFailure": "problems/problem1b.json",
 
-  "learningObjective": "The goal is to understand the effect of a sequence of assignments.  Whenever we want to remember the state of a variable (e.g., I), we could always just use a second variable (e.g., J), instead of using <b>Remember</b>.",
+  "learningObjective": "<ol><li>On line 9 enter an expression to replace /* expression */ so that the Confirm statement evaluates to true</li><li>On line 13 enter an expression to replace /* expression */ so that the Confirm statement evaluates to true</li><li>On line 14 choose a relational operator to replace /* conditional */ so that the Confirm statement evaluates to true</li></ol>",
 
-  "referenceMaterial": "The following code should look familiar. What is the relationship between I and J at the end of the code?",
+  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p><p><em>Comments in Code</em> -  are marked as follows: /* marks the beginning of a comment and */ marks the end of a comment.</p>",
 
   "lines": [8, 11, 12],
 
