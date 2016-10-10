@@ -4,10 +4,10 @@ Facility CPSC_2151;
         Var I: Integer;
         Read(I);
 
-        Remember; -- Value of I here is remembered as #I 
+        Remember;
 
         I := I + 1;
 
-        Confirm I = /*expression*/; -- Replace /* expression */ with the value of I here
+        Confirm I = /*expression*/;
     end Main;
 end CPSC_2151;

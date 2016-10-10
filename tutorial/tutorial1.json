@@ -8,9 +8,9 @@
   "nextLessonOnFailure": "tutorial/tutorial1.json",
   "nextLessonOnSuccess": "tutorial/tutorial2.json",
 
-  "learningObjective": "Analyze the following code and state the relationship between the value of 'I' at the end and its remembered value.  Replace /* conditional */ with one of =, <, >, <=, >=.  DO NOT EDIT THE CODE IN ANY OTHER WAY.",
+  "learningObjective": "<p>On line 10  choose a relational operator to replace the /* conditional */ so that the Confirm statement evaluates to true</p>",
 
-  "referenceMaterial": "In analyzing code, sometimes we need to relate variable values to values remembered at an earlier point in program execution. The <b>Remember</b> construct is useful for this.  When using <b>Remember</b>, the value of 'I' at the remembered point is '#I'.",
+  "referenceMaterial": "<ul><li><em>On Line 5</em>:&nbsp;&nbsp; <code>Read(I);</code><br />The Read operation takes an integer as input to the program and stores it in variable I<br /><br /></li><li><em>On Line 6</em>:&nbsp;&nbsp; <code>Remember;</code><br />At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements<br /><br /></li><li><em>On Line 8</em>:&nbsp;&nbsp; <code>I := I + 1;</code><br />The <code>:=</code> is the assignment operator, on this line I is assigned the result of evaluating I + 1<br /><br /></li><li><em>On Line 10</em>:&nbsp;&nbsp; <code>/*</code> marks the beginning of a comment and&nbsp;&nbsp;&nbsp;<code>*/</code> marks the end of a comment<br /><br /></li><li><em>On Line 10</em>:&nbsp;&nbsp; <code>= &nbsp;&nbsp; &lt; &nbsp;&nbsp; &lt;= &nbsp;&nbsp; &gt; &nbsp;&nbsp; &gt;=</code><br />Are the relational operators from which to choose</li></ul>",
 
   "lines": [10],
 
