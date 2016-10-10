@@ -1,9 +1,10 @@
 var createEditor;
+var author;
 
 function injectCreate(id) {
     $("#" + id).load("create/html/createHTML", function() {
         injectCreateEditor();
-        generateAuthor();
+        author = Math.random();
     });
 }
 
