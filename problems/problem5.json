@@ -8,9 +8,9 @@
   "nextLessonOnSuccess": "problems/problem6.json",
   "nextLessonOnFailure": "problems/problem5.json",
 
-  "learningObjective": "Follow the branching paths of Main; what is certain about J regardless of execution path?",
+  "learningObjective": "<p>On line 12 enter an expression to replace /* expression */ and choose a relational operator to replace /* conditional */ so that the Confirm statement evaluates to true</p>",
 
-  "referenceMaterial": "If-then statements create multiple paths of execution in our code. To be certain about the behavior of our programs, we must consider the outcomes of all branching paths.",
+  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote>",
 
   "lines": [12],
 
