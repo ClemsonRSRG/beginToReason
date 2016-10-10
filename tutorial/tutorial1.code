@@ -1,12 +1,12 @@
 Facility CPSC_2151;
-    Operation Main(); -- This is a comment
+    Operation Main();
     Procedure
         Var I: Integer;
-        Read(I); -- Input I
-        Remember; -- Value of I here is remembered as #I 
+        Read(I);
+        Remember;
 
-        I := I + 1; -- This is assignment. I is assigned I + 1.
+        I := I + 1;
 
-        Confirm I /*conditional*/ #I;  -- Replace /* conditional */ with one of: =, <, <=, >, >=
+        Confirm I /*conditional*/ #I;
     end Main;
 end CPSC_2151;
