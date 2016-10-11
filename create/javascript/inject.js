@@ -4,7 +4,9 @@ var author;
 function injectCreate(id) {
     $("#" + id).load("create/html/createHTML", function() {
         injectCreateEditor();
-        author = Math.random();
+		
+		// Generate a random number from 1 to 10000
+        author = Math.floor((Math.random() * 10000) + 1);
     });
 }
 
