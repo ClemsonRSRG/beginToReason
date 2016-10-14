@@ -2,7 +2,6 @@
   "code": "challenges/challenge2.code",
 
   "lesson": "Challenge 2 - Multiple loop statements",
-  "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "challenges/challenge1.json",
   "nextLessonOnSuccess": "challenges/complete.json",

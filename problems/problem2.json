@@ -2,7 +2,6 @@
   "code": "problems/problem2.code",
 
   "lesson": "Lesson 2 - Sequence of Assignments",
-  "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "problems/problem1.json",
   "nextLessonOnSuccess": "problems/problem3.json",

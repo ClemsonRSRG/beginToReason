@@ -2,7 +2,6 @@
   "code": "problems/problem3b.code",
 
   "lesson": "Lesson 3 - Assignments with a purpose",
-  "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "problems/problem2.json",
   "nextLessonOnSuccess": "problems/problem4.json",

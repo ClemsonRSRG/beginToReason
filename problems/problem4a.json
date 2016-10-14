@@ -2,7 +2,6 @@
   "code": "problems/problem4.code",
 
   "lesson": "Lesson 4 - If Statements",
-  "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "problems/problem3.json",
   "nextLessonOnSuccess": "problems/problem5.json",

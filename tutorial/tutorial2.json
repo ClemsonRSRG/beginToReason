@@ -2,7 +2,6 @@
   "code": "tutorial/tutorial2.code",
 
   "lesson": "Tutorial 2 - Asserting Values of Variables",
-  "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "tutorial/tutorial1.json",
   "nextLessonOnFailure": "tutorial/tutorial2.json",

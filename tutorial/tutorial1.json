@@ -2,7 +2,6 @@
   "code": "tutorial/tutorial1.code",
 
   "lesson": "Tutorial 1 - Relating Values of Variables</b>",
-  "module": "CPSC 2151 - Section 5",
 
   "previousLesson": "",
   "nextLessonOnFailure": "tutorial/tutorial1.json",
