@@ -12,7 +12,7 @@
 
   "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p><p><em>Comments in Code</em> -  are marked as follows: /* marks the beginning of a comment and */ marks the end of a comment.</p>",
 
-  "lines": [8, 11, 12],
+  "lines": [10, 13, 14],
 
   "checks": [["Confirm I = J"], ["Confirm I = J - 1", "Confirm I = J-1", "Confirm I = J- 1", "Confirm I = J -1"], ["Confirm I < J", "Confirm I <= J"]]
 }
