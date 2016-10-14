@@ -15,7 +15,7 @@ function injectCreateEditor() {
 
     createEditor = ace.edit("editor");
     createEditor.setTheme("ace/theme/github");
-    createEditor.getSession().setMode("javascript/mode-resolve");
+    createEditor.getSession().setMode("ace/mode/resolve");
 
     createEditor.getSession().on('change', removeAllVCMarkers);
     createEditor.setFontSize(18);
