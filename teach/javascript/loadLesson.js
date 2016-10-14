@@ -5,7 +5,6 @@ function loadLesson(filePath) {
         currentLesson = data;
 
         $("#header.teach td").html(data.lesson);
-        $("#footer.teach td").html(data.module);
 
         $("#objective.teach td").html(data.learningObjective);
         $("#problem.teach td").html(data.referenceMaterial);
