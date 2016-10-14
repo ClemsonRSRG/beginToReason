@@ -5,7 +5,7 @@ function injectCreate(id) {
     $("#" + id).load("create/html/createHTML", function() {
         injectCreateEditor();
 		
-		// Generate a random number from 1 to 10000
+	// Generate a random number from 1 to 10000
         author = Math.floor((Math.random() * 10000) + 1);
     });
 }
@@ -15,10 +15,10 @@ function injectCreateEditor() {
 
     createEditor = ace.edit("editor");
     createEditor.setTheme("ace/theme/github");
-	
-    var EditSession = ace.require("ace/edit_session").EditSession;
+
+    // Set this to RESOLVE mode
     var ResolveMode = ace.require("ace/mode/resolve").Mode;
-    createEditor.setSession(new EditSession("", new ResolveMode));
+    createEditor.session.setMode(new ResolveMode());
 
     createEditor.getSession().on('change', removeAllVCMarkers);
     createEditor.setFontSize(18);
