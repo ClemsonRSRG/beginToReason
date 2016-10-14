@@ -1,4 +1,5 @@
 {
+  "self": "challenges/challenge1.json",
   "code": "challenges/challenge1.code",
 
   "lesson": "Challenge 1 - Loop Statement",

@@ -1,5 +1,6 @@
 {
-  "code": "problems/problem4.code",
+  "self": "problems/problem4a.json",
+  "code": "problems/problem4a.code",
 
   "lesson": "Lesson 4 - If Statements",
 
