@@ -19,6 +19,10 @@ function loadLesson(filePath) {
     });
 }
 
+function reloadLesson() {
+    loadLesson(currentLesson.self);
+}
+
 function nextLessonButton() {
     if(!approved) {
 	alert("You may only progress when your code has been approved.");
