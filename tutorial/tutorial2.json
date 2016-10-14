@@ -1,4 +1,5 @@
 {
+  "self": "tutorial/tutorial2.json",
   "code": "tutorial/tutorial2.code",
 
   "lesson": "Tutorial 2 - Asserting Values of Variables",
