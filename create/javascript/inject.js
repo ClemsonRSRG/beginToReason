@@ -20,6 +20,9 @@ function injectCreateEditor() {
     var ResolveMode = ace.require("ace/mode/resolve").Mode;
     createEditor.session.setMode(new ResolveMode());
 
+    // Gets rid of a weird Ace Editor bug
+    createEditor.$blockScrolling = Infinity;
+
     createEditor.getSession().on('change', removeAllVCMarkers);
     createEditor.setFontSize(18);
 }
