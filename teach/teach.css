@@ -37,6 +37,7 @@ div {
 
     box-sizing: border-box;
     border: 6px solid seagreen;
+    overflow: auto;
 }
 
 #problem.teach {
@@ -46,6 +47,7 @@ div {
     border-bottom: 6px solid seagreen;
     border-left: 6px solid seagreen;
     border-right: 6px solid seagreen;
+    overflow: auto;
 }
 
 #previous.teach {
