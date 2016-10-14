@@ -1,8 +1,28 @@
-/* Important keywords that need explanation with a tool-tip.
-  * Only some of the keywords are displayed here because only some are used
-  * and some are self-explanatory.
-  */
+/* 
+ * This will hold all of our keywords information such as the hashmap that
+ * holds the keywords with their tool-tip values in it. 
+ */
+function KeywordsHashTable(obj){
+    this.length = 0;
+    this.items = new Object();
+    for (var k in obj){
+        if(obj.hasOwnProperty(k)){
+            this.items[k] = obj[k];
+            this.length++;
+        }
+    }
+    this.getTip = function(word){
+        return this.items[word];
+    }
+    this.hasKeyword = function(word){
+        return this.items.hasOwnProperty(word);
+    }
+}
 
+/* Important keywords that need explanation with a tool-tip.
+ * Only some of the keywords are displayed here because only some are used
+ * and some are self-explanatory.
+ */
 var keywordsTable = new KeywordsHashTable({
     "abs" : "" ,
     "ad" : "" ,
