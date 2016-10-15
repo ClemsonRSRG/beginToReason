@@ -9,7 +9,6 @@ Facility CPSC_2151;
 
         I := I + J;
         Confirm I = /* expression */;
-        Confirm J = /* expression */;
         
         J := I - J;
 

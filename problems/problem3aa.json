@@ -8,11 +8,11 @@
   "nextLessonOnSuccess": "problems/problem4.json",
   "nextLessonOnFailure": "problems/probem3aa.json",
 
-  "learningObjective": "<ol><li>On lines 13, 14, 18, and 19 enter an expression to replace /* expression */ so that both Confirm statements evaluate to true</li></ol>",
+  "learningObjective": "<ol><li>On lines 18 and 19 enter an expression to replace /* expression */ so that both Confirm statements evaluate to true</li></ol>",
 
   "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote>",
 
-  "lines": [13, 14, 18, 19],
+  "lines": [18, 19],
 
   "checks": [
     ["Confirm I = #I + #J", "Confirm I = #I+#J", "Confirm I = #I+ #J", "Confirm I = #I +#J", "Confirm I = #J + #I", "Confirm I = #J+#I", "Confirm I = #J+ #I", "Confirm I + #J +#I"],
