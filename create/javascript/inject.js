@@ -17,8 +17,8 @@ function injectCreateEditor() {
     createEditor.setTheme("ace/theme/github");
 
     // Set this to RESOLVE mode
-    //var ResolveMode = ace.require("ace/mode/resolve").Mode;
-    //createEditor.session.setMode(new ResolveMode());
+    var ResolveMode = ace.require("ace/mode/resolve").Mode;
+    createEditor.session.setMode(new ResolveMode());
 
     // Gets rid of a weird Ace Editor bug
     //createEditor.$blockScrolling = Infinity;
