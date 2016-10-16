@@ -3,7 +3,6 @@ Facility CPSC_2151;
     Procedure
         Var I: Integer;
         Read(I);
-
         Remember;
 
         I := I + 1;

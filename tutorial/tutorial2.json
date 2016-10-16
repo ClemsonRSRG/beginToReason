@@ -10,7 +10,7 @@
 
   "learningObjective": "<p>On line 11 enter an expression for /* expression */ so that the Confirm statement evaluates to true</p>",
 
-  "referenceMaterial": "<ul><li><em>On Line 5</em>:&nbsp;&nbsp;  <code>Read(I);</code><br />The Read operation takes an integer as input to the program and stores it in variable I<br /><br /></li><li><em>On Line 7</em>:&nbsp;&nbsp; <code>Remember;</code><br />At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements<br /><br /></li><li><em>On Line 8</em>:&nbsp;&nbsp; <code>I := I + 1;</code><br />The <code>:=</code> is the assignment operator, on this line I is assigned the result of evaluating I + 1<br /><br /></li><li><em>On Line 10</em>:&nbsp;&nbsp; <code>/*</code> marks the beginning of a comment and&nbsp;&nbsp;&nbsp;<code>*/</code> marks the end of a comment<br /><br /></li><li><em>On Line 10</em>:&nbsp; The expression to be entered should make use of #I, which was remembered on line 7</li></ul>",
+  "referenceMaterial": "<ul><li><em>On Line 6</em>:&nbsp;&nbsp; <code>Remember;</code><br />At the point of the Remember statement in the code, the value of a variable 'x' is assumed to be #x and #x can be used in Confirm statements<br /><br /></li><li><em>On Line 10</em>:<br />&nbsp;&nbsp; <code>= &nbsp;&nbsp; &lt; &nbsp;&nbsp; &lt;= &nbsp;&nbsp; &gt; &nbsp;&nbsp; &gt;=</code><br />are the relational operators from which to choose</li></ul>",
 
   "lines": [11],
 
