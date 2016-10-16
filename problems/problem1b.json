@@ -10,7 +10,7 @@
 
   "learningObjective": "<ol><li>On line 13 enter an expression to replace /* expression */ so that the Confirm statement evaluates to true</li><li>On line 14 choose a relational operator to replace /* conditional */ so that the Confirm statement evaluates to true</li></ol>",
 
-  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5 relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p><p><em>Comments in Code</em> -  are marked as follows: /* marks the beginning of a comment and */ marks the end of a comment.</p>",
+  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5 relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p>",
 
   "lines": [13, 14],
 
