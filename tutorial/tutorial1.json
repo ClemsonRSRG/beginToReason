@@ -4,7 +4,7 @@
 
   "lesson": "Tutorial 1 - Relating Values of Variables</b>",
 
-  "previousLesson": "",
+  "previousLesson": "tutorial/demographic.json",
   "nextLessonOnFailure": "tutorial/tutorial1.json",
   "nextLessonOnSuccess": "tutorial/tutorial2.json",
 
