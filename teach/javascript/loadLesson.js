@@ -24,11 +24,6 @@ function reloadLesson() {
 }
 
 function nextLessonButton() {
-	// We can always move on from the demographic survey 
-    if (currentLesson.self === "tutorial/demographic.json") {
-        approved = true;
-    }
-	
     if(!approved) {
         alert("You may only progress when your code has been approved.");
         createEditor.focus();
