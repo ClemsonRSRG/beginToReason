@@ -1,4 +1,5 @@
 {
+  "self": "tutorial/demographic.json",
   "code": "tutorial/demographic.code",
 
   "lesson": "Demographic Survey!",
