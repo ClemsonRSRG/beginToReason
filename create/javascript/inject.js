@@ -8,7 +8,7 @@ function injectCreate(id) {
 		// Check to see if we already have an author ID
 		if (localStorage.getItem('author')) {
 			// Reuse the same author ID
-			author = localStorage.getItem('todos');
+			author = localStorage.getItem('author');
 		}
 		else {
 			// Generate a random number from 1 to 10000
