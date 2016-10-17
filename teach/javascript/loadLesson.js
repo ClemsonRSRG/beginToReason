@@ -19,6 +19,10 @@ function loadLesson(filePath) {
     });
 }
 
+function endSurvey() {
+	alert("AuthorID: " + author + "\n Survey Link: https://www.surveymonkey.com/r/9FSM8WV");
+}
+
 function reloadLesson() {
     loadLesson(currentLesson.self);
 }

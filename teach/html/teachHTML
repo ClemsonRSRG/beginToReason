@@ -63,11 +63,20 @@
     </div>
 </div>
 
-<div class="teach" id="footer" onClick="reloadLesson()">
-    <table width="100%" height="100%">
-        <tr>
-            <td>Refresh lesson</td>
-        </tr>
-    </table>
+<div class="teach" id="footer">
+	<div class="teach" id="reload" onClick="reloadLesson()">
+        <table width="100%" height="100%">
+            <tr>
+                <td>Refresh lesson<td>
+            </tr>
+        </table>
+    </div>
+    <div class="teach" id="survey" onclick="endSurvey()">
+        <table width="100%" height="100%">
+            <tr>
+                <td>End Survey</td>
+            </tr>
+        </table>
+    </div>
 </div>
 <!-- End -->
