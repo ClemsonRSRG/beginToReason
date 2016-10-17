@@ -8,6 +8,11 @@ function loadLesson(filePath) {
 
         $("#objective.teach td").html(data.learningObjective);
         $("#problem.teach td").html(data.referenceMaterial);
+		
+		// We can always move on from the demographic survey 
+		if (currentLesson.self === "tutorial/demographic.json") {
+			approved = true;
+		}
 
         $.get(data.code, function (data) {
             createEditor.setValue(data);
@@ -25,8 +30,8 @@ function reloadLesson() {
 
 function nextLessonButton() {
     if(!approved) {
-	alert("You may only progress when your code has been approved.");
-	createEditor.focus();
+        alert("You may only progress when your code has been approved.");
+        createEditor.focus();
         return;
     }
 
