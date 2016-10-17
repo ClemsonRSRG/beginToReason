@@ -8,11 +8,6 @@ function loadLesson(filePath) {
 
         $("#objective.teach td").html(data.learningObjective);
         $("#problem.teach td").html(data.referenceMaterial);
-		
-		// We can always move on from the demographic survey 
-		if (currentLesson.self === "tutorial/demographic.json") {
-			approved = true;
-		}
 
         $.get(data.code, function (data) {
             createEditor.setValue(data);
@@ -21,6 +16,11 @@ function loadLesson(filePath) {
             createEditor.getSession().setUndoManager(new ace.UndoManager());
             createEditor.getSession().getUndoManager().reset();
         });
+		
+		// We can always move on from the demographic survey 
+		if (currentLesson.self === "tutorial/demographic.json") {
+			approved = true;
+		}
     });
 }
 
