@@ -71,7 +71,7 @@
             </tr>
         </table>
     </div>
-    <div class="teach" id="survey" onClick="reloadLesson()">
+    <div class="teach" id="survey" onClick="endSurvey()">
         <table width="100%" height="100%">
             <tr>
                 <td>End survey</td>
