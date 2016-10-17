@@ -30,6 +30,22 @@
 
     <script src="backend/sendData.js"></script>
     <script src="backend/time.js"></script>
+	
+	<script>
+	$( function() {
+		$( "#dialog-box" ).dialog({
+			modal: true,
+			buttons: {
+				Ok: function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			close: function( event, ui ) {
+				$( "#dialog-message" ).html("");
+			}
+		});
+	} );
+	</script>
 </head>
 <body>
 
