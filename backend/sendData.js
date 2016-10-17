@@ -15,11 +15,11 @@ function sendData() {
     data += ",";
 
     data += "\"module\":";
-    data += "\"" + currentLesson.module + "\"";
+    data += "\"" + "CPSC2151" + "\"";
     data += ",";
 
     data += "\"lesson\":";
-    data += "\"" + currentLesson.lesson + "\"";
+    data += "\"" + currentLesson.self + "\"";
     data += ",";
 
     data += "\"correct\":";
