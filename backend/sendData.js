@@ -15,7 +15,7 @@ function sendData() {
     data += ",";
 
     data += "\"module\":";
-    data += "\"" + "CPSC2151" + "\"";
+    data += "\"" + "CPSC 2151 (Spring 2016)" + "\"";
     data += ",";
 
     data += "\"lesson\":";
