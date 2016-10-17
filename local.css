@@ -19,3 +19,8 @@ td {
     float: left;
     width: 30%;
 }
+
+#dialog-message {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
