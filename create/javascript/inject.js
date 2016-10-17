@@ -5,8 +5,16 @@ function injectCreate(id) {
     $("#" + id).load("create/html/createHTML", function() {
         injectCreateEditor();
 		
-	// Generate a random number from 1 to 10000
-        author = Math.floor((Math.random() * 10000) + 1);
+		// Check to see if we already have an author ID
+		if (localStorage.getItem('author')) {
+			// Reuse the same author ID
+			author = localStorage.getItem('todos');
+		}
+		else {
+			// Generate a random number from 1 to 10000
+			author = Math.floor((Math.random() * 10000) + 1);
+			localStorage.setItem('author', author);
+		}
     });
 }
 
