@@ -11,7 +11,7 @@ div {
     overflow: hidden;
 }
 
-#header.teach , #footer.teach {
+#header.teach {
     width: 100%;
     height: 70px;
 
@@ -19,6 +19,17 @@ div {
 
     box-sizing: border-box;
     border: 6px solid seagreen;
+}
+
+#footer.teach {
+    width: 100%;
+    height: 35px;
+
+    background: #BEBEBE;
+
+    box-sizing: border-box;
+    border-left: 6px solid seagreen;
+    border-right: 6px solid seagreen;
 }
 
 #headette.teach, #footette.teach {

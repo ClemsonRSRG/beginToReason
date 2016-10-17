@@ -67,14 +67,14 @@
 	<div class="teach" id="reload" onClick="reloadLesson()">
         <table width="100%" height="100%">
             <tr>
-                <td>Refresh lesson<td>
+                <td>Reload lesson<td>
             </tr>
         </table>
     </div>
     <div class="teach" id="survey" onclick="endSurvey()">
         <table width="100%" height="100%">
             <tr>
-                <td>End Survey</td>
+                <td>End survey</td>
             </tr>
         </table>
     </div>
