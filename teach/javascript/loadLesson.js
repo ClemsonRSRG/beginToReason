@@ -16,11 +16,6 @@ function loadLesson(filePath) {
             createEditor.getSession().setUndoManager(new ace.UndoManager());
             createEditor.getSession().getUndoManager().reset();
         });
-		
-		// We can always move on from the demographic survey 
-		if (currentLesson.self === "tutorial/demographic.json") {
-			approved = true;
-		}
     });
 }
 
@@ -29,6 +24,11 @@ function reloadLesson() {
 }
 
 function nextLessonButton() {
+	// We can always move on from the demographic survey 
+    if (currentLesson.self === "tutorial/demographic.json") {
+        approved = true;
+    }
+	
     if(!approved) {
         alert("You may only progress when your code has been approved.");
         createEditor.focus();
