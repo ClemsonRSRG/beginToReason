@@ -20,7 +20,7 @@ function loadLesson(filePath) {
 }
 
 function endSurvey() {
-	alert("<b>AuthorID:</b> " + author + "\n<b>Survey Link:</b> https://www.surveymonkey.com/r/9FSM8WV");
+	alert("AuthorID: " + author + "\nSurvey Link: https://www.surveymonkey.com/r/9FSM8WV");
 }
 
 function reloadLesson() {
