@@ -20,7 +20,7 @@ function loadLesson(filePath) {
 }
 
 function endSurvey() {
-	$( "#dialog-message" ).html("<b>AuthorID:</b> " + author + "</br><b>Survey Link:</b> https://www.surveymonkey.com/r/9N79RK9");
+	$( "#dialog-message" ).html("<b>AuthorID:</b> " + author + "</br><b>Survey Link:</b> https://www.surveymonkey.com/r/F7KF6F8");
 	$( "#dialog-box" ).dialog( "open" );
 }
 
