@@ -20,7 +20,6 @@ function getVCLines(content) {
         if(message.status == "error") {
             alert("Your code is syntactically incorrect and thus could not be verified.");
             verifying = false;
-            reloadLesson();
             
             createEditor.focus();
             return;
@@ -32,7 +31,6 @@ function getVCLines(content) {
 	if(message.result == "") {
         alert("Your code could not be verified; try a simpler answer and only use declared variables.");
         verifying = false;
-        reloadLesson();
 
         createEditor.focus();
         return;
@@ -83,13 +81,13 @@ function verifyVCs(content) {
         if(!doChecks() && succeed) {
             approved = false;
             alert("Your answer was verified but semantically insufficient; try providing a more descriptive answer.");
-            reloadLesson();
             createEditor.focus();
         }
-	if(!succeed) {
+        if(!succeed) {
             alert("Your answer was syntactically correct but unverifiable; the statement you are trying to prove is not true.");
-            nextLessonAndFailure();
-	}
+            if (currentLesson.self != currentLesson.nextLessonOnFailure)
+                nextLessonAndFailure();
+        }
 
         sendData();
     }
