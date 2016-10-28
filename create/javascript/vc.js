@@ -6,6 +6,7 @@ function submitAnswer() {
     if(verifying)
         return;
     verifying = true;
+    $("#footer.create").attr("class", "createDisabled");
     
     getVCLines(createEditor.getValue());
 }
@@ -22,6 +23,7 @@ function getVCLines(content) {
         if(message.status == "error") {
             alert("Your code is syntactically incorrect and thus could not be verified.");
             verifying = false;
+            $("#footer.createDisabled").attr("class", "create");
             
             createEditor.focus();
             return;
@@ -33,6 +35,7 @@ function getVCLines(content) {
 	if(message.result == "") {
         alert("Your code could not be verified; try a simpler answer and only use declared variables.");
         verifying = false;
+        $("#footer.createDisabled").attr("class", "create");
 
         createEditor.focus();
         return;
@@ -90,6 +93,7 @@ function verifyVCs(content) {
         }
 
         verifying = false;
+        $("#footer.createDisabled").attr("class", "create");
         sendData();
     }
 }

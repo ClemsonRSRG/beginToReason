@@ -9,6 +9,7 @@ function createResize() {
     usedHeight += $("#headette.create").height();
     usedHeight += $("#headette.create").height();
     usedHeight += $("#footer.create").height();
+    usedHeight += $("#footer.createDisabled").height();
     usedHeight += 36; //for div borders
 
     if(usedHeight >= totalHeight) {
