@@ -60,8 +60,13 @@ function prevLesson() {
 
 function checkLines() {
     var rowNum = createEditor.getCursorPosition().row + 1;
-    if ($.inArray(rowNum, currentLesson.lines) != -1) createEditor.setReadOnly(false);
-    else createEditor.setReadOnly(true);
+    
+    if (createEditor.selection.isMultiLine())
+        createEditor.setReadOnly(true);
+    else if ($.inArray(rowNum, currentLesson.lines) != -1)
+        createEditor.setReadOnly(false);
+    else
+        createEditor.setReadOnly(true);
 }
 
 function doChecks() {
