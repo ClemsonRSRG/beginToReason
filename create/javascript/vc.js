@@ -2,14 +2,15 @@ var VCs;
 var verifying = false;
 
 function submitAnswer() {
-
-    if(verifying) return;
+    /* Protect against multiple requests */
+    if(verifying)
+        return;
+    verifying = true;
+    
     getVCLines(createEditor.getValue());
 }
 
 function getVCLines(content) {
-    verifying = true;
-
     removeAllVCMarkers();
     var socket = new WebSocket("wss://resolve.cs.clemson.edu/teaching/Compiler?job=genVCs&project=Teaching_Project");
 
