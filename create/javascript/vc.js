@@ -2,11 +2,8 @@ var VCs;
 var verifying = false;
 
 function submitAnswer() {
+
     if(verifying) return;
-    
-    /* Disable button until socket closes so that multiple requests are impossible */
-    $("div#create div#footer").removeAttr("onclick");
-    
     getVCLines(createEditor.getValue());
 }
 
@@ -58,11 +55,6 @@ function getVCLines(content) {
     content = toJSON(content);
 
     socket.onopen = function() { socket.send(content); };
-    
-    /* Enable the button again */
-    socket.onclose = function() {
-        $("div#create div#footer").attr("onclick", "submitAnswer()");
-    };
 }
 
 function verifyVCs(content) {
@@ -80,8 +72,6 @@ function verifyVCs(content) {
 
     socket.onopen = function() { socket.send(content); };
     socket.onclose = function() {
-        verifying = false;
-
         if(doChecks() && succeed) {
             approved = true;
             alert("Your answer was verified and was semantically meaningful. You may move on to the next lesson.");
@@ -98,6 +88,7 @@ function verifyVCs(content) {
                 nextLessonAndFailure();
         }
 
+        verifying = false;
         sendData();
     }
 }
