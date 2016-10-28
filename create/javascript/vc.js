@@ -21,7 +21,8 @@ function getVCLines(content) {
         // Extract the array of VCs from the message (trust me, this works)
         message = JSON.parse(message.data);
         if(message.status == "error") {
-            alert("Your code is syntactically incorrect and thus could not be verified.");
+            $("#dialog-message").html("Your code is syntactically incorrect and thus could not be verified.");
+            $("#dialog-box").dialog("open");
             verifying = false;
             $("#footer.createDisabled").attr("class", "create");
             
@@ -33,7 +34,8 @@ function getVCLines(content) {
         }
 
 	if(message.result == "") {
-        alert("Your code could not be verified; try a simpler answer and only use declared variables.");
+	    $("#dialog-message").html("Your code could not be verified; try a simpler answer and only use declared variables.");
+	    $("#dialog-box").dialog("open");
         verifying = false;
         $("#footer.createDisabled").attr("class", "create");
 
@@ -78,16 +80,19 @@ function verifyVCs(content) {
     socket.onclose = function() {
         if(doChecks() && succeed) {
             approved = true;
-            alert("Your answer was verified and was semantically meaningful. You may move on to the next lesson.");
+            $("#dialog-message").html("Your answer was verified and was semantically meaningful. You may move on to the next lesson.");
+            $("#dialog-box").dialog("open");
             nextLessonAndSuccess();
         }
         if(!doChecks() && succeed) {
             approved = false;
-            alert("Your answer was verified but semantically insufficient; try providing a more descriptive answer.");
+            $("#dialog-message").html("Your answer was verified but semantically insufficient; try providing a more descriptive answer.");
+            $("#dialog-box").dialog("open");
             createEditor.focus();
         }
         if(!succeed) {
-            alert("Your answer was syntactically correct but unverifiable; the statement you are trying to prove is not true.");
+            $("#dialog-message").html("Your answer was syntactically correct but unverifiable; the statement you are trying to prove is not true.");
+            $("#dialog-box").dialog("open");
             if (currentLesson.self != currentLesson.nextLessonOnFailure)
                 nextLessonAndFailure();
         }
