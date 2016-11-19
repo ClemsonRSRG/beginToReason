@@ -2,7 +2,7 @@
   "self": "problems/problem1a.json",
   "code": "problems/problem1a.code",
 
-  "lesson": "Lesson 1 - Sequence of assignments",
+  "lesson": "Lesson 1a - Sequence of assignments",
 
   "previousLesson": "tutorial/tutorial2.json",
   "nextLessonOnSuccess": "problems/problem2.json",

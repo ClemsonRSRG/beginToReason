@@ -2,7 +2,7 @@
   "self": "problems/problem4a.json",
   "code": "problems/problem4a.code",
 
-  "lesson": "Lesson 4 - If Statements",
+  "lesson": "Lesson 4a - If Statements",
 
   "previousLesson": "problems/problem3.json",
   "nextLessonOnSuccess": "problems/problem5.json",

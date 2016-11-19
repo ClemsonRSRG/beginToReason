@@ -2,7 +2,7 @@
   "self": "problems/problem3a.json",
   "code": "problems/problem3a.code",
 
-  "lesson": "Lesson 3 - Assignments with a purpose",
+  "lesson": "Lesson 3a - Assignments with a purpose",
 
   "previousLesson": "problems/problem2.json",
   "nextLessonOnSuccess": "problems/problem3aa.json",
