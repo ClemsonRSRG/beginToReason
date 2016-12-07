@@ -41,7 +41,16 @@ div {
 
 #header.create table,
 #headette.create table,
-#footette.create table,
+#footette.create table {
+    text-align: center;
+    vertical-align: middle;
+
+    font-family: "Courier New";
+    color: ghostwhite;
+    font-weight: bolder;
+    font-size: 16pt;
+}
+
 #footer.create table,
 #footer.createDisabled table {
     text-align: center;
@@ -50,7 +59,7 @@ div {
     font-family: "Courier New";
     color: ghostwhite;
     font-weight: bolder;
-    font-size: 16pt;
+    font-size: 12pt;
 }
 
 #footette.create:hover {
