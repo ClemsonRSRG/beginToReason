@@ -13,7 +13,7 @@
 <div class="create" id="footette" onclick="submitAnswer()">
     <table width="100%" height="100%">
         <tr>
-            <td>check correctness!</td>
+            <td>Check Correctness!</td>
         </tr>
     </table>
 </div>
