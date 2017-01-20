@@ -11,7 +11,7 @@ div {
     overflow: hidden;
 }
 
-#header.create , #footer.create, #footer.createDisabled {
+#header.create , #footer.create {
     width: 100%;
     height: 70px;
 
@@ -21,7 +21,7 @@ div {
     border: 6px solid steelblue;
 }
 
-#headette.create, #footette.create {
+#headette.create, #footette.create, #footette.createDisabled {
     width: 100%;
     height: 35px;
 
@@ -41,7 +41,8 @@ div {
 
 #header.create table,
 #headette.create table,
-#footette.create table {
+#footette.create table,
+#footette.createDisabled table {
     text-align: center;
     vertical-align: middle;
 
@@ -51,8 +52,7 @@ div {
     font-size: 16pt;
 }
 
-#footer.create table,
-#footer.createDisabled table {
+#footer.create table {
     text-align: center;
     vertical-align: middle;
 
@@ -71,12 +71,12 @@ div {
     background: #6193BF;
 }
 
-#footer.createDisabled {
-    background: #6193BF;
+#footette.createDisabled {
+    background: #559060;
 }
 
-#footer.createDisabled table {
-    color: #7BA3C9;
+#footette.createDisabled table {
+    color: #68B080;
 }
 
 /* VC Markers Colors */
