@@ -1,12 +1,12 @@
 {
-  "self": "problems/problem3a.json",
-  "code": "problems/problem3a.code",
+  "self": "problems/lesson3a.json",
+  "code": "problems/lesson3a.code",
 
   "lesson": "Lesson 3a - Assignments with a purpose",
 
-  "previousLesson": "problems/problem2.json",
-  "nextLessonOnSuccess": "problems/problem3aa.json",
-  "nextLessonOnFailure": "problems/problem3b.json",
+  "previousLesson": "problems/lesson2.json",
+  "nextLessonOnSuccess": "problems/lesson3aa.json",
+  "nextLessonOnFailure": "problems/lesson3b.json",
 
   "learningObjective": "Understand the Remember statement (see below). On lines 13 and 14 enter an expression to replace /* expression */ so that both Confirm statements evaluate to true.",
 

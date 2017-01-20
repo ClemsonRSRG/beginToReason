@@ -1,12 +1,12 @@
 {
-  "self": "problems/problem4a.json",
-  "code": "problems/problem4a.code",
+  "self": "problems/lesson4a.json",
+  "code": "problems/lesson4a.code",
 
   "lesson": "Lesson 4a - If Statements",
 
-  "previousLesson": "problems/problem3.json",
-  "nextLessonOnSuccess": "problems/problem5.json",
-  "nextLessonOnFailure": "problems/problem4a.json",
+  "previousLesson": "problems/lesson3.json",
+  "nextLessonOnSuccess": "problems/lesson5.json",
+  "nextLessonOnFailure": "problems/lesson4a.json",
 
   "learningObjective": "<ol><li>On lines 11, 14, and 15 choose a relational operator to replace /* conditional */ so that the Confirm statements evaluate to true</li></ol>",
 

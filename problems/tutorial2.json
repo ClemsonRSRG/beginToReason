@@ -1,12 +1,12 @@
 {
-  "self": "tutorial/tutorial2.json",
-  "code": "tutorial/tutorial2.code",
+  "self": "problems/tutorial2.json",
+  "code": "problems/tutorial2.code",
 
   "lesson": "Tutorial 2 - Asserting Values of Variables",
 
-  "previousLesson": "tutorial/tutorial1.json",
-  "nextLessonOnFailure": "tutorial/tutorial2.json",
-  "nextLessonOnSuccess": "problems/problem1.json",
+  "previousLesson": "problems/tutorial1.json",
+  "nextLessonOnFailure": "problems/tutorial2.json",
+  "nextLessonOnSuccess": "problems/lesson1.json",
 
   "learningObjective": "<p>On line 10 enter an expression for /* expression */ so that the Confirm statement evaluates to true</p>",
 

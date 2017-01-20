@@ -1,12 +1,12 @@
 {
-  "self": "problems/problem1b.json",
-  "code": "problems/problem1b.code",
+  "self": "problems/lesson1b.json",
+  "code": "problems/lesson1b.code",
 
   "lesson": "Lesson 1b - Sequence of assignments",
 
-  "previousLesson": "tutorial/tutorial2.json",
-  "nextLessonOnSuccess": "problems/problem2.json",
-  "nextLessonOnFailure": "problems/problem1b.json",
+  "previousLesson": "problems/tutorial2.json",
+  "nextLessonOnSuccess": "problems/lesson2.json",
+  "nextLessonOnFailure": "problems/lesson1b.json",
 
   "learningObjective": "<ol><li>On line 10, enter the value of I in terms of J. Replace /* expression */ so that the Confirm statement evaluates to true.</li><li>On line 13, enter the value of I in terms of J. Replace /* expression */ so that the Confirm statement evaluates to true.</li><li>On line 14, replace /* conditional */ with a conditional so that the Confirm statement evaluates to true.</li></ol>",
 

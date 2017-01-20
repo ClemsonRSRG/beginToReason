@@ -1,11 +1,12 @@
 {
-  "code": "challenges/complete.code",
+  "self": "problems/complete.json",
+  "code": "problems/complete.code",
 
   "lesson": "Lab Completed!",
 
-  "previousLesson": "challenges/challenge2.json",
-  "nextLessonOnSuccess": "",
-  "nextLessonOnFailure": "",
+  "previousLesson": "problems/challenge2.json",
+  "nextLessonOnSuccess": "problems/complete.json",
+  "nextLessonOnFailure": "problems/complete.json",
 
   "learningObjective": "Thank you for participating in this research study. Please inform your instructor that you have completed all of the lessons.",
 

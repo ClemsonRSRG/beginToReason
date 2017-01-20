@@ -1,12 +1,12 @@
 {
-  "self": "problems/problem2.json",
-  "code": "problems/problem2.code",
+  "self": "problems/lesson2.json",
+  "code": "problems/lesson2.code",
 
   "lesson": "Lesson 2 - Sequence of Assignments",
 
-  "previousLesson": "problems/problem1.json",
-  "nextLessonOnSuccess": "problems/problem3.json",
-  "nextLessonOnFailure": "problems/problem2a.json",
+  "previousLesson": "problems/lesson1.json",
+  "nextLessonOnSuccess": "problems/lesson3.json",
+  "nextLessonOnFailure": "problems/lesson2a.json",
 
   "learningObjective": "<ol><li>On line 13 enter an expression to replace /* expression */ so that the Confirm statement evaluates to true</li></ol>",
   

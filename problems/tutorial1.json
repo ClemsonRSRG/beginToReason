@@ -1,12 +1,12 @@
 {
-  "self": "tutorial/tutorial1.json",
-  "code": "tutorial/tutorial1.code",
+  "self": "problems/tutorial1.json",
+  "code": "problems/tutorial1.code",
 
   "lesson": "Tutorial 1 - Relating Values of Variables</b>",
 
-  "previousLesson": "",
-  "nextLessonOnFailure": "tutorial/tutorial1.json",
-  "nextLessonOnSuccess": "tutorial/tutorial2.json",
+  "previousLesson": "problems/tutorial1.json",
+  "nextLessonOnFailure": "problems/tutorial1.json",
+  "nextLessonOnSuccess": "problems/tutorial2.json",
 
   "learningObjective": "<p>On line 10  choose a relational operator to replace the /* conditional */ so that the Confirm statement evaluates to true</p>",
 
