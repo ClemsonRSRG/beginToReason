@@ -14,7 +14,7 @@
     <script src="ace/mode-resolve.js" type="text/javascript" charset="utf-8"></script>
 
     <!-- CSS Inclusion -->
-    <link href="local.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link href="left/style.css" rel="stylesheet">
     <link href="right/style.css" rel="stylesheet">
 
@@ -54,7 +54,7 @@
 </head>
 <body>
 
-<div id="teach"></div>
+<div id="left"></div>
 <div id="create"></div>
 <div id="dialog-box" title="byDesign Message">
 	<div id="dialog-message"></div>
@@ -65,7 +65,7 @@
 <script>
     $(document).ready(function () {
         injectCreate("create");
-        injectTeach("teach");
+        injectTeach("left");
 
         teachResize();
         createResize();

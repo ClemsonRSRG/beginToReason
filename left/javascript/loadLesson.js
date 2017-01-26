@@ -4,10 +4,10 @@ function loadLesson(filePath) {
     $.getJSON(filePath, function(data) {
         currentLesson = data;
 
-        $("#header.teach td").html(data.lesson);
+        $("#left .header td").html(data.lesson);
 
-        $("#objective.teach td").html(data.learningObjective);
-        $("#problem.teach td").html(data.referenceMaterial);
+        $("#left .objective td").html(data.learningObjective);
+        $("left .reference td").html(data.referenceMaterial);
 
         $.get(data.code, function (data) {
             createEditor.setValue(data);

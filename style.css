@@ -6,7 +6,7 @@ td {
     overflow: auto;
 }
 
-#create, #teach {
+#create, #left {
     height: 100%;
 }
 
@@ -15,7 +15,7 @@ td {
     width: 70%;
 }
 
-#teach {
+#left {
     float: left;
     width: 30%;
 }

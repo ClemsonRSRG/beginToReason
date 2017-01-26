@@ -5,15 +5,15 @@ function teachResize() {
     var totalHeight = $("html").height();
 
     var usedHeight = 0;
-    usedHeight += $("#header.teach").height();
-    usedHeight += $("#headette.teach").height();
-    usedHeight += $("#headette.teach").height();
-    usedHeight += $("#footer.teach").height();
+    usedHeight += $("#left .header").height();
+    usedHeight += $("#left .headette").height();
+    usedHeight += $("#left .footette").height();
+    usedHeight += $("#left .footer").height();
     usedHeight += 42; //for div borders
 
     if(usedHeight >= totalHeight) {
-        $("#objective.teach").height(0);
-        $("#problem.teach").height(0);
+        $("#left .objective").height(0);
+        $("#left .reference").height(0);
         setTimeout(teachResize, 0);
         return;
     }
@@ -21,10 +21,10 @@ function teachResize() {
     var avalHeight = totalHeight - usedHeight;
 
     var objectiveHeight = avalHeight / 2;
-    $("#objective.teach").height(objectiveHeight);
+    $("#left .objective").height(objectiveHeight);
 
-    var problemHeight = avalHeight - objectiveHeight;
-    $("#problem.teach").height(problemHeight);
+    var referenceHeight = avalHeight - objectiveHeight;
+    $("#left .reference").height(referenceHeight);
 
     setTimeout(teachResize, 0);
 }

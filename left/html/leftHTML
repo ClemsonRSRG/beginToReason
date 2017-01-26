@@ -1,5 +1,8 @@
+
+
 <!-- By Design - Teach HTML -->
-<div class="teach" id="header">
+
+<div class="header">
     <table width="100%" height="100%">
         <tr>
             <td>Lesson Name</td>
@@ -7,15 +10,15 @@
     </table>
 </div>
 
-<div class="teach" id="headette">
-    <div class="teach" id="previous" onclick="prevLesson()">
+<div class="headette">
+    <div class="prev" onclick="prevLesson()">
         <table width="100%" height="100%">
             <tr>
                 <td><< Prev<td>
             </tr>
         </table>
     </div>
-    <div class="teach" id="next" onclick="nextLessonButton()">
+    <div class="next" onclick="nextLessonButton()">
         <table width="100%" height="100%">
             <tr>
                 <td>Next >></td>
@@ -24,37 +27,39 @@
     </div>
 </div>
 
-<div class="teach" id="objective">
-    <table>
-        <tr>
-            <th>Learning Objective:</th>
-        <tr>
-        <tr>
-            <td>Text that outline the educational intent of this problem goes here.</td>
-        <tr>
-    </table>
+<div class="content">
+    <div class="objective">
+        <table>
+            <tr>
+                <th>Learning Objective:</th>
+            </tr>
+            <tr>
+                <td>Text that outline the educational intent of this problem goes here.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="reference">
+        <table>
+            <tr>
+                <th>Reference Material:</th>
+            </tr>
+            <tr>
+                <td>Text that outlines the problem intented to enforce the above learning objective.</td>
+            </tr>
+        </table>
+    </div>
 </div>
 
-<div class="teach" id="problem">
-    <table>
-        <tr>
-            <th>Reference Material:</th>
-        <tr>
-        <tr>
-            <td>Text that outlines the problem intented to enforce the above learning objective.</td>
-        <tr>
-    </table>
-</div>
-
-<div class="teach" id="footette">
-    <div class="teach" id="previous" onclick="prevLesson()">
+<div class="footette">
+    <div class="prev" onclick="prevLesson()">
         <table width="100%" height="100%">
             <tr>
                 <td><< Prev<td>
             </tr>
         </table>
     </div>
-    <div class="teach" id="next" onclick="nextLessonButton()">
+    <div class="next" onclick="nextLessonButton()">
         <table width="100%" height="100%">
             <tr>
                 <td>Next >></td>
@@ -63,15 +68,16 @@
     </div>
 </div>
 
-<div class="teach" id="footer">
-	<div class="teach" id="reload" onClick="reloadLesson()">
+<div class="footer">
+	<div class="prev" onClick="reloadLesson()">
         <table width="100%" height="100%">
             <tr>
                 <td>Reload lesson<td>
             </tr>
         </table>
     </div>
-    <div class="teach" id="survey" onClick="endSurvey()">
+    
+    <div class="next" onClick="endSurvey()">
         <table width="100%" height="100%">
             <tr>
                 <td>End survey</td>
@@ -79,4 +85,7 @@
         </table>
     </div>
 </div>
+
 <!-- End -->
+
+

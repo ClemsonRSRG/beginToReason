@@ -11,7 +11,7 @@ div {
     overflow: hidden;
 }
 
-#header.teach, #footer.teach {
+#left .header, #left .footer {
     width: 100%;
     height: 70px;
 
@@ -21,7 +21,7 @@ div {
     border: 6px solid seagreen;
 }
 
-#headette.teach, #footette.teach {
+#left .headette, #left .footette {
     width: 100%;
     height: 35px;
 
@@ -32,7 +32,7 @@ div {
     border-right: 6px solid seagreen;
 }
 
-#objective.teach {
+#left .content .objective {
     width: 100%;
 
     box-sizing: border-box;
@@ -40,7 +40,7 @@ div {
     overflow: auto;
 }
 
-#problem.teach {
+#left .content .reference {
     width: 100%;
 
     box-sizing: border-box;
@@ -50,7 +50,7 @@ div {
     overflow: auto;
 }
 
-#previous.teach {
+#left .prev {
     float: left;
 
     width: 50%;
@@ -60,7 +60,7 @@ div {
     border-right: 3px solid seagreen;
 }
 
-#next.teach {
+#left .next {
     float: right;
 
     width: 50%;
@@ -70,27 +70,7 @@ div {
     border-left: 3px solid seagreen;
 }
 
-#reload.teach {
-    float: left;
-
-    width: 50%;
-    height: 100%;
-
-    box-sizing: border-box;
-    border-right: 3px solid seagreen;
-}
-
-#survey.teach {
-    float: right;
-
-    width: 50%;
-    height: 100%;
-
-    box-sizing: border-box;
-    border-left: 3px solid seagreen;
-}
-
-.teach table {
+#left table {
     width: 100%;
 
     text-align: center;
@@ -102,40 +82,28 @@ div {
     font-size: 14pt;
 }
 
-#objective.teach table, #problem.teach table {
+#left .content table {
     text-align: left;
 }
 
-#objective.teach th,
-#objective.teach td,
-#problem.teach th,
-#problem.teach td {
+#left .content th,
+#left .content td, {
     padding-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-#objective.teach th, #problem.teach th {
+#left .content th {
     color: black;
 }
 
-#objective.teach td, #problem.teach td {
+#left .content td {
     color: black;
     font-weight: normal;
     padding-bottom: 5px;
 }
 
-#header.teach:hover {
-    background: #5FA473;
-    cursor: pointer;
-}
-
-#reload.teach:hover, #survey.teach:hover {
-    background: #5FA473;
-    cursor: pointer;
-}
-
-#previous.teach:hover, #next.teach:hover {
+#left .prev:hover, #left .next:hover {
     background: darkgrey;
     cursor: pointer;
 }
