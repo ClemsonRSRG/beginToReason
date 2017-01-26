@@ -6,11 +6,11 @@ td {
     overflow: auto;
 }
 
-#create, #left {
+#right, #left {
     height: 100%;
 }
 
-#create {
+#right {
     float: right;
     width: 70%;
 }

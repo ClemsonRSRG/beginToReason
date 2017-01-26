@@ -1,27 +1,33 @@
+
+
 <!-- By Design - Create HTML -->
-<div class="create" id="header">
+
+<div class="header">
     <table width="100%" height="100%">
         <tr>
             <td>byDesign - Web IDE</td>
         </tr>
     </table>
 </div>
-<div class="create" id="headette"></div>
+<div class="headette"></div>
 
-<div class="create" id="editor"></div>
+<div id="editor"></div>
 
-<div class="create" id="footette" onclick="submitAnswer()">
+<div class="footette" onclick="submitAnswer()">
     <table width="100%" height="100%">
         <tr>
             <td>Check Correctness!</td>
         </tr>
     </table>
 </div>
-<div class="create" id="footer">
+<div class="footer">
 	<table width="100%" height="100%">
         <tr>
             <td>This research is funded in part by NSF grants CCF-1161916 and DUE-1611714.</td>
         </tr>
     </table>
 </div>
+
 <!-- End -->
+
+

@@ -55,7 +55,7 @@
 <body>
 
 <div id="left"></div>
-<div id="create"></div>
+<div id="right"></div>
 <div id="dialog-box" title="byDesign Message">
 	<div id="dialog-message"></div>
 </div>
@@ -64,8 +64,8 @@
 
 <script>
     $(document).ready(function () {
-        injectCreate("create");
         injectTeach("left");
+        injectCreate("right");
 
         teachResize();
         createResize();
