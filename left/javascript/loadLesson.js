@@ -39,14 +39,15 @@ function nextLessonButton() {
 }
 
 function nextLessonAndFailure() {
-    if(currentLesson.nextLessonOnFailure == "") return;
+    if (currentLesson.nextLessonOnFailure == "") return;
+    if (currentLesson.nextLessonOnFailure == currentLesson.self) return;
     
     resetTime();
     loadLesson(currentLesson.nextLessonOnFailure);
 }
 
 function nextLessonAndSuccess() {
-    if(currentLesson.nextLessonOnSuccess == "") return;
+    if (currentLesson.nextLessonOnSuccess == "") return;
     
     resetTime();
     loadLesson(currentLesson.nextLessonOnSuccess);
