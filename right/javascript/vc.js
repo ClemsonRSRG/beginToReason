@@ -7,7 +7,7 @@ function submitAnswer() {
         return;
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
-    
+
     getVCLines(createEditor.getValue());
 }
 
