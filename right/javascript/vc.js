@@ -21,7 +21,7 @@ function getVCLines(content) {
         // Extract the array of VCs from the message (trust me, this works)
         message = JSON.parse(message.data);
         if(message.status == "error") {
-            $("#dialog-message").html("Your code is syntactically incorrect and thus could not be verified.");
+            $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
             $("#dialog-box").dialog("open");
             verifying = false;
             $("#right .footetteDisabled").attr("class", "footette");
@@ -34,7 +34,7 @@ function getVCLines(content) {
         }
 
 	if(message.result == "") {
-	    $("#dialog-message").html("Your code could not be verified; try a simpler answer and only use declared variables.");
+	    $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
 	    $("#dialog-box").dialog("open");
         verifying = false;
         $("#right .footetteDisabled").attr("class", "footette");
@@ -80,21 +80,26 @@ function verifyVCs(content) {
     socket.onclose = function() {
         if(doChecks() && succeed) {
             approved = true;
-            $("#dialog-message").html("Your answer was verified and was semantically meaningful. You may move on to the next lesson.");
+            $("#dialog-message").html("Correct. On to the next lesson!");
             $("#dialog-box").dialog("open");
             nextLessonAndSuccess();
         }
-        if(!doChecks() && succeed) {
+        if(!doChecks() && succeed) { // Should soon be obsolete
             approved = false;
-            $("#dialog-message").html("Your answer was verified but semantically insufficient; try providing a more descriptive answer.");
+            $("#dialog-message").html("Sorry, not the intended answer. Try again!");
             $("#dialog-box").dialog("open");
             createEditor.focus();
         }
         if(!succeed) {
-            $("#dialog-message").html("Your answer was syntactically correct but unverifiable; the statement you are trying to prove is not true.");
-            $("#dialog-box").dialog("open");
-            if (currentLesson.self != currentLesson.nextLessonOnFailure)
+            if (currentLesson.self != currentLesson.nextLessonOnFailure) {
+                $("#dialog-message").html("Sorry, not correct. Try this other lesson!");
+                $("#dialog-box").dialog("open");
                 nextLessonAndFailure();
+            }
+            else {
+                $("#dialog-message").html("Sorry, not correct. Try again!");
+                $("#dialog-box").dialog("open");
+            }
         }
 
         verifying = false;
