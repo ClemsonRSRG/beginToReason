@@ -138,19 +138,13 @@ function verifyVCs(content) {
 
     socket.onopen = function() { socket.send(content); };
     socket.onclose = function() {
-        if(doChecks() && succeed) {
+        if(succeed) {
             approved = true;
             $("#dialog-message").html("Correct. On to the next lesson!");
             $("#dialog-box").dialog("open");
             nextLessonAndSuccess();
         }
-        if(!doChecks() && succeed) { // Should soon be obsolete
-            approved = false;
-            $("#dialog-message").html("Sorry, not the intended answer. Try again!");
-            $("#dialog-box").dialog("open");
-            createEditor.focus();
-        }
-        if(!succeed) {
+        else {
             if (currentLesson.self != currentLesson.nextLessonOnFailure) {
                 $("#dialog-message").html("Sorry, not correct. Try this other lesson!");
                 $("#dialog-box").dialog("open");
