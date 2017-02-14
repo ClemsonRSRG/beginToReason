@@ -8,6 +8,66 @@ function submitAnswer() {
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
 
+    // Get student's code
+    var content = createEditor.getValue();
+    
+    // Find all the confirm statements
+    var regex = new RegExp("Confirm [^;]*;", "mg");
+    var confirms = content.match(regex);
+    if (confirms.length == 0) {
+        $("#dialog-message").html("Sorry! Could not find Confirm statements.");
+        $("#dialog-box").dialog("open");
+        verifying = false;
+        $("#right .footetteDisabled").attr("class", "footette");
+            
+        createEditor.focus();
+        return;
+    }
+    
+    var i;
+    for (i = 0 ; i < confirms.length ; i++) {
+        // Remove the "Confirm " so that we can find the variable names
+        var statement = confirms[i];
+        statement = statement.substr(8);
+        
+        // Split the string at the conditional
+        regex = new RegExp("[<>=]");
+        var parts = statement.split(regex);
+        if (parts.length != 2) {
+            $("#dialog-message").html("Sorry! That is not what we are looking for.");
+            $("#dialog-box").dialog("open");
+            verifying = false;
+            $("#right .footetteDisabled").attr("class", "footette");
+                
+            createEditor.focus();
+            return;
+        }
+        
+        // Find the variables used on the left side
+        var left = parts[0];
+        var right = parts[1];
+        regex = new RegExp("[a-zA-Z]", "g");
+        var variables = left.match(regex);
+        if (variables == null)
+            continue;
+        
+        // Search for these variables on the right side
+        var j;
+        for (j = 0 ; j < variables.length ; j++) {
+            variable = variables[j];
+            regex = new RegExp("[^#]" + variable, "g");
+            if (right.search(regex) > -1) {
+                $("#dialog-message").html("Sorry! Cannot use a variable to define itself.");
+                $("#dialog-box").dialog("open");
+                verifying = false;
+                $("#right .footetteDisabled").attr("class", "footette");
+                
+                createEditor.focus();
+                return;
+            }
+        }
+    }
+
     getVCLines(createEditor.getValue());
 }
 
@@ -25,7 +85,7 @@ function getVCLines(content) {
             $("#dialog-box").dialog("open");
             verifying = false;
             $("#right .footetteDisabled").attr("class", "footette");
-            
+
             createEditor.focus();
             return;
         }
@@ -33,15 +93,15 @@ function getVCLines(content) {
             return;
         }
 
-	if(message.result == "") {
-	    $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
-	    $("#dialog-box").dialog("open");
-        verifying = false;
-        $("#right .footetteDisabled").attr("class", "footette");
-
-        createEditor.focus();
-        return;
-	}
+        if(message.result == "") {
+	        $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
+	        $("#dialog-box").dialog("open");
+            verifying = false;
+            $("#right .footetteDisabled").attr("class", "footette");
+            
+            createEditor.focus();
+            return;
+	    }
 
         message = decode(message.result);
         message = $(message).text();
