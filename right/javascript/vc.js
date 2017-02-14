@@ -3,12 +3,44 @@ var verifying = false;
 
 function submitAnswer() {
     /* Protect against multiple requests */
-    if(verifying)
-        return;
-    verifying = true;
-    $("#right .footette").attr("class", "footetteDisabled");
+//    if(verifying)
+//        return;
+//    verifying = true;
+//    $("#right .footette").attr("class", "footetteDisabled");
 
-    getVCLines(createEditor.getValue());
+    // Get student's code
+    var content = createEditor.getValue();
+    console.log(content);
+
+    // Find all the confirm statements
+    var regex = new RegExp("Confirm [^;]*;", "mg");
+    var confirms = content.match(regex);
+    console.log(confirms);
+
+    // Remove the "Confirm " so that we can find the variable names
+    var statement = confirms[0];
+    statement = statement.substr(8);
+    console.log(statement);
+
+    // Split the string at the conditional
+    regex = new RegExp("[<>=]");
+    var parts = statement.split(regex);
+    console.log(parts);
+
+    // Find the variables use on the left side
+    var left = parts[0];
+    var right = parts[0];
+    regex = new RegExp("[a-zA-Z]", "g");
+    var variables = left.match(regex);
+    console.log(variables);
+
+    // Search for these variables on the right side
+    variable = variables[0];
+    regex = new RegExp("[^#]" + variable, "g");
+    var trivials = right.match(regex);
+    console.log(trivials);
+
+//    getVCLines(createEditor.getValue());
 }
 
 function getVCLines(content) {
@@ -25,7 +57,7 @@ function getVCLines(content) {
             $("#dialog-box").dialog("open");
             verifying = false;
             $("#right .footetteDisabled").attr("class", "footette");
-            
+
             createEditor.focus();
             return;
         }
@@ -33,15 +65,15 @@ function getVCLines(content) {
             return;
         }
 
-	if(message.result == "") {
-	    $("#dialog-message").html("Your code could not be verified; try a simpler answer and only use declared variables.");
-	    $("#dialog-box").dialog("open");
+        if(message.result == "") {
+            $("#dialog-message").html("Your code could not be verified; try a simpler answer and only use declared variables.");
+            $("#dialog-box").dialog("open");
         verifying = false;
         $("#right .footetteDisabled").attr("class", "footette");
 
         createEditor.focus();
         return;
-	}
+        }
 
         message = decode(message.result);
         message = $(message).text();
@@ -102,3 +134,4 @@ function verifyVCs(content) {
         sendData();
     }
 }
+
