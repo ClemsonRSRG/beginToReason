@@ -3,44 +3,72 @@ var verifying = false;
 
 function submitAnswer() {
     /* Protect against multiple requests */
-//    if(verifying)
-//        return;
-//    verifying = true;
-//    $("#right .footette").attr("class", "footetteDisabled");
+    if(verifying)
+        return;
+    verifying = true;
+    $("#right .footette").attr("class", "footetteDisabled");
 
     // Get student's code
     var content = createEditor.getValue();
-    console.log(content);
-
+    
     // Find all the confirm statements
     var regex = new RegExp("Confirm [^;]*;", "mg");
     var confirms = content.match(regex);
-    console.log(confirms);
+    if (confirms.length == 0) {
+        $("#dialog-message").html("Sorry! Could not find Confirm statements.");
+        $("#dialog-box").dialog("open");
+        verifying = false;
+        $("#right .footetteDisabled").attr("class", "footette");
+            
+        createEditor.focus();
+        return;
+    }
+    
+    var i;
+    for (i = 0 ; i < confirms.length ; i++) {
+        // Remove the "Confirm " so that we can find the variable names
+        var statement = confirms[i];
+        statement = statement.substr(8);
+        
+        // Split the string at the conditional
+        regex = new RegExp("[<>=]");
+        var parts = statement.split(regex);
+        if (parts.length != 2) {
+            $("#dialog-message").html("Sorry! That is not what we are looking for.");
+            $("#dialog-box").dialog("open");
+            verifying = false;
+            $("#right .footetteDisabled").attr("class", "footette");
+                
+            createEditor.focus();
+            return;
+        }
+        
+        // Find the variables used on the left side
+        var left = parts[0];
+        var right = parts[1];
+        regex = new RegExp("[a-zA-Z]", "g");
+        var variables = left.match(regex);
+        if (variables == null)
+            continue;
+        
+        // Search for these variables on the right side
+        var j;
+        for (j = 0 ; j < variables.length ; j++) {
+            variable = variables[j];
+            regex = new RegExp("[^#]" + variable, "g");
+            if (right.search(regex) > -1) {
+                $("#dialog-message").html("Sorry! Cannot use a variable to define itself.");
+                $("#dialog-box").dialog("open");
+                verifying = false;
+                $("#right .footetteDisabled").attr("class", "footette");
+                
+                createEditor.focus();
+                return;
+            }
+        }
+    }
 
-    // Remove the "Confirm " so that we can find the variable names
-    var statement = confirms[0];
-    statement = statement.substr(8);
-    console.log(statement);
-
-    // Split the string at the conditional
-    regex = new RegExp("[<>=]");
-    var parts = statement.split(regex);
-    console.log(parts);
-
-    // Find the variables use on the left side
-    var left = parts[0];
-    var right = parts[0];
-    regex = new RegExp("[a-zA-Z]", "g");
-    var variables = left.match(regex);
-    console.log(variables);
-
-    // Search for these variables on the right side
-    variable = variables[0];
-    regex = new RegExp("[^#]" + variable, "g");
-    var trivials = right.match(regex);
-    console.log(trivials);
-
-//    getVCLines(createEditor.getValue());
+    getVCLines(createEditor.getValue());
 }
 
 function getVCLines(content) {
@@ -68,11 +96,11 @@ function getVCLines(content) {
         if(message.result == "") {
             $("#dialog-message").html("Your code could not be verified; try a simpler answer and only use declared variables.");
             $("#dialog-box").dialog("open");
-        verifying = false;
-        $("#right .footetteDisabled").attr("class", "footette");
-
-        createEditor.focus();
-        return;
+            verifying = false;
+            $("#right .footetteDisabled").attr("class", "footette");
+            
+            createEditor.focus();
+            return;
         }
 
         message = decode(message.result);
