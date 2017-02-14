@@ -1,9 +1,14 @@
-div {
-    overflow: auto;
+html, body {
+    width: 100%;
+    height: 100%;
+    
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
-td {
-    overflow: auto;
+div {
+    overflow: hidden;
 }
 
 #right, #left {
@@ -18,6 +23,20 @@ td {
 #left {
     float: left;
     width: 30%;
+}
+
+.header, .footer {
+    width: 100%;
+    height: 70px;
+    
+    box-sizing: border-box;
+}
+
+.headette, .footette, .footetteDisabled {
+    width: 100%;
+    height: 35px;
+    
+    box-sizing: border-box;
 }
 
 #dialog-message {

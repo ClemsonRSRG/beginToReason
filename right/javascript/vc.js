@@ -7,7 +7,67 @@ function submitAnswer() {
         return;
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
+
+    // Get student's code
+    var content = createEditor.getValue();
     
+    // Find all the confirm statements
+    var regex = new RegExp("Confirm [^;]*;", "mg");
+    var confirms = content.match(regex);
+    if (confirms.length == 0) {
+        $("#dialog-message").html("Sorry! Could not find Confirm statements.");
+        $("#dialog-box").dialog("open");
+        verifying = false;
+        $("#right .footetteDisabled").attr("class", "footette");
+            
+        createEditor.focus();
+        return;
+    }
+    
+    var i;
+    for (i = 0 ; i < confirms.length ; i++) {
+        // Remove the "Confirm " so that we can find the variable names
+        var statement = confirms[i];
+        statement = statement.substr(8);
+        
+        // Split the string at the conditional
+        regex = new RegExp("[<>=]");
+        var parts = statement.split(regex);
+        if (parts.length != 2) {
+            $("#dialog-message").html("Sorry! That is not what we are looking for.");
+            $("#dialog-box").dialog("open");
+            verifying = false;
+            $("#right .footetteDisabled").attr("class", "footette");
+                
+            createEditor.focus();
+            return;
+        }
+        
+        // Find the variables used on the left side
+        var left = parts[0];
+        var right = parts[1];
+        regex = new RegExp("[a-zA-Z]", "g");
+        var variables = left.match(regex);
+        if (variables == null)
+            continue;
+        
+        // Search for these variables on the right side
+        var j;
+        for (j = 0 ; j < variables.length ; j++) {
+            variable = variables[j];
+            regex = new RegExp("[^#]" + variable, "g");
+            if (right.search(regex) > -1) {
+                $("#dialog-message").html("Sorry! Cannot use a variable to define itself.");
+                $("#dialog-box").dialog("open");
+                verifying = false;
+                $("#right .footetteDisabled").attr("class", "footette");
+                
+                createEditor.focus();
+                return;
+            }
+        }
+    }
+
     getVCLines(createEditor.getValue());
 }
 
@@ -21,11 +81,11 @@ function getVCLines(content) {
         // Extract the array of VCs from the message (trust me, this works)
         message = JSON.parse(message.data);
         if(message.status == "error") {
-            $("#dialog-message").html("Your code is syntactically incorrect and thus could not be verified.");
+            $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
             $("#dialog-box").dialog("open");
             verifying = false;
             $("#right .footetteDisabled").attr("class", "footette");
-            
+
             createEditor.focus();
             return;
         }
@@ -33,15 +93,15 @@ function getVCLines(content) {
             return;
         }
 
-	if(message.result == "") {
-	    $("#dialog-message").html("Your code could not be verified; try a simpler answer and only use declared variables.");
-	    $("#dialog-box").dialog("open");
-        verifying = false;
-        $("#right .footetteDisabled").attr("class", "footette");
-
-        createEditor.focus();
-        return;
-	}
+        if(message.result == "") {
+	        $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
+	        $("#dialog-box").dialog("open");
+            verifying = false;
+            $("#right .footetteDisabled").attr("class", "footette");
+            
+            createEditor.focus();
+            return;
+	    }
 
         message = decode(message.result);
         message = $(message).text();
@@ -80,21 +140,26 @@ function verifyVCs(content) {
     socket.onclose = function() {
         if(doChecks() && succeed) {
             approved = true;
-            $("#dialog-message").html("Your answer was verified and was semantically meaningful. You may move on to the next lesson.");
+            $("#dialog-message").html("Correct. On to the next lesson!");
             $("#dialog-box").dialog("open");
             nextLessonAndSuccess();
         }
-        if(!doChecks() && succeed) {
+        if(!doChecks() && succeed) { // Should soon be obsolete
             approved = false;
-            $("#dialog-message").html("Your answer was verified but semantically insufficient; try providing a more descriptive answer.");
+            $("#dialog-message").html("Sorry, not the intended answer. Try again!");
             $("#dialog-box").dialog("open");
             createEditor.focus();
         }
         if(!succeed) {
-            $("#dialog-message").html("Your answer was syntactically correct but unverifiable; the statement you are trying to prove is not true.");
-            $("#dialog-box").dialog("open");
-            if (currentLesson.self != currentLesson.nextLessonOnFailure)
+            if (currentLesson.self != currentLesson.nextLessonOnFailure) {
+                $("#dialog-message").html("Sorry, not correct. Try this other lesson!");
+                $("#dialog-box").dialog("open");
                 nextLessonAndFailure();
+            }
+            else {
+                $("#dialog-message").html("Sorry, not correct. Try again!");
+                $("#dialog-box").dialog("open");
+            }
         }
 
         verifying = false;

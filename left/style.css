@@ -1,33 +1,10 @@
-html, body {
-    width: 100%;
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-div {
-    overflow: hidden;
-}
-
 #left .header, #left .footer {
-    width: 100%;
-    height: 70px;
-
     background: darkseagreen;
-
-    box-sizing: border-box;
     border: 6px solid seagreen;
 }
 
 #left .headette, #left .footette {
-    width: 100%;
-    height: 35px;
-
     background: #BEBEBE;
-
-    box-sizing: border-box;
     border-left: 6px solid seagreen;
     border-right: 6px solid seagreen;
 }

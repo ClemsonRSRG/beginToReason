@@ -71,19 +71,5 @@ function checkLines() {
 }
 
 function doChecks() {
-    var i = -1;
-    var toReturn = true;
-
-    $.each(currentLesson.lines, function(index, value) {
-        i += 1;
-        var lineText = createEditor.session.getLine(value - 1);
-
-        var passes = false;
-        $.each(currentLesson.checks[i], function(index, value) {
-            if(lineText.indexOf(value) > -1) passes = true;
-        });
-        if(!passes) toReturn = false;
-    });
-
-    return toReturn;
+    return true;
 }
