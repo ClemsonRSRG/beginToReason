@@ -7,7 +7,7 @@ function loadLesson(filePath) {
         $("#left .header td").html(data.lesson);
 
         $("#left .objective td").html(data.learningObjective);
-        $("left .reference td").html(data.referenceMaterial);
+        $("#left .reference td").html(data.referenceMaterial);
 
         $.get(data.code, function (data) {
             createEditor.setValue(data);
