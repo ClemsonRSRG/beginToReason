@@ -15,7 +15,7 @@ function submitAnswer() {
     var regex = new RegExp("Confirm [^;]*;", "mg");
     var confirms = content.match(regex);
     if (confirms.length == 0) {
-        $("#dialog-message").html("Sorry! Could not find Confirm statements.");
+        $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
         $("#dialog-box").dialog("open");
         verifying = false;
         $("#right .footetteDisabled").attr("class", "footette");
@@ -34,7 +34,7 @@ function submitAnswer() {
         regex = new RegExp("[<>=]");
         var parts = statement.split(regex);
         if (parts.length != 2) {
-            $("#dialog-message").html("Sorry! That is not what we are looking for.");
+            $("#dialog-message").html("Sorry, not the intended answer. Try again!");
             $("#dialog-box").dialog("open");
             verifying = false;
             $("#right .footetteDisabled").attr("class", "footette");
@@ -57,7 +57,7 @@ function submitAnswer() {
             variable = variables[j];
             regex = new RegExp("[^#]" + variable, "g");
             if (right.search(regex) > -1) {
-                $("#dialog-message").html("Sorry! Cannot use a variable to define itself.");
+                $("#dialog-message").html("Sorry, not the intended answer. Try again!");
                 $("#dialog-box").dialog("open");
                 verifying = false;
                 $("#right .footetteDisabled").attr("class", "footette");
