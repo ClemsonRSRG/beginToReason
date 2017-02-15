@@ -69,7 +69,3 @@ function checkLines() {
     else
         createEditor.setReadOnly(true);
 }
-
-function doChecks() {
-    return true;
-}
