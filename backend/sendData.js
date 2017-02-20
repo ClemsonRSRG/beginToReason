@@ -30,5 +30,5 @@ function sendData() {
     data += "\"" + 0 + "\"";
     data += "}\"";
 
-    $.post("https://resolve.cs.clemson.edu/teaching/bydesign", data);
+    $.post("https://resolve.cs.clemson.edu/testing/bydesign", data);
 }
