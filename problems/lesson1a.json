@@ -10,9 +10,5 @@
 
   "learningObjective": "<p>On line 10 choose a relational operator to replace /* conditional */ so that the Confirm statement evaluates to true.</p>",
 
-  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p>",
-
-  "lines": [10],
-
-  "checks": [["Confirm I > J;", "Confirm I >= J"]]
+  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p>"
 }
