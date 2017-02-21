@@ -7,22 +7,30 @@ function submitAnswer() {
         return;
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
-
-    // Get student's code
+    
     var content = createEditor.getValue();
     
-    // Find all the confirm statements
-    var regex = new RegExp("Confirm [^;]*;", "mg");
-    var confirms = content.match(regex);
-    if (confirms.length == 0) {
-        $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
+    if (checkForTrivials(content))
+    {
+        getVCLines(content);
+    }
+    else
+    {
+        $("#dialog-message").html("Sorry, not the intended answer. Try again!");
         $("#dialog-box").dialog("open");
         verifying = false;
         $("#right .footetteDisabled").attr("class", "footette");
-            
-        createEditor.focus();
-        return;
+        createEditor.focus();        
     }
+    
+}
+
+function checkForTrivials(content) {
+    // Find all the confirm statements
+    var regex = new RegExp("Confirm [^;]*;", "mg");
+    var confirms = content.match(regex);
+    if (confirms.length == 0)
+        return false;
     
     var i;
     for (i = 0 ; i < confirms.length ; i++) {
@@ -33,15 +41,8 @@ function submitAnswer() {
         // Split the string at the conditional
         regex = new RegExp("[<>=]");
         var parts = statement.split(regex);
-        if (parts.length != 2) {
-            $("#dialog-message").html("Sorry, not the intended answer. Try again!");
-            $("#dialog-box").dialog("open");
-            verifying = false;
-            $("#right .footetteDisabled").attr("class", "footette");
-                
-            createEditor.focus();
-            return;
-        }
+        if (parts.length != 2)
+            return false;
         
         // Find the variables used on the left side
         var left = parts[0];
@@ -56,19 +57,12 @@ function submitAnswer() {
         for (j = 0 ; j < variables.length ; j++) {
             variable = variables[j];
             regex = new RegExp("[^#]" + variable, "g");
-            if (right.search(regex) > -1) {
-                $("#dialog-message").html("Sorry, not the intended answer. Try again!");
-                $("#dialog-box").dialog("open");
-                verifying = false;
-                $("#right .footetteDisabled").attr("class", "footette");
-                
-                createEditor.focus();
-                return;
-            }
+            if (right.search(regex) > -1)
+                return false;
         }
     }
 
-    getVCLines(createEditor.getValue());
+    return true;
 }
 
 function getVCLines(content) {
