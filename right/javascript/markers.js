@@ -6,7 +6,7 @@ var approved = false;
 // of the following things.
 // 1. ACE Editor Marker object
 // 2. CSS Style applied to object
-// 3. Number of VCs on that line. 
+// 3. Number of VCs yet to be processed on that line. 
 function resolveMarkerObj(marker, style, vcCount) {
 	this.aceEditorMarker = marker;
 	this.cssStyle = style;
@@ -26,9 +26,9 @@ function removeAllVCMarkers() {
     markers = [];
 }
 
-// This adds a new VC marker. 
+// This adds a new RESOLVE VC marker with a VC count of 1. 
 function addVCMarker(VC, style) {
-    markers[VC.lineNum].aceEditorMarker = createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true);
+	markers[VC.lineNum] = new resolveMarkerObj(createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true), style, 1);
 }
 
 function addVCMarkers() {
