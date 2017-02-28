@@ -51,7 +51,7 @@ function addVCMarkers() {
 // This updates the RESOLVE VC marker object with a new ACE Editor marker 
 // and stores the style for future use.
 function updateVCMarker(VC, style) {
-	createEditor.session.removeMarker(markers[VC.lineNum]);
+	createEditor.session.removeMarker(markers[VC.lineNum].aceEditorMarker);
 	markers[VC.lineNum].aceEditorMarker = createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true);
 	markers[VC.lineNum].cssStyle = style;
 }
