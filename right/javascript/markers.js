@@ -79,7 +79,7 @@ function updateMarker(result) {
 				if(result.result.substring(0, "Proved".length) == "Proved") {
 					// Only add the "vc_proved" style if we are the last VC 
 					// to be processed.
-					if (markers[VC.lineNum].numVCs == 1) addVCMarker(VC, "vc_proved");
+					if (markers[VC.lineNum].numVCs == 1) updateVCMarker(VC, "vc_proved");
 				}
 				else {
 					updateVCMarker(VC, "vc_failed");
