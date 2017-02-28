@@ -13,26 +13,33 @@ function resolveMarkerObj(marker, style, vcCount) {
 	this.numVCs = vcCount;
 }
 
+// Removes all VC markers from ACE Editor and sets 
+// the markers array to empty.
 function removeAllVCMarkers() {
     succeed = true;
     approved = false;
 
     $.each(markers, function(index, marker){
-        if(typeof marker !== "undefined") createEditor.session.removeMarker(marker);
+        if(typeof marker !== "undefined") createEditor.session.removeMarker(marker.aceEditorMarker);
     });
 
     markers = [];
 }
 
+// This adds a new VC marker. 
 function addVCMarker(VC, style) {
-    markers[VC.lineNum] = createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true);
+    markers[VC.lineNum].aceEditorMarker = createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true);
 }
 
 function addVCMarkers() {
     removeAllVCMarkers();
 
     $.each(VCs, function(index, VC){
-        if(typeof markers[VC.lineNum] !== "undefined") return;
+		// If we already have a RESOLVE VC Marker, 
+		// increment the VC count on that line.
+        if(typeof markers[VC.lineNum] !== "undefined") {
+			return;
+		}
         addVCMarker(VC, "vc_unverified");
     });
 }
