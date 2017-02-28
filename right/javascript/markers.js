@@ -38,8 +38,8 @@ function addVCMarkers() {
     removeAllVCMarkers();
 
     $.each(VCs, function(index, VC){
-		// If we already have a RESOLVE VC Marker, 
-		// increment the VC count on that line.
+        // If we already have a RESOLVE VC Marker, 
+        // increment the VC count on that line.
         if(typeof markers[VC.lineNum] !== "undefined") {
             markers[VC.lineNum].numVCs++;
             return;
