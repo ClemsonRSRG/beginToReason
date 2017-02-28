@@ -38,6 +38,7 @@ function addVCMarkers() {
 		// If we already have a RESOLVE VC Marker, 
 		// increment the VC count on that line.
         if(typeof markers[VC.lineNum] !== "undefined") {
+			markers[VC.lineNum].numVCs++;
 			return;
 		}
         addVCMarker(VC, "vc_unverified");
