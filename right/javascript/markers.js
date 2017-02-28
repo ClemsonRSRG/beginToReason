@@ -2,6 +2,17 @@ var markers; // line-indexed array of markers
 var succeed = true;
 var approved = false;
 
+// RESOLVE marker object: It is used to keep track 
+// of the following things.
+// 1. ACE Editor Marker object
+// 2. CSS Style applied to object
+// 3. Number of VCs on that line. 
+function resolveMarkerObj(marker, style, vcCount) {
+	this.aceEditorMarker = marker;
+	this.cssStyle = style;
+	this.numVCs = vcCount;
+}
+
 function removeAllVCMarkers() {
     succeed = true;
     approved = false;
