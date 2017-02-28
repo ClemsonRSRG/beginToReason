@@ -51,6 +51,7 @@ function addVCMarkers() {
 // This updates the RESOLVE VC marker object with a new ACE Editor marker 
 // and stores the style for future use.
 function updateVCMarker(VC, style) {
+	createEditor.session.removeMarker(markers[VC.lineNum]);
 	markers[VC.lineNum].aceEditorMarker = createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true);
 	markers[VC.lineNum].cssStyle = style;
 }
@@ -72,13 +73,22 @@ function updateVCMarker(VC, style) {
 function updateMarker(result) {
     $.each(VCs, function(index, VC) {
         if(VC.vc == result.id) {
-            createEditor.session.removeMarker(markers[VC.lineNum]);
-
-            if(result.result.substring(0, "Proved".length) == "Proved") addVCMarker(VC, "vc_proved");
-            else {
-                addVCMarker(VC, "vc_failed");
-                succeed = false;
-            }
+			// Only deal with the markers that don't already have
+			// "vc_failed" as a style.
+			if (markers[VC.lineNum].cssStyle !== "vc_failed") {
+				if(result.result.substring(0, "Proved".length) == "Proved") {
+					// Only add the "vc_proved" style if we are the last VC 
+					// to be processed.
+					if (markers[VC.lineNum].numVCs == 1) addVCMarker(VC, "vc_proved");
+				}
+				else {
+					updateVCMarker(VC, "vc_failed");
+					succeed = false;
+				}
+			}
+			
+			// Decrement the number of VCs to be processed on that line
+			markers[VC.lineNum].numVCs--;
         }
     });
 }
