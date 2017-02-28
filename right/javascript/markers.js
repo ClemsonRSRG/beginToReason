@@ -10,9 +10,9 @@ var approved = false;
   3. Number of VCs yet to be processed on that line.
 */
 function resolveMarkerObj(marker, style, vcCount) {
-	this.aceEditorMarker = marker;
-	this.cssStyle = style;
-	this.numVCs = vcCount;
+    this.aceEditorMarker = marker;
+    this.cssStyle = style;
+    this.numVCs = vcCount;
 }
 
 // Removes all VC markers from ACE Editor and sets 
@@ -30,7 +30,7 @@ function removeAllVCMarkers() {
 
 // This adds a new RESOLVE VC marker with a VC count of 1. 
 function addVCMarker(VC, style) {
-	markers[VC.lineNum] = new resolveMarkerObj(createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true), style, 1);
+    markers[VC.lineNum] = new resolveMarkerObj(createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true), style, 1);
 }
 
 // This adds a "vc_unverified" marker to lines that have VCs to be verified.
@@ -41,9 +41,9 @@ function addVCMarkers() {
 		// If we already have a RESOLVE VC Marker, 
 		// increment the VC count on that line.
         if(typeof markers[VC.lineNum] !== "undefined") {
-			markers[VC.lineNum].numVCs++;
-			return;
-		}
+            markers[VC.lineNum].numVCs++;
+            return;
+        }
         addVCMarker(VC, "vc_unverified");
     });
 }
@@ -51,9 +51,9 @@ function addVCMarkers() {
 // This updates the RESOLVE VC marker object with a new ACE Editor marker 
 // and stores the style for future use.
 function updateVCMarker(VC, style) {
-	createEditor.session.removeMarker(markers[VC.lineNum].aceEditorMarker);
-	markers[VC.lineNum].aceEditorMarker = createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true);
-	markers[VC.lineNum].cssStyle = style;
+    createEditor.session.removeMarker(markers[VC.lineNum].aceEditorMarker);
+    markers[VC.lineNum].aceEditorMarker = createEditor.session.addMarker(new Range(VC.lineNum-1, 0, VC.lineNum, 0), style, "", true);
+    markers[VC.lineNum].cssStyle = style;
 }
 
 /* 
@@ -73,22 +73,22 @@ function updateVCMarker(VC, style) {
 function updateMarker(result) {
     $.each(VCs, function(index, VC) {
         if(VC.vc == result.id) {
-			// Only deal with the markers that don't already have
-			// "vc_failed" as a style.
-			if (markers[VC.lineNum].cssStyle !== "vc_failed") {
-				if(result.result.substring(0, "Proved".length) == "Proved") {
-					// Only add the "vc_proved" style if we are the last VC 
-					// to be processed.
-					if (markers[VC.lineNum].numVCs == 1) updateVCMarker(VC, "vc_proved");
-				}
-				else {
-					updateVCMarker(VC, "vc_failed");
-					succeed = false;
-				}
-			}
+            // Only deal with the markers that don't already have
+            // "vc_failed" as a style.
+            if (markers[VC.lineNum].cssStyle !== "vc_failed") {
+                if(result.result.substring(0, "Proved".length) == "Proved") {
+                    // Only add the "vc_proved" style if we are the last VC 
+                    // to be processed.
+                    if (markers[VC.lineNum].numVCs == 1) updateVCMarker(VC, "vc_proved");
+                }
+                else {
+                    updateVCMarker(VC, "vc_failed");
+                    succeed = false;
+                }
+            }
 			
-			// Decrement the number of VCs to be processed on that line
-			markers[VC.lineNum].numVCs--;
+            // Decrement the number of VCs to be processed on that line
+            markers[VC.lineNum].numVCs--;
         }
     });
 }
