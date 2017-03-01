@@ -1,4 +1,6 @@
-Facility CPSC_2151;
+Facility Tutorial_2;
+    uses Integer_Ext_Theory;
+
     Operation Main();
     Procedure
         Var I: Integer;
@@ -9,4 +11,4 @@ Facility CPSC_2151;
 
         Confirm I = /*expression*/;
     end Main;
-end CPSC_2151;
+end Tutorial_2;

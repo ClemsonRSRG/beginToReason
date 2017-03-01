@@ -1,5 +1,5 @@
-Facility CPSC_2151;
-	uses Integer_Ext_Theory;
+Facility Lesson_1b;
+    uses Integer_Ext_Theory;
 
     Operation Main();
     Procedure
@@ -13,4 +13,4 @@ Facility CPSC_2151;
         Confirm I = /* expression */;
         Confirm I /* conditional */ J;
     end Main;
-end CPSC_2151;
+end Lesson_1b;
