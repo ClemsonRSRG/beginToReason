@@ -20,6 +20,7 @@
     "no-empty-function": "error",
     "no-eq-null": "error",
     "no-floating-decimal": "error",
+    "no-global-assign": "off",
     "no-implicit-coercion": "error",
     "no-lone-blocks": "error",
     "no-loop-func": "error",
@@ -132,8 +133,10 @@
     "space-in-parens": "error",
     "space-infix-ops": "error",
     "space-unary-ops": "error",
-    "spaced-comment": "error",
     "unicode-bom": "error",
-    "wrap-regex": "off"
+    "wrap-regex": "off",
+
+    // Variables
+    "no-unused-vars": "off"
   }
 }
