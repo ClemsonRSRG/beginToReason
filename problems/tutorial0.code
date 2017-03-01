@@ -1,4 +1,4 @@
-Facility Tutorial_0;
+Facility BeginToReason;
     uses Integer_Ext_Theory;
 
     Operation Main();
@@ -15,4 +15,4 @@ Facility Tutorial_0;
 
         Confirm K = /*expression*/;
     end Main;
-end Tutorial_0;
+end BeginToReason;

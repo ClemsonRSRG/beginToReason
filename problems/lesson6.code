@@ -1,4 +1,4 @@
-Facility Lesson_6;
+Facility BeginToReason;
     uses Integer_Ext_Theory;
 
     Operation Main();
@@ -19,4 +19,4 @@ Facility Lesson_6;
 
         Confirm K /*conditional*/ #I and K /*conditional*/ #J and K /*conditional*/ #K;
     end Main;
-end Lesson_6;
+end BeginToReason;

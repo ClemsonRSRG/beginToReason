@@ -1,4 +1,4 @@
-Facility Lesson_3;
+Facility BeginToReason;
     uses Integer_Ext_Theory;
 
     Operation Main();
@@ -16,4 +16,4 @@ Facility Lesson_3;
         Confirm I = /* expression */;
         Confirm J = /* expression */;
     end Main;
-end Lesson_3;
+end BeginToReason;

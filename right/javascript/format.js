@@ -22,5 +22,5 @@ function encode(content) {
 
 // Formats the data into a basic json format
 function toJSON(content) {
-    return'{"name":"' + "CPSC_2151" + '","pkg":"User","project":"Teaching_Project","content":"' + content + '","parent":"undefined","type":"f"}';
+    return'{"name":"' + "BeginToReason" + '","pkg":"User","project":"Teaching_Project","content":"' + content + '","parent":"undefined","type":"f"}';
 }

@@ -1,4 +1,4 @@
-Facility Challenge_1;
+Facility BeginToReason;
     uses Integer_Ext_Theory;
 
     Operation Main();
@@ -21,4 +21,4 @@ Facility Challenge_1;
             Confirm I /* conditional */ K;
         end;
     end Main;
-end Challenge_1;
+end BeginToReason;
