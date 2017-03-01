@@ -4,15 +4,15 @@
 
   "lesson": "Tutorial 1 - Relating Values of Variables</b>",
 
-  "previousLesson": "problems/tutorial1.json",
+  "previousLesson": "problems/tutorial0.json",
   "nextLessonOnFailure": "problems/tutorial1.json",
   "nextLessonOnSuccess": "problems/tutorial2.json",
 
-  "learningObjective": "<p>On line 10  choose a relational operator to replace the /* conditional */ so that the Confirm statement evaluates to true</p>",
+  "learningObjective": "<p>On line 12 choose a relational operator to replace the /* conditional */ so that the Confirm statement evaluates to true</p>",
 
-  "referenceMaterial": "<ul><li><em>On Line 6</em>:&nbsp;&nbsp; <code>Remember;</code><br />At the point of the Remember statement in the code, the value of a variable 'x' is assumed to be #x and #x can be used in Confirm statements<br /><br /></li><li><em>On Line 10</em>:<br />&nbsp;&nbsp; <code>= &nbsp;&nbsp; &lt; &nbsp;&nbsp; &lt;= &nbsp;&nbsp; &gt; &nbsp;&nbsp; &gt;=</code><br />are the relational operators from which to choose</li></ul>",
+  "referenceMaterial": "<ul><li><em>On Line 8</em>:&nbsp;&nbsp; <code>Remember;</code><br />At the point of the Remember statement in the code, the value of a variable 'x' is assumed to be #x and #x can be used in Confirm statements<br /><br /></li><li><em>On Line 10</em>:<br />&nbsp;&nbsp; <code>= &nbsp;&nbsp; &lt; &nbsp;&nbsp; &lt;= &nbsp;&nbsp; &gt; &nbsp;&nbsp; &gt;=</code><br />are the relational operators from which to choose</li></ul>",
 
-  "lines": [10],
+  "lines": [12],
 
   "checks": [["Confirm I > #I;", "Confirm I >= #I;"]]
 }

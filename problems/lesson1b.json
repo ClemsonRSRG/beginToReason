@@ -4,7 +4,7 @@
 
   "lesson": "Lesson 1b - Sequence of assignments",
 
-  "previousLesson": "problems/tutorial2.json",
+  "previousLesson": "problems/lesson0.json",
   "nextLessonOnSuccess": "problems/lesson2.json",
   "nextLessonOnFailure": "problems/lesson1b.json",
 
