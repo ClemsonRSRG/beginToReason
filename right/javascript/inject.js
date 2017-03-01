@@ -1,3 +1,6 @@
+/*global checkLines*/
+/*eslint no-undef: "error"*/
+
 var createEditor;
 var author;
 
