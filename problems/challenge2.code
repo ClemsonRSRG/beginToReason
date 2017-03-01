@@ -1,5 +1,7 @@
-Facility CPSC_2151;
-   Operation Main();
+Facility BeginToReason;
+    uses Integer_Ext_Theory;
+
+    Operation Main();
     Procedure
         Var I, J, K: Integer;
         Read(I);
@@ -27,4 +29,4 @@ Facility CPSC_2151;
 
         Confirm I = /* expression */;
     end Main;
-end CPSC_2151;
+end BeginToReason;
