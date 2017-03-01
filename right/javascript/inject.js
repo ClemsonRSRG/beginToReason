@@ -1,3 +1,5 @@
+/* global ace removeAllVCMarkers checkLines */
+
 var createEditor;
 var author;
 
@@ -20,7 +22,7 @@ function injectCreate(id) {
 function injectCreateEditor() {
     var ResolveMode = ace.require("ace/mode/resolve").Mode;
 
-    Range = ace.require('ace/range').Range;
+    Range = ace.require("ace/range").Range;
     createEditor = ace.edit("editor");
     createEditor.setTheme("ace/theme/github");
 
