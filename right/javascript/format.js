@@ -1,17 +1,17 @@
 // Decodes data received
-function decode(content){
-    var lsRegExp = /\%20/g;
-    var lsRegExp2 = /\%2B/g;
+function decode(content) {
+    var lsRegExp = /%20/g;
+    var lsRegExp2 = /%2B/g;
 
     content = String(unescape(content)).replace(lsRegExp, " ");
-    content = content.replace(lsRegExp2, "+")
+    content = content.replace(lsRegExp2, "+");
 
     return content;
 }
 
 // Encodes data to be sent
 function encode(content) {
-    var lsRegExp = new RegExp(" ","gim");
+    var lsRegExp = new RegExp(" ", "gim");
     var lsRegExp2 = /\+/g;
 
     content = String(escape(content)).replace(lsRegExp, "%20");
@@ -22,7 +22,7 @@ function encode(content) {
 
 // Formats the data into a basic json format
 function toJSON(content) {
-    var jsonObj = new Object();
+    var jsonObj = {};
 
     jsonObj.name = "BeginToReason";
     jsonObj.pkg = "User";
@@ -30,7 +30,7 @@ function toJSON(content) {
     jsonObj.content = content;
     jsonObj.parent = "undefined";
     jsonObj.type = "f";
-	
+
     return JSON.stringify(jsonObj);
-	// return '{"name":"' + "BeginToReason" + '","pkg":"User","project":"Teaching_Project","content":"' + content + '","parent":"undefined","type":"f"}';
+    // return '{"name":"' + "BeginToReason" + '","pkg":"User","project":"Teaching_Project","content":"' + content + '","parent":"undefined","type":"f"}';
 }
