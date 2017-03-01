@@ -1,0 +1,18 @@
+{
+  "self": "problems/tutorial0.json",
+  "code": "problems/tutorial0.code",
+
+  "lesson": "Tutorial 0 - Relating Values of Variables</b>",
+
+  "previousLesson": "problems/tutorial0.json",
+  "nextLessonOnFailure": "problems/tutorial0.json",
+  "nextLessonOnSuccess": "problems/tutorial1.json",
+
+  "learningObjective": "<p>On line 16 enter an expression for /* expression */ so that the Confirm statement evaluates to true.</p>",
+
+  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p>",
+
+  "lines": [16],
+
+  "checks": [["Confirm K = 0;"]]
+}
