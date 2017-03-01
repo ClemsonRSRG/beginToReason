@@ -1,30 +1,29 @@
 {
-  "rules": {},
   "env": {
     "es6": true,
     "browser": true
-	"jquery": true
+    "jquery": true
   },
   "extends": "eslint:recommended",
   "rules": {
-	// Possible Errors
-	"no-extra-parens": "error",
-	"no-unsafe-negation": "error",
+    // Possible Errors
+    "no-extra-parens": "error",
+    "no-unsafe-negation": "error",
 	
-	// Best Practices
-	"array-callback-return": "error",
-	"consistent-return": "error",
-	"curly": "error",
-	"default-case": "error",
-	"no-alert": "error",
-	"no-else-return": "error",
+    // Best Practices
+    "array-callback-return": "error",
+    "consistent-return": "error",
+    "curly": "error",
+    "default-case": "error",
+    "no-alert": "error",
+    "no-else-return": "error",
     "no-empty-function": "error",
-	"no-eq-null": "error",
-	"no-floating-decimal": "error",
-	"no-implicit-coercion": "error",
-	"no-lone-blocks": "error",
-	"no-loop-func": "error",
-	"no-multi-spaces": ["error", {
+    "no-eq-null": "error",
+    "no-floating-decimal": "error",
+    "no-implicit-coercion": "error",
+    "no-lone-blocks": "error",
+    "no-loop-func": "error",
+    "no-multi-spaces": ["error", {
       "exceptions": {
         "AssignmentExpression": true,
         "ArrowFunctionExpression": true,
@@ -33,15 +32,15 @@
         }
       }
     ],
-	"no-multi-str": "error",
-	"no-new-func": "off",
+    "no-multi-str": "error",
+    "no-new-func": "off",
     "no-new-wrappers": "error",
     "no-new": "error",
-	"no-octal-escape": "error",
-	"no-restricted-properties": "error",
-	"no-self-compare": "error",
-	"no-throw-literal": "error",
-	"no-unmodified-loop-condition": "error",
+    "no-octal-escape": "error",
+    "no-restricted-properties": "error",
+    "no-self-compare": "error",
+    "no-throw-literal": "error",
+    "no-unmodified-loop-condition": "error",
     "no-unused-expressions": "error",
     "no-useless-call": "error",
     "no-useless-concat": "error",
@@ -50,11 +49,11 @@
     "no-warning-comments": "off",
     "no-with": "error",
     "radix": "error",
-	"vars-on-top": "error",
+    "vars-on-top": "error",
     "wrap-iife": "error",
     "yoda": "error",
 
-	// Stylistic Issues
+    // Stylistic Issues
     "array-bracket-spacing": "error",
     "block-spacing": "error",
     "brace-style": "error",
