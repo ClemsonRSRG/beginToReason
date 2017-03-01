@@ -22,5 +22,15 @@ function encode(content) {
 
 // Formats the data into a basic json format
 function toJSON(content) {
-    return'{"name":"' + "BeginToReason" + '","pkg":"User","project":"Teaching_Project","content":"' + content + '","parent":"undefined","type":"f"}';
+    var jsonObj = new Object();
+
+    jsonObj.name = "BeginToReason";
+    jsonObj.pkg = "User";
+    jsonObj.project = "Teaching_Project";
+    jsonObj.content = content;
+    jsonObj.parent = "undefined";
+    jsonObj.type = "f";
+	
+    return JSON.stringify(jsonObj);
+	// return '{"name":"' + "BeginToReason" + '","pkg":"User","project":"Teaching_Project","content":"' + content + '","parent":"undefined","type":"f"}';
 }
