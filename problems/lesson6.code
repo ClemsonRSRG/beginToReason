@@ -17,6 +17,8 @@ Facility BeginToReason;
             K := J;
         end;
 
-        Confirm K /*conditional*/ #I and K /*conditional*/ #J and K /*conditional*/ #K;
+        Confirm K /*conditional*/ #I;
+        Confirm K /*conditional*/ #J;
+        Confirm K /*conditional*/ #K;
     end Main;
 end BeginToReason;
