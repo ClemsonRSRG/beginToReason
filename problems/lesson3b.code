@@ -1,4 +1,6 @@
-Facility CPSC_2151;
+Facility BeginToReason;
+    uses Integer_Ext_Theory;
+
     Operation Main();
     Procedure
         Var I, J: Integer;
@@ -13,4 +15,4 @@ Facility CPSC_2151;
         J := I - J;
         Confirm J = /* expression */;
     end Main;
-end CPSC_2151;
+end BeginToReason;

@@ -1,4 +1,6 @@
-Facility CPSC_2151;
+Facility BeginToReason;
+    uses Integer_Ext_Theory;
+
     Operation Main();
     Procedure
         Var I, J, K: Integer;
@@ -15,6 +17,8 @@ Facility CPSC_2151;
             K := J;
         end;
 
-        Confirm K /*conditional*/ #I and K /*conditional*/ #J and K /*conditional*/ #K;
+        Confirm K /*conditional*/ #I;
+        Confirm K /*conditional*/ #J;
+        Confirm K /*conditional*/ #K;
     end Main;
-end CPSC_2151;
+end BeginToReason;

@@ -1,0 +1,38 @@
+#
+# Style checking settings for Hound
+#
+fail_on_violations: true
+
+# Disable checks for:
+# 1. Ruby
+# 2. CoffeeScript
+# 3. JSHint (Use ESLint instead)
+# 4. SCSS
+# 5. Haml
+# 6. Go
+# 7. Swift
+ruby:
+  enabled: false
+
+coffeescript:
+  enabled: false
+
+jshint:
+  enabled: false
+
+scss:
+  enabled: false
+
+haml:
+  enabled: false
+
+go:
+  enabled: false
+
+swift:
+  enabled: false
+
+# ESLint (JavaScript)
+eslint:
+  enabled: true
+  config_file: .eslintrc

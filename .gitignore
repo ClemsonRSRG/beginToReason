@@ -18,6 +18,21 @@
 # Per-developer IDE Files #
 ###########################
 
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.classpath
+
 # Netbeans
 nbactions*.xml
 

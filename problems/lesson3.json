@@ -8,7 +8,7 @@
   "nextLessonOnSuccess": "problems/lesson4.json",
   "nextLessonOnFailure": "problems/lesson3a.json",
 
-  "learningObjective": "<ol><li>On lines 14 and 15 enter an expression to replace /* expression */ so that both Confirm statements evaluate to true</li></ol>",
+  "learningObjective": "<ol><li>On lines 16 and 17 enter an expression to replace /* expression */ so that both Confirm statements evaluate to true</li></ol>",
 
   "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote>"
 }
