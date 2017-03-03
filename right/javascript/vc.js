@@ -8,13 +8,28 @@ function submitAnswer() {
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
 
+    var content = null;
+    if(currentLesson.base != null){
+        content = baseLessonCode;
+        $.each(currentLesson.lines, function (index, obj) {
+            var line = createEditor.session.getLine(obj - 1);
+            content = content.replace(currentLesson.replaces[index], line);            
+        });
+    } else {
+        content = createEditor.getValue();
+    }
+    console.log(content);
+    alert("I'm here");
+    return;
+
     // Get student's code
-    var content = createEditor.getValue();
+    //var content = createEditor.getValue();
     
     // Find all the confirm statements
     var regex = new RegExp("Confirm [^;]*;", "mg");
     var confirms = content.match(regex);
     if (confirms.length == 0) {
+        alert(1);
         $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
         $("#dialog-box").dialog("open");
         verifying = false;
@@ -34,6 +49,7 @@ function submitAnswer() {
         regex = new RegExp("[<>=]");
         var parts = statement.split(regex);
         if (parts.length != 2) {
+            alert(2);
             $("#dialog-message").html("Sorry, not the intended answer. Try again!");
             $("#dialog-box").dialog("open");
             verifying = false;
@@ -57,6 +73,7 @@ function submitAnswer() {
             variable = variables[j];
             regex = new RegExp("[^#]" + variable, "g");
             if (right.search(regex) > -1) {
+                alert(3);
                 $("#dialog-message").html("Sorry, not the intended answer. Try again!");
                 $("#dialog-box").dialog("open");
                 verifying = false;
@@ -75,12 +92,15 @@ function getVCLines(content) {
     removeAllVCMarkers();
     var socket = new WebSocket("wss://resolve.cs.clemson.edu/testing/Compiler?job=genVCs&project=Teaching_Project");
 
-    socket.onmessage = function(message) {
+    socket.onmessage = function(message) {        
         if(!verifying) return;
 
-        // Extract the array of VCs from the message (trust me, this works)
-        message = JSON.parse(message.data);
+        console.log(JSON.stringify(message.data));
+        // Extract the array of VCs from the message (trust me, this works)        
+        message = JSON.parse(message.data);        
+        console.log(JSON.stringify(message));
         if(message.status == "error") {
+            alert(4);
             $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
             $("#dialog-box").dialog("open");
             verifying = false;
@@ -94,6 +114,7 @@ function getVCLines(content) {
         }
 
         if(message.result == "") {
+            alert(5);
 	        $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
 	        $("#dialog-box").dialog("open");
             verifying = false;
@@ -102,24 +123,24 @@ function getVCLines(content) {
             createEditor.focus();
             return;
 	    }
-
         message = decode(message.result);
         message = $(message).text();
+       //console.log(message);
         message = JSON.parse(message);
 
         // Simplify the VC information
         VCs = [];
+        console.log(JSON.stringify(message));
         $.each(message.vcs, function (index, obj) {
             if (typeof obj.vc !== "undefined") VCs.push(obj);
         });
-
         addVCMarkers();
         verifyVCs(createEditor.getValue());
     };
 
     content = encode(content);
     content = toJSON(content);
-
+    //console.log(JSON.stringify(content));
     socket.onopen = function() { socket.send(content); };
 }
 
@@ -129,7 +150,8 @@ function verifyVCs(content) {
     socket.onmessage = function(message) {
         message = JSON.parse(message.data);
         if(message.status !== "processing") return;
-
+        console.log(1)
+        console.log(JSON.stringify(message))
         updateMarker(message.result);
     };
 
@@ -137,6 +159,7 @@ function verifyVCs(content) {
     content = toJSON(content);
 
     socket.onopen = function() { socket.send(content); };
+    
     socket.onclose = function() {
         if(succeed) {
             approved = true;

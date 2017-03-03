@@ -4,7 +4,7 @@
 
   "lesson": "Lesson 1 - Sequence of assignments",
 
-  "previousLesson": "problems/tutorial2.json",
+  "previousLesson": "problems/lesson1.json",
   "nextLessonOnSuccess": "problems/lesson2.json",
   "nextLessonOnFailure": "problems/lesson1a.json",
 
@@ -12,7 +12,7 @@
 
   "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p>",
 
-  "lines": [10],
+  "lines": [9],
 
-  "checks": [["Confirm I < J;", "Confirm I <= J"]]
+  "checks": [["Confirm I = #I;"]]
 }

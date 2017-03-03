@@ -1,21 +1,35 @@
 var currentLesson;
-
+// Base lession
+var baseLesson;
+var baseLessonCode;
 function loadLesson(filePath) {
     $.getJSON(filePath, function(data) {
-        currentLesson = data;
-
+        currentLesson = data;        
+        // If the lesson has a base lession, load it.
+        if( data.base != null ){
+            // Load base lesson json
+            $.get(data.base, function (data) {
+                baseLesson = data;         
+                if(baseLesson != null){
+                    // Load base lesson code
+                    $.get(baseLesson.code, function (data) {
+                        baseLessonCode = data;                                 
+                    });
+                }       
+            });
+        }
+        
         $("#left .header td").html(data.lesson);
 
         $("#left .objective td").html(data.learningObjective);
         $("#left .reference td").html(data.referenceMaterial);
-
         $.get(data.code, function (data) {
             createEditor.setValue(data);
             createEditor.selection.moveCursorToPosition({row: 0, column: 0});
 
             createEditor.getSession().setUndoManager(new ace.UndoManager());
             createEditor.getSession().getUndoManager().reset();
-        });
+        });        
     });
 }
 
