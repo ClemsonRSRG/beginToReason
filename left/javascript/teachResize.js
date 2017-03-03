@@ -11,7 +11,7 @@ function teachResize() {
     usedHeight += $("#left .footer").height();
     usedHeight += 42; //for div borders
 
-    if(usedHeight >= totalHeight) {
+    if (usedHeight >= totalHeight) {
         $("#left .objective").height(0);
         $("#left .reference").height(0);
         setTimeout(teachResize, 0);
