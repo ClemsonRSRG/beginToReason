@@ -1,4 +1,5 @@
 {
+  "type": "lesson",
   "self": "problems/lesson4a.json",
   "code": "problems/lesson4a.code",
 
@@ -7,8 +8,6 @@
   "previousLesson": "problems/lesson3.json",
   "nextLessonOnSuccess": "problems/lesson5.json",
   "nextLessonOnFailure": "problems/lesson4a.json",
-
-  "learningObjective": "<ol><li>On lines 13, 16, and 17 choose a relational operator to replace /* conditional */ so that the Confirm statements evaluate to true</li></ol>",
 
   "referenceMaterial": "<p><em>Relational Operators</em> - There are 5 relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote>"
 }

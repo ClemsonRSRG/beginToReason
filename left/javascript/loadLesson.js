@@ -8,8 +8,14 @@ function loadLesson(filePath) {
 
         $("#left .header td").html(data.lesson);
 
-        $("#left .objective td").html(data.learningObjective);
         $("#left .reference td").html(data.referenceMaterial);
+        if (data.type == "tutorial" || data.type == "end") {
+            $("#left .activity td").html(data.activity);
+        } else if (data.type == "lesson" || data.type == "challenge") {
+            $("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
+        } else {
+            $("#left .activity td").html("This should never appear.");
+        }
 
         $.get(data.code, function (data) {
             createEditor.setValue(data);

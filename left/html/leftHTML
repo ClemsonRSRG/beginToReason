@@ -28,10 +28,10 @@
 </div>
 
 <div class="content">
-    <div class="objective">
+    <div class="activity">
         <table>
             <tr>
-                <th>Learning Objective:</th>
+                <th>Activity:</th>
             </tr>
             <tr>
                 <td>Text that outline the educational intent of this problem goes here.</td>

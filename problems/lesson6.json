@@ -1,4 +1,5 @@
 {
+  "type": "lesson",
   "self": "problems/lesson6.json",
   "code": "problems/lesson6.code",
 
@@ -7,8 +8,6 @@
   "previousLesson": "problems/lesson5.json",
   "nextLessonOnSuccess": "problems/challenge1.json",
   "nextLessonOnFailure": "problems/lesson6.json",
-
-  "learningObjective": "<p>On lines 20, 21, and 22 choose a relational operator to replace /* conditional */ so that the Confirm statements evaluate to true</p>",
 
   "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote><p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote>"
 }
