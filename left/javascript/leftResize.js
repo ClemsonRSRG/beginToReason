@@ -1,6 +1,3 @@
-/**
- * Created by Matthew Pfister on 2/1/2016.
- */
 function teachResize() {
     var totalHeight = $("html").height();
 
@@ -12,7 +9,7 @@ function teachResize() {
     usedHeight += 42; //for div borders
 
     if (usedHeight >= totalHeight) {
-        $("#left .objective").height(0);
+        $("#left .activity").height(0);
         $("#left .reference").height(0);
         setTimeout(teachResize, 0);
         return;
@@ -20,10 +17,10 @@ function teachResize() {
 
     var avalHeight = totalHeight - usedHeight;
 
-    var objectiveHeight = avalHeight / 2;
-    $("#left .objective").height(objectiveHeight);
+    var activityHeight = avalHeight / 2;
+    $("#left .activity").height(activityHeight);
 
-    var referenceHeight = avalHeight - objectiveHeight;
+    var referenceHeight = avalHeight - activityHeight;
     $("#left .reference").height(referenceHeight);
 
     setTimeout(teachResize, 0);

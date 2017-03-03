@@ -30,7 +30,7 @@
     font-size: 12pt;
 }
 
-#right .footette:hover {
+#right .footette:hover, #right .headette.button:hover {
     background: #5FA473;
     cursor: pointer;
 }
@@ -65,7 +65,6 @@
     background: lightgreen;
     opacity: 0.3;
     pointer-events: auto;
-//    cursor: pointer;
     z-index:5000;
 }
 
@@ -80,7 +79,6 @@
     background: palevioletred;
     opacity: 0.3;
     pointer-events: auto;
-//    cursor: pointer;
     z-index:5000;
 }
 
