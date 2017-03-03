@@ -1,3 +1,5 @@
+/* eslint quote-props: "off" */
+
 /* 
  * This will hold all of our keywords information such as the hashmap that
  * holds the keywords with their tool-tip values in it.
