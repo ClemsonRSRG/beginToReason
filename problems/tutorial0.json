@@ -11,5 +11,7 @@
 
   "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by entering an expression for /* expression */, then check correctness.</p>",
 
-  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p>"
+  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p>",
+  
+  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/tutorial0.html"
 }

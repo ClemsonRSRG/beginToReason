@@ -9,12 +9,26 @@ function loadLesson(filePath) {
         $("#left .header td").html(data.lesson);
 
         $("#left .reference td").html(data.referenceMaterial);
-        if (data.type == "tutorial" || data.type == "end") {
+        if (data.type == "tutorial") {
             $("#left .activity td").html(data.activity);
+            $("#right .headette").addClass("button");
+            $("#right .headette td")
+                .html("Click here for quick video instructions")
+                .off("click")
+                .click(function() { window.open(data.screenCapture, "_blank"); });
+
         } else if (data.type == "lesson" || data.type == "challenge") {
             $("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
+            $("#right .headette").removeClass("button");
+            $("#right .headette td").html("").off("click");
+
+        } else if (data.type == "end") {
+            $("#left .activity td").html(data.activity);
+
         } else {
             $("#left .activity td").html("This should never appear.");
+            $("#right .headette").removeClass("button");
+            $("#right .headette td").html("").off("Click");
         }
 
         $.get(data.code, function (data) {
