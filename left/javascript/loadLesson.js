@@ -53,8 +53,8 @@ function nextLessonAndFailure() {
         return;
     }
 
-    resetTime();
     loadLesson(currentLesson.nextLessonOnFailure);
+    resetTime();
 }
 
 function nextLessonAndSuccess() {
@@ -62,8 +62,8 @@ function nextLessonAndSuccess() {
         return;
     }
 
-    resetTime();
     loadLesson(currentLesson.nextLessonOnSuccess);
+    resetTime();
 }
 
 function prevLesson() {
@@ -73,4 +73,5 @@ function prevLesson() {
     }
 
     loadLesson(currentLesson.previousLesson);
+    resetTime(); // Might need to remove this when we change the "next" button.
 }

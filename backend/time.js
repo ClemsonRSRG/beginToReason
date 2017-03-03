@@ -1,9 +1,10 @@
-var time = Math.floor(Date.now());
+var time = new Date();
 
 function resetTime() {
-    time = Math.floor(Date.now());
+    time = new Date();
 }
 
 function getTime() {
-    return Math.floor(Date.now()) - time;
+    var endTime = new Date();
+    return endTime.getTime() - time.getTime();
 }
