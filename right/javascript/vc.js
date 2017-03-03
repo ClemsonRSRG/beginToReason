@@ -13,7 +13,7 @@ function submitAnswer() {
     if (checkForTrivials(content))
     {
         getVCLines(content);
-    }
+    } 
     else
     {
         $("#dialog-message").html("Sorry, not the intended answer. Try again!");
@@ -22,7 +22,6 @@ function submitAnswer() {
         $("#right .footetteDisabled").attr("class", "footette");
         createEditor.focus();
     }
-    
 }
 
 function checkForTrivials(content) {
@@ -51,7 +50,7 @@ function checkForTrivials(content) {
         var right = parts[1];
         regex = new RegExp("[a-zA-Z]", "g");
         var variables = left.match(regex);
-        if (variables == null) {
+        if (variables === null) {
             continue;
         }
         
@@ -65,7 +64,7 @@ function checkForTrivials(content) {
             }
         }
     }
-
+    
     return true;
 }
 
