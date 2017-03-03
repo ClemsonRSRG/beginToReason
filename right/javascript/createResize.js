@@ -12,7 +12,7 @@ function createResize() {
     usedHeight += $("#right .footetteDisabled").height();
     usedHeight += 36; //for div borders
 
-    if(usedHeight >= totalHeight) {
+    if (usedHeight >= totalHeight) {
         $("#editor").height(0);
         setTimeout(createResize, 0);
         return;

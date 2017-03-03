@@ -1,4 +1,4 @@
-/* global ace removeAllVCMarkers checkLines */
+/* global ace removeAllVCMarkers */
 
 var createEditor;
 var author;
