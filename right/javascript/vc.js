@@ -1,5 +1,5 @@
 /* global addVCMarkers approved createEditor currentLesson decode encode nextLessonAndSuccess nextLessonAndFailure
-   removeAllVCMarkers sendData succeed toJSON updateMarker */
+   removeAllVCMarkers resetTime sendData succeed toJSON updateMarker */
 
 var VCs;
 var verifying = false;
@@ -153,20 +153,26 @@ function verifyVCs(content) {
             approved = true;
             $("#dialog-message").html("Correct. On to the next lesson!");
             $("#dialog-box").dialog("open");
+
+            sendData(); // Need to send the data before we reset the time! (Need new "approved")
             nextLessonAndSuccess();
         } else {
             if (currentLesson.self != currentLesson.nextLessonOnFailure) {
                 $("#dialog-message").html("Sorry, not correct. Try this other lesson!");
                 $("#dialog-box").dialog("open");
+
+				sendData(); // Need to send the data before we reset the time! ("approved" should be false)
                 nextLessonAndFailure();
             } else {
                 $("#dialog-message").html("Sorry, not correct. Try again!");
                 $("#dialog-box").dialog("open");
+
+				sendData(); // Need to send the data before we reset the time! ("approved" should be false)
+				resetTime(); // Reset the time because it is a new attempt!
             }
         }
 
         verifying = false;
         $("#right .footetteDisabled").attr("class", "footette");
-        sendData();
     };
 }
