@@ -20,7 +20,7 @@ function submitAnswer() {
         $("#dialog-box").dialog("open");
         verifying = false;
         $("#right .footetteDisabled").attr("class", "footette");
-        createEditor.focus();        
+        createEditor.focus();
     }
     
 }
@@ -29,8 +29,9 @@ function checkForTrivials(content) {
     // Find all the confirm statements
     var regex = new RegExp("Confirm [^;]*;", "mg");
     var confirms = content.match(regex);
-    if (confirms.length == 0)
+    if (confirms.length == 0) {
         return false;
+    }
     
     var i;
     for (i = 0 ; i < confirms.length ; i++) {
@@ -41,24 +42,27 @@ function checkForTrivials(content) {
         // Split the string at the conditional
         regex = new RegExp("[<>=]");
         var parts = statement.split(regex);
-        if (parts.length != 2)
+        if (parts.length != 2) {
             return false;
+        }
         
         // Find the variables used on the left side
         var left = parts[0];
         var right = parts[1];
         regex = new RegExp("[a-zA-Z]", "g");
         var variables = left.match(regex);
-        if (variables == null)
+        if (variables == null) {
             continue;
+        }
         
         // Search for these variables on the right side
         var j;
         for (j = 0 ; j < variables.length ; j++) {
             variable = variables[j];
             regex = new RegExp("[^#]" + variable, "g");
-            if (right.search(regex) > -1)
+            if (right.search(regex) > -1) {
                 return false;
+            }
         }
     }
 
