@@ -1,4 +1,4 @@
-/* global addVCMarkers approved createEditor currentLesson decode encode nextLessonAndSuccess nextLessonAndFailure 
+/* global addVCMarkers approved createEditor currentLesson decode encode nextLessonAndSuccess nextLessonAndFailure
    removeAllVCMarkers sendData succeed toJSON updateMarker */
 
 var VCs;
@@ -10,7 +10,7 @@ function submitAnswer() {
         return;
     }
 
-	verifying = true;
+    verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
 
     var content = createEditor.getValue();
@@ -58,7 +58,7 @@ function checkForTrivials(content) {
 
         // Search for these variables on the right side
         var j;
-        for (j = 0 ; j < variables.length ; j++) {
+        for (j = 0; j < variables.length; j++) {
             var variable = variables[j];
             regex = new RegExp("[^#]" + variable, "g");
             if (right.search(regex) > -1) {
