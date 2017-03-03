@@ -15,7 +15,9 @@ function loadLesson(filePath) {
             $("#right .headette td")
                 .html("Click here for quick video instructions")
                 .off("click")
-                .click(function() { window.open(data.screenCapture, "_blank"); });
+                .click(function () {
+                    window.open(data.screenCapture, "_blank");
+                });
 
         } else if (data.type == "lesson" || data.type == "challenge") {
             $("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
@@ -28,7 +30,7 @@ function loadLesson(filePath) {
         } else {
             $("#left .activity td").html("This should never appear.");
             $("#right .headette").removeClass("button");
-            $("#right .headette td").html("").off("Click");
+            $("#right .headette td").html("").off("click");
         }
 
         $.get(data.code, function (data) {
