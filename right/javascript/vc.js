@@ -161,14 +161,14 @@ function verifyVCs(content) {
                 $("#dialog-message").html("Sorry, not correct. Try this other lesson!");
                 $("#dialog-box").dialog("open");
 
-				sendData(); // Need to send the data before we reset the time! ("approved" should be false)
+                sendData(); // Need to send the data before we reset the time! ("approved" should be false)
                 nextLessonAndFailure();
             } else {
                 $("#dialog-message").html("Sorry, not correct. Try again!");
                 $("#dialog-box").dialog("open");
 
-				sendData(); // Need to send the data before we reset the time! ("approved" should be false)
-				resetTime(); // Reset the time because it is a new attempt!
+                sendData(); // Need to send the data before we reset the time! ("approved" should be false)
+                resetTime(); // Reset the time because it is a new attempt!
             }
         }
 
