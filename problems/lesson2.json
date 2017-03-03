@@ -10,9 +10,5 @@
 
   "learningObjective": "<ol><li>On line 15 enter an expression to replace /* expression */ so that the Confirm statement evaluates to true</li></ol>",
   
-  "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote>",
-
-  "lines": [15],
-
-  "checks": [["Confirm I + J = #I + #J;", "Confirm I + J = #I+#J;", "Confirm I + J = #I+ #J;", "Confirm I + J = #I +#J;", "Confirm I + J = #J + #I;", "Confirm I + J = #J+#I;", "Confirm I + J = #J+ #I;", "Confirm I + J = #J +#I;"]]
+  "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote>"
 }

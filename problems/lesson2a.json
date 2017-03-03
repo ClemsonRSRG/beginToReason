@@ -10,13 +10,5 @@
 
   "learningObjective": "<p>Understand the Remember statement (see below). On lines 12, 15, and 17 enter an expression to replace /* expression */ so that all 3 Confirm statements evaluate to true</p>",
 
-  "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote>",
-
-  "lines": [12, 15, 17],
-
-  "checks": [
-    ["Confirm I = #I + 1", "Confirm I = #I+1", "Confirm I = #I+ 1", "Confirm I = #I +1", "Confirm I = 1 + #I", "Confirm I = 1+#I", "Confirm I = 1+ #I", "Confirm I = 1 +#I"],
-    ["Confirm J = #J - 1", "Confirm J = #J-1", "Confirm J = #J- 1", "Confirm J = #J -1"],
-    ["Confirm I + J = #I + #J;", "Confirm I + J = #I+#J;", "Confirm I + J = #I+ #J;", "Confirm I + J = #I +#J;", "Confirm I + J = #J + #I;", "Confirm I + J = #J+#I;", "Confirm I + J = #J+ #I;", "Confirm I + J = #J +#I;"]
-  ]
+  "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote>"
 }
