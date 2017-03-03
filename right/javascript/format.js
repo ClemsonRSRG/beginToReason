@@ -32,5 +32,4 @@ function toJSON(content) {
     jsonObj.type = "f";
 
     return JSON.stringify(jsonObj);
-    // return '{"name":"' + "BeginToReason" + '","pkg":"User","project":"Teaching_Project","content":"' + content + '","parent":"undefined","type":"f"}';
 }
