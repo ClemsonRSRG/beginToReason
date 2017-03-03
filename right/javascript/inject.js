@@ -33,7 +33,5 @@ function injectCreateEditor() {
     // createEditor.$blockScrolling = Infinity;
 
     createEditor.getSession().on("change", removeAllVCMarkers);
-    createEditor.getSession().selection.on("changeCursor", checkLines);
-    createEditor.getSession().on("change", checkLines);
     createEditor.setFontSize(18);
 }

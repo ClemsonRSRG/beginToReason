@@ -9,7 +9,6 @@ function submitAnswer() {
     $("#right .footette").attr("class", "footetteDisabled");
     
     var content = createEditor.getValue();
-    
     if (checkForTrivials(content))
     {
         getVCLines(content);
@@ -38,11 +37,17 @@ function checkForTrivials(content) {
         var statement = confirms[i];
         statement = statement.substr(8);
         
-        // Split the string at the conditional
-        regex = new RegExp("[<>=]");
-        var parts = statement.split(regex);
-        if (parts.length != 2)
+        // Search for an illegal "/="
+        regex = new RegExp("/=");
+        if (statement.match(regex) != null)
             return false;
+        
+        // Split the string at the conditional, first looking for >= or <=
+        regex = new RegExp("[<=|>=]");
+        var parts = statement.split(regex);
+        if (parts.length == 1) {
+            
+        }
         
         // Find the variables used on the left side
         var left = parts[0];
