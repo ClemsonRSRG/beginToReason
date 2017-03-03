@@ -39,7 +39,7 @@ function checkForTrivials(content) {
         // Remove the "Confirm " so that we can find the variable names
         var statement = confirms[i];
         statement = statement.substr(8);
-        
+
         // Search for an illegal "/="
         regex = new RegExp("/=");
         if (statement.search(regex) > -1) {
