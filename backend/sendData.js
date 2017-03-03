@@ -1,34 +1,17 @@
+/* global approved createEditor currentLesson getTime */
+
 var author = Math.floor(Math.random() * 1000000000);
+
 function sendData() {
-    var data = "\"{";
+    var data = {};
 
-    data += "\"code\":";
-    data += "\"" + createEditor.getValue() + "\"";
-    data += ",";
+    data.code = createEditor.getValue();
+    data.time = getTime();
+    data.author = author;
+    data.module = "Spring 2017";
+    data.lesson = currentLesson.self;
+    data.correct = approved;
+    data.points = "0";
 
-    data += "\"time\":";
-    data += "\"" + getTime() + "\"";
-    data += ",";
-
-    data += "\"author\":";
-    data += "\"" + author + "\"";
-    data += ",";
-
-    data += "\"module\":";
-    data += "\"" + "Spring 2017" + "\"";
-    data += ",";
-
-    data += "\"lesson\":";
-    data += "\"" + currentLesson.self + "\"";
-    data += ",";
-
-    data += "\"correct\":";
-    data += "\"" + approved + "\"";
-    data += ",";
-
-    data += "\"points\":";
-    data += "\"" + 0 + "\"";
-    data += "}\"";
-
-    $.post("https://resolve.cs.clemson.edu/teaching/bydesign", data);
+    $.post("https://resolve.cs.clemson.edu/teaching/bydesign", JSON.stringify(data));
 }
