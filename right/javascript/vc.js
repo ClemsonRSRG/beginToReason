@@ -1,4 +1,5 @@
-/* global approved currentLesson encode nextLessonAndSuccess nextLessonAndFailure sendData succeed toJSON */
+/* global addVCMarkers approved createEditor currentLesson decode encode nextLessonAndSuccess nextLessonAndFailure 
+   removeAllVCMarkers sendData succeed toJSON updateMarker */
 
 var VCs;
 var verifying = false;
@@ -58,7 +59,7 @@ function checkForTrivials(content) {
         // Search for these variables on the right side
         var j;
         for (j = 0 ; j < variables.length ; j++) {
-            variable = variables[j];
+            var variable = variables[j];
             regex = new RegExp("[^#]" + variable, "g");
             if (right.search(regex) > -1) {
                 return false;
@@ -70,14 +71,14 @@ function checkForTrivials(content) {
 }
 
 function getVCLines(content) {
-    removeAllVCMarkers();
     var socket = new WebSocket("wss://resolve.cs.clemson.edu/teaching/Compiler?job=genVCs&project=Teaching_Project");
+    removeAllVCMarkers();
 
     socket.onmessage = function (message) {
         if (!verifying) {
             return;
         }
-        
+
         // Extract the array of VCs from the message (trust me, this works)
         message = JSON.parse(message.data);
         if (message.status == "error") {
@@ -89,20 +90,20 @@ function getVCLines(content) {
             createEditor.focus();
             return;
         }
-        
+
         if (message.status != "complete") {
             return;
         }
 
         if (message.result == "") {
-	        $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
-	        $("#dialog-box").dialog("open");
+            $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
+            $("#dialog-box").dialog("open");
             verifying = false;
             $("#right .footetteDisabled").attr("class", "footette");
 
             createEditor.focus();
             return;
-	    }
+        }
 
         message = decode(message.result);
         message = $(message).text();
@@ -111,7 +112,9 @@ function getVCLines(content) {
         // Simplify the VC information
         VCs = [];
         $.each(message.vcs, function (index, obj) {
-            if (typeof obj.vc !== "undefined") VCs.push(obj);
+            if (typeof obj.vc !== "undefined") {
+                VCs.push(obj);
+            }
         });
 
         addVCMarkers();
