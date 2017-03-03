@@ -1,3 +1,5 @@
+/* global approved currentLesson encode nextLessonAndSuccess nextLessonAndFailure sendData succeed toJSON */
+
 var VCs;
 var verifying = false;
 
@@ -139,11 +141,11 @@ function verifyVCs(content) {
     content = encode(content);
     content = toJSON(content);
 
-    socket.onopen = function () { 
-        socket.send(content); 
-	};
+    socket.onopen = function () {
+        socket.send(content);
+    };
 
-	socket.onclose = function () {
+    socket.onclose = function () {
         if (succeed) {
             approved = true;
             $("#dialog-message").html("Correct. On to the next lesson!");
@@ -163,5 +165,5 @@ function verifyVCs(content) {
         verifying = false;
         $("#right .footetteDisabled").attr("class", "footette");
         sendData();
-    }
+    };
 }
