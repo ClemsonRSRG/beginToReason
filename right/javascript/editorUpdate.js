@@ -1,6 +1,6 @@
 /* eslint quote-props: "off" */
 
-/* 
+/*
  * This will hold all of our keywords information such as the hashmap that
  * holds the keywords with their tool-tip values in it.
  */
@@ -27,7 +27,7 @@ function KeywordsHashTable(obj) {
  */
 var keywordsTable = new KeywordsHashTable({
     "abs" : "",
-    "ad" : "" ,
+    "ad" : "",
     "absurdum" : "",
     "all" : "",
     "alters" : "The implementer may leave an arbitrary value of the same type at the end of the operation. This provides the most flexibility to the implementers.",
@@ -50,7 +50,7 @@ var keywordsTable = new KeywordsHashTable({
     "Case" : "",
     "changing" : "This parameter will be changed throughout the clause.",
     "clears" : "The entry will be re-initialized to the initial value of the same type by the end of the operation.",
-    "clr" : "The entry will be re-initialized to the initial value of the same type by the end of the operation.", 
+    "clr" : "The entry will be re-initialized to the initial value of the same type by the end of the operation.",
     "common" : "",
     "Commutativity" : "",
     "complement" : "",
@@ -97,7 +97,7 @@ var keywordsTable = new KeywordsHashTable({
     "exemplar" : "An identifier that stands for an arbitrary value which tells the client what is true of every variable that is of this class type.",
     "existantial" : "",
     "exists" : "",
-    "exit" : "",    
+    "exit" : "",
     "Facility" : "This is similar to Java in that every file is a class, and this facility's name should be the same as the name of the file that declares it. You need this statement at the beginning to declare the name of the class and to begin writing a file. To finish the class, write 'end Facility_Name;'",
     "Facility_Finalization" : "",
     "Facility_Initialization" : "",
@@ -225,22 +225,21 @@ function checkResolveKeywords(value) {
     if (keywordsTable.hasKeyword(value) > 0) {
         return true;
     }
-    else {
-        return false;
-    }
+
+    return false;
 }
 
-function showKeywordTooltip(pos, editor, textRange){
+function showKeywordTooltip(pos, editor, textRange) {
     var selectedWord = editor.session.getTextRange(textRange);
-    if (keywordsTable.hasKeyword(selectedWord) && (keywordsTable.getTip(selectedWord) !== "")) {
+    if (keywordsTable.hasKeyword(selectedWord) && keywordsTable.getTip(selectedWord) !== "") {
         var keyword = $("#code_editor").find(".ace_keyword:contains(" + selectedWord + ")");
-            
+
         var length = selectedWord.length;
         keyword.each(function () {
             var offset = $(this).offset();
             var keywordPos = editor.renderer.screenToTextCoordinates(offset.left + 3, offset.top + 3);
             if (keywordPos.row == pos.row) {
-                if(keywordPos.column <= pos.column && pos.column <= keywordPos.column + length){
+                if (keywordPos.column <= pos.column && pos.column <= keywordPos.column + length) {
                     $(this).qtip({
                         content: {
                             text: keywordsTable.getTip(selectedWord),
@@ -248,7 +247,7 @@ function showKeywordTooltip(pos, editor, textRange){
                                 text: selectedWord,
                                 button: true
                             }
-                        }, 
+                        },
                         show: {
                             event: false, // Only show when show() is called manually
                             ready: true // Also show on page load
