@@ -39,12 +39,24 @@ function checkForTrivials(content) {
         // Remove the "Confirm " so that we can find the variable names
         var statement = confirms[i];
         statement = statement.substr(8);
-
-        // Split the string at the conditional
-        regex = new RegExp("[<>=]");
-        var parts = statement.split(regex);
-        if (parts.length != 2) {
+        
+        // Search for an illegal "/="
+        regex = new RegExp("/=");
+        if (statement.search(regex) > -1) {
             return false;
+        }
+
+        // Split the string at the conditional, first looking for >= and <=
+        regex = new RegExp(">=|<=");
+        var parts = statement.split(regex);
+        if (parts.length > 2) {
+            return false;
+        } else if (parts.length == 1) { // If there is no >= or <=
+            regex = new RegExp("[<>=]");
+            parts = statement.split(regex);
+            if (parts.length != 2) {
+                return false;
+            }
         }
 
         // Find the variables used on the left side
