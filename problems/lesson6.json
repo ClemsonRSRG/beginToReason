@@ -9,5 +9,5 @@
   "nextLessonOnSuccess": "problems/challenge1.json",
   "nextLessonOnFailure": "problems/lesson6.json",
 
-  "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote><p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote>"
+  "referenceMaterial": "<p><em>Remember statement</em> - Does the following:</p><blockquote><p> At the point in the code where the Remember statement occurs the value of a variable 'x' is assumed to be #x and  this value represented by #x can be referenced in subsequent Confirm statements</p></blockquote> <p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
 }

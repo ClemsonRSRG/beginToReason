@@ -9,5 +9,5 @@
   "nextLessonOnSuccess": "problems/lesson2.json",
   "nextLessonOnFailure": "problems/lesson1a.json",
 
-  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p>"
+  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
 }
