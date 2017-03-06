@@ -1,33 +1,29 @@
 var VCs;
 var verifying = false;
-
+var contentToServer;
 function submitAnswer() {
     /* Protect against multiple requests */
     if(verifying)
         return;
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
-
-    var content = null;
+    
     if(currentLesson.base != null){
-        content = baseLessonCode;
+        contentToServer = baseLessonCode;
         $.each(currentLesson.lines, function (index, obj) {
             var line = createEditor.session.getLine(obj - 1);
-            content = content.replace(currentLesson.replaces[index], line);            
+            contentToServer = contentToServer.replace(currentLesson.replaces[index], line);            
         });
     } else {
-        content = createEditor.getValue();
+        contentToServer = createEditor.getValue();
     }
-    console.log(content);
-    alert("I'm here");
-    return;
-
+   
     // Get student's code
     //var content = createEditor.getValue();
     
     // Find all the confirm statements
     var regex = new RegExp("Confirm [^;]*;", "mg");
-    var confirms = content.match(regex);
+    var confirms = contentToServer.match(regex);
     if (confirms.length == 0) {
         alert(1);
         $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
@@ -85,7 +81,8 @@ function submitAnswer() {
         }
     }
 
-    getVCLines(createEditor.getValue());
+    //getVCLines(createEditor.getValue());
+    getVCLines(contentToServer);
 }
 
 function getVCLines(content) {
@@ -95,12 +92,9 @@ function getVCLines(content) {
     socket.onmessage = function(message) {        
         if(!verifying) return;
 
-        console.log(JSON.stringify(message.data));
         // Extract the array of VCs from the message (trust me, this works)        
         message = JSON.parse(message.data);        
-        console.log(JSON.stringify(message));
         if(message.status == "error") {
-            alert(4);
             $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
             $("#dialog-box").dialog("open");
             verifying = false;
@@ -114,7 +108,6 @@ function getVCLines(content) {
         }
 
         if(message.result == "") {
-            alert(5);
 	        $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
 	        $("#dialog-box").dialog("open");
             verifying = false;
@@ -125,22 +118,22 @@ function getVCLines(content) {
 	    }
         message = decode(message.result);
         message = $(message).text();
-       //console.log(message);
         message = JSON.parse(message);
-
         // Simplify the VC information
         VCs = [];
-        console.log(JSON.stringify(message));
         $.each(message.vcs, function (index, obj) {
-            if (typeof obj.vc !== "undefined") VCs.push(obj);
+            if (typeof obj.vc != "undefined" && baseLesson.lines.includes(parseInt(obj.lineNum))) {
+                obj.lineNum = currentLesson.lines[index];
+                VCs.push(obj);
+            }
         });
         addVCMarkers();
-        verifyVCs(createEditor.getValue());
+        //verifyVCs(createEditor.getValue());
+        verifyVCs(contentToServer);
     };
 
     content = encode(content);
     content = toJSON(content);
-    //console.log(JSON.stringify(content));
     socket.onopen = function() { socket.send(content); };
 }
 
@@ -150,14 +143,10 @@ function verifyVCs(content) {
     socket.onmessage = function(message) {
         message = JSON.parse(message.data);
         if(message.status !== "processing") return;
-        console.log(1)
-        console.log(JSON.stringify(message))
         updateMarker(message.result);
     };
-
     content = encode(content);
     content = toJSON(content);
-
     socket.onopen = function() { socket.send(content); };
     
     socket.onclose = function() {

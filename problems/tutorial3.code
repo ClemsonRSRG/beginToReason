@@ -1,9 +1,9 @@
-// I & J are integers
+// I is an integer
 
-// Let I=#I (at this point in the code I=#I)
+// Let I = #I (at this point in the code I = #I)
 
-        J := I;
-        I := I - 1;
+        I := I + 1;
 
 // What is I at this point?
 
+        I = 

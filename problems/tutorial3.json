@@ -4,7 +4,7 @@
   "base": "problems/tutorial1.json",
   "previousLesson": "problems/tutorial3.json",
   "nextLessonOnFailure": "problems/tutorial3.json",
-  "nextLessonOnSuccess": "problems/lesson1.json",
+  "nextLessonOnSuccess": "problems/tutorial3.json",
 
   "lines": [9],
 
