@@ -11,7 +11,7 @@
 
   "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by entering an expression for /* expression */, then check correctness.</p>",
 
-  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
+  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>",
 
   "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/tutorial2.html"
 }
