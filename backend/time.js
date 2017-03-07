@@ -6,5 +6,5 @@ function resetTime() {
 
 function getTime() {
     var endTime = new Date();
-    return endTime.getTime() - time.getTime();
+    return Math.round((endTime.getTime() - time.getTime()) / 1000);
 }
