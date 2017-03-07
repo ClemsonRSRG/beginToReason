@@ -1,9 +1,14 @@
-// I & J are integers
+Facility BeginToReason;
+    uses Integer_Ext_Theory;
 
-// Let I=#I (at this point in the code I=#I)
+    Operation Main();
+    Procedure
+        Var I, J: Integer;
+        Read(I);
 
         J := I;
         I := I - 1;
 
-// What is I at this point?
-
+        Confirm I /*conditional*/ J;
+    end Main;
+end BeginToReason;
