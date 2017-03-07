@@ -1,5 +1,6 @@
 var VCs;
 var verifying = false;
+// The content to be sent to WebIDE
 var contentToServer;
 function submitAnswer() {
     /* Protect against multiple requests */
@@ -8,18 +9,19 @@ function submitAnswer() {
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
     
+    // Check if this lesson has a base lesson.    
     if(currentLesson.base != null){
+        // If it does, the base lesson content with replaced lines will be sent to WebIDE.
         contentToServer = baseLessonCode;
         $.each(currentLesson.lines, function (index, obj) {
+            // Replace the configured lines.
             var line = createEditor.session.getLine(obj - 1);
             contentToServer = contentToServer.replace(currentLesson.replaces[index], line);            
         });
     } else {
+        // If not, the content in the editor will be sent to WebIDE.
         contentToServer = createEditor.getValue();
     }
-   
-    // Get student's code
-    //var content = createEditor.getValue();
     
     // Find all the confirm statements
     var regex = new RegExp("Confirm [^;]*;", "mg");
@@ -81,7 +83,6 @@ function submitAnswer() {
         }
     }
 
-    //getVCLines(createEditor.getValue());
     getVCLines(contentToServer);
 }
 
@@ -122,13 +123,14 @@ function getVCLines(content) {
         // Simplify the VC information
         VCs = [];
         $.each(message.vcs, function (index, obj) {
+            // Push to VCs only if that line is not "undefined" and it's configured.
             if (typeof obj.vc != "undefined" && baseLesson.lines.includes(parseInt(obj.lineNum))) {
+                // Set the line number to be the line in current lesson, so that this line will be highlighted.
                 obj.lineNum = currentLesson.lines[index];
                 VCs.push(obj);
             }
         });
         addVCMarkers();
-        //verifyVCs(createEditor.getValue());
         verifyVCs(contentToServer);
     };
 

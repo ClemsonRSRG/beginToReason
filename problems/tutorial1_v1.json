@@ -1,10 +1,10 @@
 {
-  "self": "problems/tutorial3.json",
-  "code": "problems/tutorial3.code",
+  "self": "problems/tutorial1_v1.json",
+  "code": "problems/tutorial1_v1.code",
   "base": "problems/tutorial1.json",
-  "previousLesson": "problems/tutorial3.json",
-  "nextLessonOnFailure": "problems/tutorial3.json",
-  "nextLessonOnSuccess": "problems/tutorial3.json",
+  "previousLesson": "problems/tutorial1_v1.json",
+  "nextLessonOnFailure": "problems/tutorial1_v1.json",
+  "nextLessonOnSuccess": "problems/tutorial1_v1.json",
 
   "lines": [9],
 

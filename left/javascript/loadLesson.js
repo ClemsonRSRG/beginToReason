@@ -1,5 +1,6 @@
+// The current lesson (the lesson students see)
 var currentLesson;
-// Base lession
+// Base lession (the lesson to be sent to WebIDE)
 var baseLesson;
 var baseLessonCode;
 function loadLesson(filePath) {
