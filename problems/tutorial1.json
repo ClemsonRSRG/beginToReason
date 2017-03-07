@@ -8,6 +8,7 @@
   "previousLesson": "problems/tutorial0.json",
   "nextLessonOnFailure": "problems/tutorial1.json",
   "nextLessonOnSuccess": "problems/tutorial2.json",
+  "solution": "The correct answer is I > #I.",
 
   "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by choosing a conditional operator to replace the /* conditional */, then check correctness.</p>",
 
