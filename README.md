@@ -34,6 +34,7 @@ include:
 * [The Resuable Software Research Group (RSRG)]
 (https://www.cs.clemson.edu/resolve/) - School of Computing, Clemson University
 * [Florida Atlantic University](http://www.fau.edu/research/)
+* [Indiana University Southeast](https://www.ius.edu/)
 
 ##Copyright and license
 
