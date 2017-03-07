@@ -8,6 +8,7 @@
   "previousLesson": "problems/tutorial0.json",
   "nextLessonOnFailure": "problems/tutorial0.json",
   "nextLessonOnSuccess": "problems/tutorial1.json",
+  "solution": "The correct answer is K = 3.",
 
   "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by entering an expression for /* expression */, then check correctness.</p>",
 

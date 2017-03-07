@@ -176,7 +176,11 @@ function verifyVCs(content) {
                 sendData(); // Need to send the data before we reset the time! ("approved" should be false)
                 nextLessonAndFailure();
             } else {
-                $("#dialog-message").html("Sorry, not correct. Try again!");
+                if (currentLesson.type == "tutorial") {
+                    $("#dialog-message").html("Sorry, not correct. Try again! " + currentLesson.solution);
+                } else {
+                    $("#dialog-message").html("Sorry, not correct. Try again!");
+                }
                 $("#dialog-box").dialog("open");
 
                 sendData(); // Need to send the data before we reset the time! ("approved" should be false)
