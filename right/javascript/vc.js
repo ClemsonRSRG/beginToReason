@@ -201,7 +201,11 @@ function verifyVCs(content) {
                 nextLessonAndFailure();
             } else {
                 if (currentLesson.type == "tutorial") {
-                    $("#dialog-message").html("Sorry, not correct. Try again! " + currentLesson.solution);
+                    if( currentLesson.base != null ){
+                        $("#dialog-message").html("Sorry, not correct. Try again! " + baseLesson.solution);
+                    } else {
+                        $("#dialog-message").html("Sorry, not correct. Try again! " + currentLesson.solution);
+                    }
                 } else {
                     $("#dialog-message").html("Sorry, not correct. Try again!");
                 }
