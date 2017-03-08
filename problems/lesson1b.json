@@ -1,22 +1,13 @@
 {
+  "type": "lesson",
   "self": "problems/lesson1b.json",
   "code": "problems/lesson1b.code",
 
   "lesson": "Lesson 1b - Sequence of assignments",
 
-  "previousLesson": "problems/tutorial2.json",
+  "previousLesson": "problems/lesson0.json",
   "nextLessonOnSuccess": "problems/lesson2.json",
   "nextLessonOnFailure": "problems/lesson1b.json",
 
-  "learningObjective": "<ol><li>On line 10, enter the value of I in terms of J. Replace /* expression */ so that the Confirm statement evaluates to true.</li><li>On line 13, enter the value of I in terms of J. Replace /* expression */ so that the Confirm statement evaluates to true.</li><li>On line 14, replace /* conditional */ with a conditional so that the Confirm statement evaluates to true.</li></ol>",
-
-  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5 relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote><p><code>:= </code> is the <em>assignment operator</em></p>",
-
-  "lines": [10, 13, 14],
-
-  "checks": [
-    ["Confirm I = J"],
-    ["Confirm I = J - 1", "Confirm I = J-1", "Confirm I = J- 1", "Confirm I = J -1"],
-    ["Confirm I < J", "Confirm I <= J"]
-  ]
+  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
 }

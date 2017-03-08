@@ -1,8 +1,10 @@
+/* global ace approved author createEditor resetTime verifying */
 // The current lesson (the lesson students see)
 var currentLesson;
 // Base lession (the lesson to be sent to WebIDE)
 var baseLesson;
 var baseLessonCode;
+var baseLessonCodeLines;
 function loadLesson(filePath) {
     $.getJSON(filePath, function(data) {
         currentLesson = data;        
@@ -14,7 +16,8 @@ function loadLesson(filePath) {
                 if(baseLesson != null){
                     // Load base lesson code
                     $.get(baseLesson.code, function (data) {
-                        baseLessonCode = data;                                 
+                        baseLessonCode = data;      
+                        baseLessonCodeLines = baseLessonCode.split('\n');                           
                     });
                 }       
             });
@@ -22,21 +25,47 @@ function loadLesson(filePath) {
         
         $("#left .header td").html(data.lesson);
 
-        $("#left .objective td").html(data.learningObjective);
         $("#left .reference td").html(data.referenceMaterial);
+        if (data.type == "tutorial") {
+            $("#left .activity td").html(data.activity);
+            $("#right .headette").addClass("button");
+            $("#right .headette td")
+                .html("Click here for quick video instructions")
+                .off("click")
+                .click(function () {
+                    window.open(data.screenCapture, "_blank");
+                });
+
+        } else if (data.type == "lesson" || data.type == "challenge") {
+            $("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
+            $("#right .headette").removeClass("button");
+            $("#right .headette td").html("").off("click");
+
+        } else if (data.type == "end") {
+            $("#left .activity td").html(data.activity);
+
+        } else {
+            $("#left .activity td").html("This should never appear.");
+            $("#right .headette").removeClass("button");
+            $("#right .headette td").html("").off("click");
+        }
+
         $.get(data.code, function (data) {
             createEditor.setValue(data);
-            createEditor.selection.moveCursorToPosition({row: 0, column: 0});
+            createEditor.selection.moveCursorToPosition({
+                row: 0,
+                column: 0
+            });
 
             createEditor.getSession().setUndoManager(new ace.UndoManager());
             createEditor.getSession().getUndoManager().reset();
-        });        
+        });
     });
 }
 
 function endSurvey() {
-	$( "#dialog-message" ).html("<b>AuthorID:</b> " + author + "</br><b>Survey Link:</b> https://www.surveymonkey.com/r/F7KF6F8");
-	$( "#dialog-box" ).dialog( "open" );
+    $("#dialog-message").html("<b>AuthorID:</b> " + author + "</br><b>Survey Link:</b> https://www.surveymonkey.com/r/F7KF6F8");
+    $("#dialog-box").dialog("open");
 }
 
 function reloadLesson() {
@@ -44,8 +73,9 @@ function reloadLesson() {
 }
 
 function nextLessonButton() {
-    if(!approved) {
-        alert("You may only progress when your code has been approved.");
+    if (!approved) {
+        $("#dialog-message").html("You may only progress when your code has been approved.");
+        $("#dialog-box").dialog("open");
         createEditor.focus();
         return;
     }
@@ -54,33 +84,33 @@ function nextLessonButton() {
 }
 
 function nextLessonAndFailure() {
-    if (currentLesson.nextLessonOnFailure == "") return;
-    if (currentLesson.nextLessonOnFailure == currentLesson.self) return;
-    
-    resetTime();
+    if (currentLesson.nextLessonOnFailure == "") {
+        return;
+    }
+
+    if (currentLesson.nextLessonOnFailure == currentLesson.self) {
+        return;
+    }
+
     loadLesson(currentLesson.nextLessonOnFailure);
+    resetTime();
 }
 
 function nextLessonAndSuccess() {
-    if (currentLesson.nextLessonOnSuccess == "") return;
-    
-    resetTime();
+    if (currentLesson.nextLessonOnSuccess == "") {
+        return;
+    }
+
     loadLesson(currentLesson.nextLessonOnSuccess);
+    resetTime();
 }
 
 function prevLesson() {
     verifying = false;
-    if(currentLesson.previousLesson == "") return;
-    loadLesson(currentLesson.previousLesson);
-}
+    if (currentLesson.previousLesson == "") {
+        return;
+    }
 
-function checkLines() {
-    var rowNum = createEditor.getCursorPosition().row + 1;
-    
-    if (createEditor.selection.isMultiLine())
-        createEditor.setReadOnly(true);
-    else if ($.inArray(rowNum, currentLesson.lines) != -1)
-        createEditor.setReadOnly(false);
-    else
-        createEditor.setReadOnly(true);
+    loadLesson(currentLesson.previousLesson);
+    resetTime(); // Might need to remove this when we change the "next" button.
 }

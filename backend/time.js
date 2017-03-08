@@ -1,6 +1,10 @@
-/**
- * Created by Matthew Pfister on 2/20/2016.
- */
-var time = Math.floor(Date.now());
-function resetTime() { time = Math.floor(Date.now()); }
-function getTime() { return Math.floor(Date.now()) - time; }
+var time = new Date();
+
+function resetTime() {
+    time = new Date();
+}
+
+function getTime() {
+    var endTime = new Date();
+    return endTime.getTime() - time.getTime();
+}

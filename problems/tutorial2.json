@@ -1,4 +1,5 @@
 {
+  "type": "tutorial",
   "self": "problems/tutorial2.json",
   "code": "problems/tutorial2.code",
 
@@ -6,13 +7,11 @@
 
   "previousLesson": "problems/tutorial1.json",
   "nextLessonOnFailure": "problems/tutorial2.json",
-  "nextLessonOnSuccess": "problems/lesson1.json",
+  "nextLessonOnSuccess": "problems/lesson0.json",
 
-  "learningObjective": "<p>On line 10 enter an expression for /* expression */ so that the Confirm statement evaluates to true</p>",
+  "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by entering an expression for /* expression */, then check correctness.</p>",
 
-  "referenceMaterial": "<ul><li><em>On Line 6</em>:&nbsp;&nbsp; <code>Remember;</code><br />At the point of the Remember statement in the code, the value of a variable 'x' is assumed to be #x and #x can be used in Confirm statements<br /><br /></li><li><em>On Line 10</em>:<br />&nbsp;&nbsp; <code>= &nbsp;&nbsp; &lt; &nbsp;&nbsp; &lt;= &nbsp;&nbsp; &gt; &nbsp;&nbsp; &gt;=</code><br />are the relational operators from which to choose</li></ul>",
+  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
 
-  "lines": [10],
-
-  "checks": [["Confirm I = #I + 1;", "Confirm I = #I+1;", "Confirm I = #I+ 1;", "Confirm I = #I +1;","Confirm I = 1 + #I;", "Confirm I = 1+#I;", "Confirm I = 1+ #I;", "Confirm I = 1 +#I;"]]
+  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/tutorial2.html"
 }

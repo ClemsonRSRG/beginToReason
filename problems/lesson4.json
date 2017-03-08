@@ -1,4 +1,5 @@
 {
+  "type": "lesson",
   "self": "problems/lesson4.json",
   "code": "problems/lesson4.code",
 
@@ -8,11 +9,5 @@
   "nextLessonOnSuccess": "problems/lesson5.json",
   "nextLessonOnFailure": "problems/lesson4a.json",
 
-  "learningObjective": "<ol><li>On lines 13 and 14 choose a relational operator to replace /* conditional */ so that the Confirm statements evaluate to true</li></ol>",
-
-  "referenceMaterial": "<p><em>Relational Operators</em> - There are 5  relational operators from which to choose, they are: </p><blockquote><pre>=   &lt;   &lt;=    &gt;    &gt;=</pre></blockquote>",
-
-  "lines": [13, 14],
-
-  "checks": [["Confirm K >= I"], ["Confirm K >= J"]]
+  "referenceMaterial": "<p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
 }

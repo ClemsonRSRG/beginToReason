@@ -1,14 +1,21 @@
 {
+  "type": "tutorial",
   "self": "problems/tutorial1_v1.json",
   "code": "problems/tutorial1_v1.code",
+
+  "lesson": "Tutorial 1 - Relating Values of Variables</b>",
+
   "base": "problems/tutorial1.json",
+
   "previousLesson": "problems/tutorial1_v1.json",
   "nextLessonOnFailure": "problems/tutorial1_v1.json",
   "nextLessonOnSuccess": "problems/tutorial1_v1.json",
 
+  "activity": "<p>Please complete the problem, then check correctness.</p>",
+
+  "referenceMaterial": "",
+
   "lines": [9],
 
-  "replaces": ["I /*conditional*/ #I;"],
-
-  "checks": [["Confirm I > J;", "Confirm I >= J;"]]
+  "replaces": ["I /*conditional*/ #I;"]
 }

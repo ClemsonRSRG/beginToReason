@@ -9,21 +9,30 @@
         </tr>
     </table>
 </div>
-<div class="headette"></div>
+
+<div class="headette">
+    <table width="100%" height="100%">
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+</div>
 
 <div id="editor"></div>
 
 <div class="footette" onclick="submitAnswer()">
     <table width="100%" height="100%">
         <tr>
-            <td>Check Correctness!</td>
+            <td>Click here to check correctness</td>
         </tr>
     </table>
 </div>
+
 <div class="footer">
 	<table width="100%" height="100%">
         <tr>
-            <td>This research is funded in part by NSF grants CCF-1161916 and DUE-1611714.</td>
+            <td>This research is funded in part by NSF grants CCF-1161916 and DUE-1611714. 
+                This is a joint effort involving Clemson University, Florida Atlantic University, and Indiana University Southeast.</td>
         </tr>
     </table>
 </div>
