@@ -1,13 +1,13 @@
 {
   "type": "challenge",
-  "self": "problems/challenge2.json",
-  "code": "problems/challenge2.code",
+  "self": "problems/section1/challenge2.json",
+  "code": "problems/section1/challenge2.code",
 
   "lesson": "Challenge 2 - Multiple loop statements",
 
-  "previousLesson": "problems/challenge1.json",
-  "nextLessonOnSuccess": "problems/complete.json",
-  "nextLessonOnFailure": "problems/challenge2.json",
+  "previousLesson": "problems/section1/challenge1.json",
+  "nextLessonOnSuccess": "problems/section1/complete.json",
+  "nextLessonOnFailure": "problems/section1/challenge2.json",
 
   "referenceMaterial": "<p><em>changing</em> statement - contains a list of variables whose values are changed by execution of the  loop body</p><p><em>decreasing</em> expression - an expression whose value decreases after each pass through the loop body</p>"
 }

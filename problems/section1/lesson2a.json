@@ -1,0 +1,13 @@
+{
+  "type": "lesson",
+  "self": "problems/section1/lesson2a.json",
+  "code": "problems/section1/lesson2a.code",
+
+  "lesson": "Lesson 2a - Sequence of Assignments",
+
+  "previousLesson": "problems/section1/lesson1.json",
+  "nextLessonOnSuccess": "problems/section1/lesson3.json",
+  "nextLessonOnFailure": "problems/section1/lesson2a.json",
+
+  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>"
+}

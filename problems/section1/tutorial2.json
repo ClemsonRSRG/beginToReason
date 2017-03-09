@@ -1,13 +1,13 @@
 {
   "type": "tutorial",
-  "self": "problems/tutorial2.json",
-  "code": "problems/tutorial2.code",
+  "self": "problems/section1/tutorial2.json",
+  "code": "problems/section1/tutorial2.code",
 
   "lesson": "Tutorial 2 - Asserting Values of Variables",
 
-  "previousLesson": "problems/tutorial1.json",
-  "nextLessonOnFailure": "problems/tutorial2.json",
-  "nextLessonOnSuccess": "problems/lesson0.json",
+  "previousLesson": "problems/section1/tutorial1.json",
+  "nextLessonOnFailure": "problems/section1/tutorial2.json",
+  "nextLessonOnSuccess": "problems/section1/lesson0.json",
   "solution": "The correct is I = #I + 1.",
 
   "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by entering an expression for /* expression */, then check correctness.</p>",

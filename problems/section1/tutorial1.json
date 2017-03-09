@@ -1,13 +1,13 @@
 {
   "type": "tutorial",
-  "self": "problems/tutorial1.json",
-  "code": "problems/tutorial1.code",
+  "self": "problems/section1/tutorial1.json",
+  "code": "problems/section1/tutorial1.code",
 
   "lesson": "Tutorial 1 - Relating Values of Variables</b>",
 
-  "previousLesson": "problems/tutorial0.json",
-  "nextLessonOnFailure": "problems/tutorial1.json",
-  "nextLessonOnSuccess": "problems/tutorial2.json",
+  "previousLesson": "problems/section1/tutorial0.json",
+  "nextLessonOnFailure": "problems/section1/tutorial1.json",
+  "nextLessonOnSuccess": "problems/section1/tutorial2.json",
   "solution": "The correct answer is I > #I.",
 
   "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by choosing a conditional operator to replace the /* conditional */, then check correctness.</p>",
