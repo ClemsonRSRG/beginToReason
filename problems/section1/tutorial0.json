@@ -2,6 +2,7 @@
   "type": "tutorial",
   "self": "problems/section1/tutorial0.json",
   "code": "problems/section1/tutorial0.code",
+  "module": "section1",
 
   "lesson": "Tutorial 0 - Variables and Values",
 

@@ -2,6 +2,7 @@
   "type": "end"
   "self": "problems/section1/complete.json",
   "code": "problems/section1/complete.code",
+  "module": "section1",
 
   "lesson": "Lab Completed!",
 

@@ -2,6 +2,7 @@
   "type": "challenge",
   "self": "problems/section1/challenge2.json",
   "code": "problems/section1/challenge2.code",
+  "module": "section1",
 
   "lesson": "Challenge 2 - Multiple loop statements",
 

@@ -2,6 +2,7 @@
   "type": "lesson",
   "self": "problems/section1/lesson1b.json",
   "code": "problems/section1/lesson1b.code",
+  "module": "section1",
 
   "lesson": "Lesson 1b - Sequence of assignments",
 

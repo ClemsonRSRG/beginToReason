@@ -2,6 +2,7 @@
   "type": "tutorial",
   "self": "problems/section1/tutorial2.json",
   "code": "problems/section1/tutorial2.code",
+  "module": "section1",
 
   "lesson": "Tutorial 2 - Asserting Values of Variables",
 
