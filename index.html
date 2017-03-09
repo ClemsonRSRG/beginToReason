@@ -70,6 +70,14 @@
         teachResize();
         createResize();
     });
+     window.addEventListener('keydown', function (event) {
+        if(event.keyCode == 13) createEditor.setReadOnly(true);
+        else if(event.keyCode == 90 && event.ctrlKey) createEditor.setReadOnly(false);
+        else {
+            createEditor.setReadOnly(false);
+            checkLines();
+        }
+    });
 </script>
 
 </html>

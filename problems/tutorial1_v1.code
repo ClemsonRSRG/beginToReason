@@ -4,6 +4,6 @@
 
         I := I + 1;
 
-// What is I at this point?
+// What is I at this point in terms of #I?
 
-        I = 
+        I /*relational*/ #I;

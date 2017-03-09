@@ -21,6 +21,7 @@ function loadLesson(filePath) {
                     });
                 }       
             });
+
         }
         
         $("#left .header td").html(data.lesson);
@@ -113,4 +114,15 @@ function prevLesson() {
 
     loadLesson(currentLesson.previousLesson);
     resetTime(); // Might need to remove this when we change the "next" button.
+}
+
+function checkLines() {
+    var rowNum = createEditor.getCursorPosition().row + 1;
+    
+    if (createEditor.selection.isMultiLine())
+        createEditor.setReadOnly(true);
+    else if ($.inArray(rowNum, currentLesson.lines) != -1)
+        createEditor.setReadOnly(false);
+    else
+        createEditor.setReadOnly(true);
 }
