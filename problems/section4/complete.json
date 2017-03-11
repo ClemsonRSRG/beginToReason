@@ -1,0 +1,16 @@
+{
+  "type": "end",
+  "self": "problems/section4/complete.json",
+  "code": "problems/section4/complete.code",
+  "module": "section4",
+
+  "lesson": "Lab Completed!",
+
+  "previousLesson": "problems/section4/challenge2.json",
+  "nextLessonOnSuccess": "problems/section4/complete.json",
+  "nextLessonOnFailure": "problems/section4/complete.json",
+
+  "activity": "Thank you for participating in this research study. Please inform your instructor that you have completed all of the lessons.",
+
+  "referenceMaterial": "Please click on the 'End survey' button, remember the 'authorId' and follow the link to fill out the survey."
+}

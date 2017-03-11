@@ -1,0 +1,14 @@
+{
+  "type": "lesson",
+  "self": "problems/section2/lesson6.json",
+  "code": "problems/section2/lesson6.code",
+  "module": "section2",
+
+  "lesson": "Lesson 6 - Multiple If Statements",
+
+  "previousLesson": "problems/section2/lesson5.json",
+  "nextLessonOnSuccess": "problems/section2/challenge1.json",
+  "nextLessonOnFailure": "problems/section2/lesson6.json",
+
+  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p> <p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
+}

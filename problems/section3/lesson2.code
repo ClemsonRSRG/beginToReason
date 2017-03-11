@@ -4,13 +4,17 @@ Facility BeginToReason;
     Operation Main();
     Procedure
         Var I, J: Integer;
-        Read(I);
+        Var A, B: Integer;
 
-        J := I;
-        Confirm I = /* expression */;
-        
-        I := I - 1;
-        Confirm I = /* expression */;
-        Confirm I /* conditional */ J;
+        Read(I);
+        Read(J);
+
+        A := I;
+        B := J;
+
+        I := I + 1;
+        J := J - 1;
+
+        Confirm I + J = /*expression*/;
     end Main;
 end BeginToReason;

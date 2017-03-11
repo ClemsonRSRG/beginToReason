@@ -4,14 +4,15 @@ Facility BeginToReason;
     Operation Main();
     Procedure
         Var I, J, K: Integer;
+        
+        I := 2;
+        J := 3;
 
-        I := 1;
-        J := 2;
-        K := 3;
+        K := I;
+        If (J > I) then
+            K := J;
+        end;
 
-        J := I + J;
-        I := J - K;
-
-        Confirm I = /*expression*/;
+        Confirm K = /*expression*/;
     end Main;
 end BeginToReason;

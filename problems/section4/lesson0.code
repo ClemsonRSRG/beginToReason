@@ -4,7 +4,7 @@ Facility BeginToReason;
     Operation Main();
     Procedure
         Var I, J, K: Integer;
-
+        
         I := 1;
         J := 2;
         K := 3;

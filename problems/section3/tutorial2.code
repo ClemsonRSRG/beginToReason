@@ -3,14 +3,11 @@ Facility BeginToReason;
 
     Operation Main();
     Procedure
-        Var I, J, K: Integer;
+        Var I: Integer;
+        Read(I);
+        Remember;
 
-        I := 1;
-        J := 2;
-        K := 3;
-
-        J := I + J;
-        I := J - K;
+        I := I + 1;
 
         Confirm I = /*expression*/;
     end Main;
