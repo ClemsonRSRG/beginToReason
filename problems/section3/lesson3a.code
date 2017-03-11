@@ -9,8 +9,8 @@ Facility BeginToReason;
 
         Remember;
 
-        I := I + J;
-        J := I - J;
+        I := I - J;
+        J := I + J;
 
         Confirm I = /* expression */;
         Confirm J = /* expression */;

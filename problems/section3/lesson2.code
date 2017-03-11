@@ -4,10 +4,13 @@ Facility BeginToReason;
     Operation Main();
     Procedure
         Var I, J: Integer;
+        Var A, B: Integer;
+
         Read(I);
         Read(J);
 
-        Remember;
+        A := I;
+        B := J;
 
         I := I + 1;
         J := J - 1;
