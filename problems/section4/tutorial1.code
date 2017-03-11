@@ -1,0 +1,14 @@
+Facility BeginToReason;
+    uses Integer_Ext_Theory;
+
+    Operation Main();
+    Procedure
+        Var I: Integer;
+        Read(I);
+        Remember;
+
+        I := I + 1; -- Assignment
+
+        Confirm I /*conditional*/ #I;
+    end Main;
+end BeginToReason;
