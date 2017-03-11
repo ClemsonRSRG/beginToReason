@@ -1,13 +1,14 @@
 {
   "type": "tutorial",
-  "self": "problems/tutorial0.json",
-  "code": "problems/tutorial0.code",
+  "self": "problems/section1/tutorial0.json",
+  "code": "problems/section1/tutorial0.code",
+  "module": "section1",
 
   "lesson": "Tutorial 0 - Variables and Values",
 
-  "previousLesson": "problems/tutorial0.json",
-  "nextLessonOnFailure": "problems/tutorial0.json",
-  "nextLessonOnSuccess": "problems/tutorial1.json",
+  "previousLesson": "problems/section1/tutorial0.json",
+  "nextLessonOnFailure": "problems/section1/tutorial0.json",
+  "nextLessonOnSuccess": "problems/section1/tutorial1.json",
   "solution": "The correct answer is K = 3.",
 
   "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by entering an expression for /* expression */, then check correctness.</p>",

@@ -1,7 +1,7 @@
 /* global loadLesson */
 
-function injectTeach(id) {
+function injectTeach(id, lessonLink) {
     $("#" + id).load("left/html/leftHTML", function () {
-        loadLesson("problems/tutorial0.json");
+        loadLesson(lessonLink);
     });
 }

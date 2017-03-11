@@ -1,13 +1,14 @@
 {
-  "type": "end"
-  "self": "problems/complete.json",
-  "code": "problems/complete.code",
+  "type": "end",
+  "self": "problems/section1/complete.json",
+  "code": "problems/section1/complete.code",
+  "module": "section1",
 
   "lesson": "Lab Completed!",
 
-  "previousLesson": "problems/challenge2.json",
-  "nextLessonOnSuccess": "problems/complete.json",
-  "nextLessonOnFailure": "problems/complete.json",
+  "previousLesson": "problems/section1/challenge2.json",
+  "nextLessonOnSuccess": "problems/section1/complete.json",
+  "nextLessonOnFailure": "problems/section1/complete.json",
 
   "activity": "Thank you for participating in this research study. Please inform your instructor that you have completed all of the lessons.",
 
