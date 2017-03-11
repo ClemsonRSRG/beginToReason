@@ -10,7 +10,10 @@ Facility BeginToReason;
         Remember;
 
         I := I + 1;
+        Confirm I = /*expression*/;
+
         J := J - 1;
+        Confirm J = /*expression*/;
 
         Confirm I + J = /*expression*/;
     end Main;
