@@ -4,13 +4,13 @@ Facility BeginToReason;
     Operation Main();
     Procedure
         Var I, J: Integer;
-        Var A, B: Integer;
+        Var A, C: Integer;
 
         Read(I);
         Read(J);
 
         A := I;
-        B := J;
+        C := J;
 
         I := I + 1;
         Confirm I = /*expression*/;

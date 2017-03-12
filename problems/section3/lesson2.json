@@ -10,5 +10,5 @@
   "nextLessonOnSuccess": "problems/section3/lesson3.json",
   "nextLessonOnFailure": "problems/section3/lesson2a.json",
   
-  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>"
+  "referenceMaterial": "To complete <b>Confirm</b> assertion(s), use the variables A and C."
 }
