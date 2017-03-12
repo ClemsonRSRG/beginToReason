@@ -10,5 +10,5 @@
   "nextLessonOnSuccess": "problems/section3/lesson3.json",
   "nextLessonOnFailure": "problems/section3/lesson2a.json",
 
-  "referenceMaterial": "To complete <b>Confirm</b> assertion(s), use the variables A and C."
+  "referenceMaterial": "To complete the <b>Confirm</b> assertion(s), use the variables A and C."
 }
