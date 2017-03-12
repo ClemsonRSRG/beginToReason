@@ -47,7 +47,7 @@ function loadLesson(filePath) {
 }
 
 function endSurvey() {
-    $("#dialog-message").html("<b>AuthorID:</b> " + author + "</br><b>Survey Link:</b> https://www.surveymonkey.com/r/F7KF6F8");
+    $("#dialog-message").html("<b>AuthorID:</b> " + author + "</br></br><b>Instructions:</b></br>Use the number above and complete the survey on Canvas.");
     $("#dialog-box").dialog("open");
 }
 
