@@ -6,6 +6,7 @@ Facility BeginToReason;
         Var I, J: Integer;
         Read(I);
         Read(J);
+
         Remember;
         
         I := I + 1;

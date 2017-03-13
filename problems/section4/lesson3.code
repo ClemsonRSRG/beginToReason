@@ -13,7 +13,7 @@ Facility BeginToReason;
         Confirm I = /*expression*/;
 
         J := I + J;
-        Confirm I = /*expression*/;
+        Confirm J = /*expression*/;
 
         I := J - I;
         Confirm I = /*expression*/;
