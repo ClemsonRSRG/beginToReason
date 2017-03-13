@@ -32,6 +32,6 @@ function injectCreateEditor() {
     // Gets rid of a weird Ace Editor bug
     // createEditor.$blockScrolling = Infinity;
 
-    createEditor.getSession().on("change", removeAllVCMarkers);
     createEditor.setFontSize(18);
+    createEditor.on("change", removeAllVCMarkers);
 }
