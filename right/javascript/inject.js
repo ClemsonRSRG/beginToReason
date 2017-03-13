@@ -38,7 +38,14 @@ function injectCreateEditor() {
 }
 
 function checkEdit(change) {
-    var arr = [change];
-    arr.forEach(function(obj){console.log(obj);});
-    createEditor.getSession().undoChanges(arr, true);
+    var manager = createEditor.getSession().getUndoManager();
+    
+    // Must wait for the change to filter through the event system. There is
+    // probably a way to catch it, but I couldn't find it.
+    setTimeout(function(){
+        console.log(change);
+
+        if (manager.hasUndo())
+            manager.undo(true);
+    }, 0);
 }
