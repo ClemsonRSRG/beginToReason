@@ -34,11 +34,4 @@ function injectCreateEditor() {
 
     createEditor.setFontSize(18);
     createEditor.on("change", removeAllVCMarkers);
-    createEditor.on("change", checkEdit);
-}
-
-function checkEdit(change) {
-    var arr = [change];
-    arr.forEach(function(obj){console.log(obj);});
-    createEditor.getSession().undoChanges(arr, true);
 }
