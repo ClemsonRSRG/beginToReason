@@ -8,7 +8,7 @@
 
   "previousLesson": "problems/section1/lesson0.json",
   "nextLessonOnSuccess": "problems/section1/lesson2.json",
-  "nextLessonOnFailure": "problems/section1/lesson1a.json",
+  "nextLessonOnFailure": "problems/section1/lesson1.json",
 
   "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
 }
