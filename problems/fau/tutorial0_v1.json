@@ -1,0 +1,21 @@
+{
+  "type": "tutorial",
+  "self": "problems/fau/tutorial0_v1.json",
+  "code": "problems/fau/tutorial0_v1.code",
+
+  "lesson": "Tutorial 0 - Variables and Values</b>",
+
+  "base": "problems/fau/tutorial0_v1.json",
+
+  "previousLesson": "problems/fau/tutorial0_v1.json",
+  "nextLessonOnFailure": "problems/fau/tutorial1_v1.json",
+  "nextLessonOnSuccess": "problems/fau/tutorial1_v1.json",
+
+  "activity": "<p>Please complete the problem, then check correctness.</p>",
+
+  "referenceMaterial": "",
+
+  "lines": [10],
+
+  "replaces": ["K = /*expression*/;"]
+}
