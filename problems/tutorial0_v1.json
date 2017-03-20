@@ -5,7 +5,7 @@
 
   "lesson": "Tutorial 0 - Variables and Values</b>",
 
-  "base": "problems/tutorial0.json",
+  "base": "problems/section1/tutorial0.json",
 
   "previousLesson": "problems/tutorial0_v1.json",
   "nextLessonOnFailure": "problems/tutorial1_v1.json",

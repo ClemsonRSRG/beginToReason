@@ -50,12 +50,20 @@ function checkEdit(change) {
         }
 
         // If the line does not have "Confirm" in it somewhere
-        var line = createEditor.getSession().getLine(change.start.row);
-        if (!line.includes("Confirm")) {
-            manager.undo(true);
-            return;
-        }
-
+        // or it's not configured in the "lines". (added by the FAU team)
+        if( currentLesson.lines != null ){
+            var rowNum = change.start.row + 1;
+            if (!currentLesson.lines.includes(rowNum)) {
+                manager.undo(true);
+                return;
+            }
+        } else {
+            var line = createEditor.getSession().getLine(change.start.row);
+            if (!line.includes("Confirm")) {
+                manager.undo(true);
+                return;
+            }
+        }        
         // Make sure we do not collate undos. Downside: there is no real undo functionality
         manager.reset();
     }, 0);
