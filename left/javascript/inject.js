@@ -2,6 +2,6 @@
 
 function injectTeach(id) {
     $("#" + id).load("left/html/leftHTML", function () {
-        loadLesson("problems/tutorial1_v1.json");
+        loadLesson("problems/tutorial0_v1.json");
     });
 }

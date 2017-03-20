@@ -1,0 +1,10 @@
+// I, J, K are integers
+
+   I := 2;
+   J := 3;
+   K := I;
+
+   If (J > I) then K := J;
+
+// What is the value of K?
+       K = /*expression*/;

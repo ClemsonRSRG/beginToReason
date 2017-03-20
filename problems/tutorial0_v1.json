@@ -1,11 +1,11 @@
 {
   "type": "tutorial",
-  "self": "problems/tutorial1_v1.json",
-  "code": "problems/tutorial1_v1.code",
+  "self": "problems/tutorial0_v1.json",
+  "code": "problems/tutorial0_v1.code",
 
-  "lesson": "Tutorial 1 V1 - Relating Values of Variables</b>",
+  "lesson": "Tutorial 0 - Variables and Values</b>",
 
-  "base": "problems/tutorial1.json",
+  "base": "problems/tutorial0.json",
 
   "previousLesson": "problems/tutorial0_v1.json",
   "nextLessonOnFailure": "problems/tutorial1_v1.json",
@@ -15,7 +15,7 @@
 
   "referenceMaterial": "",
 
-  "lines": [9],
+  "lines": [10],
 
-  "replaces": ["I /*conditional*/ #I;"]
+  "replaces": ["K = /*expression*/;"]
 }
