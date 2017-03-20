@@ -8,10 +8,10 @@ function sendData() {
     data.code = createEditor.getValue();
     data.time = getTime();
     data.author = author;
-    data.module = "Spring 2017";
+    data.module = currentLesson.module;
     data.lesson = currentLesson.self;
     data.correct = approved;
     data.points = "0";
-    
+
     $.post("https://resolve.cs.clemson.edu/testing/bydesign", JSON.stringify(data));
 }

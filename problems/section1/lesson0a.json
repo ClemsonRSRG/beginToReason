@@ -1,0 +1,14 @@
+{
+  "type": "lesson",
+  "self": "problems/section1/lesson0a.json",
+  "code": "problems/section1/lesson0a.code",
+  "module": "section1",
+
+  "lesson": "Lesson 0a - Constants and assignments",
+
+  "previousLesson": "problems/section1/tutorial2.json",
+  "nextLessonOnSuccess": "problems/section1/lesson1.json",
+  "nextLessonOnFailure": "problems/section1/lesson0a.json",
+
+  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p>"
+}

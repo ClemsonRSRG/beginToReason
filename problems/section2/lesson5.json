@@ -1,0 +1,14 @@
+{
+  "type": "lesson",
+  "self": "problems/section2/lesson5.json",
+  "code": "problems/section2/lesson5.code",
+  "module": "section2",
+
+  "lesson": "Lesson 5 - If Statements",
+
+  "previousLesson": "problems/section2/lesson4.json",
+  "nextLessonOnSuccess": "problems/section2/lesson6.json",
+  "nextLessonOnFailure": "problems/section2/lesson5.json",
+
+  "referenceMaterial": "<p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
+}

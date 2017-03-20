@@ -1,0 +1,14 @@
+{
+  "type": "lesson",
+  "self": "problems/section3/lesson2a.json",
+  "code": "problems/section3/lesson2a.code",
+  "module": "section3",
+
+  "lesson": "Lesson 2a - Sequence of Assignments",
+
+  "previousLesson": "problems/section3/lesson1.json",
+  "nextLessonOnSuccess": "problems/section3/lesson3.json",
+  "nextLessonOnFailure": "problems/section3/lesson2a.json",
+
+  "referenceMaterial": "To complete the <b>Confirm</b> assertion(s), use the variables A and C."
+}

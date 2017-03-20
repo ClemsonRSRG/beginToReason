@@ -1,0 +1,14 @@
+{
+  "type": "lesson",
+  "self": "problems/section1/lesson1.json",
+  "code": "problems/section1/lesson1.code",
+  "module": "section1",
+
+  "lesson": "Lesson 1 - Sequence of assignments",
+
+  "previousLesson": "problems/section1/lesson0.json",
+  "nextLessonOnSuccess": "problems/section1/lesson2.json",
+  "nextLessonOnFailure": "problems/section1/lesson1.json",
+
+  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
+}

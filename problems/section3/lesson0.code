@@ -1,0 +1,17 @@
+Facility BeginToReason;
+    uses Integer_Ext_Theory;
+
+    Operation Main();
+    Procedure
+        Var I, J, K: Integer;
+        
+        I := 1;
+        J := 2;
+        K := 3;
+
+        J := K - J;
+        I := I + J;
+
+        Confirm I = /*expression*/;
+    end Main;
+end BeginToReason;

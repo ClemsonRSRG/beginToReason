@@ -1,0 +1,19 @@
+Facility BeginToReason;
+    uses Integer_Ext_Theory;
+
+    Operation Main();
+    Procedure
+        Var I, J: Integer;
+        Read(I);
+        Read(J);
+
+        Remember;
+
+        I := I - J;
+        J := I + J;
+        I := J - I;
+
+        Confirm I = /*expression*/;
+        Confirm J = /*expression*/;
+    end Main;
+end BeginToReason;
