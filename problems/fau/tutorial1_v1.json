@@ -1,21 +1,22 @@
 {
   "type": "tutorial",
-  "self": "problems/tutorial1_v1.json",
-  "code": "problems/tutorial1_v1.code",
+  "self": "problems/fau/tutorial1_v1.json",
+  "code": "problems/fau/tutorial1_v1.code",
 
-  "lesson": "Tutorial 1 V1 - Relating Values of Variables</b>",
+  "lesson": "Tutorial 1 - Relating Values of Variables</b>",
 
-  "base": "problems/tutorial1.json",
+  "base": "problems/section1/tutorial1.json",
 
-  "previousLesson": "problems/tutorial0_v1.json",
-  "nextLessonOnFailure": "problems/tutorial1_v1.json",
-  "nextLessonOnSuccess": "problems/tutorial1_v1.json",
+  "previousLesson": "problems/fau/tutorial0_v1.json",
+  "nextLessonOnFailure": "problems/fau/tutorial1_v1.json",
+  "nextLessonOnSuccess": "problems/fau/tutorial2_v1.json",
+  "solution": "The correct answer is I > #I.",
 
-  "activity": "<p>Please complete the problem, then check correctness.</p>",
+  "activity": "<p>Please replace /*relational*/ with the correct relational operator, then check correctness.</p>",
 
-  "referenceMaterial": "",
+  "referenceMaterial": "<p>The initial values of variables such as I and J are assumed to be #I and #J.</p><p>:=  is the assignment operator</p><p>Relational operators are: =, <, <=, >, >=</p>",
 
-  "lines": [9],
+  "lines": [8],
 
   "replaces": ["I /*conditional*/ #I;"]
 }

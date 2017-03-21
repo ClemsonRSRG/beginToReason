@@ -4,6 +4,5 @@
 
         I := I + 1;
 
-// What is I at this point in terms of #I?
-
+// Fill in the relationship(s) below.
         I /*relational*/ #I;

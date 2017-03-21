@@ -5,15 +5,16 @@
 
   "lesson": "Tutorial 0 - Variables and Values</b>",
 
-  "base": "problems/fau/tutorial0_v1.json",
+  "base": "problems/section1/tutorial0.json",
 
   "previousLesson": "problems/fau/tutorial0_v1.json",
-  "nextLessonOnFailure": "problems/fau/tutorial1_v1.json",
+  "nextLessonOnFailure": "problems/fau/tutorial0_v1.json",
   "nextLessonOnSuccess": "problems/fau/tutorial1_v1.json",
+  "solution": "The correct answer is K = 3.",
 
   "activity": "<p>Please complete the problem, then check correctness.</p>",
 
-  "referenceMaterial": "",
+  "referenceMaterial": "<p>An expression is formed by combining one or more variables or numbers using arithmetic operators (+, -).</p><p>:= is the assignment operator</p><p>= is one of the relational operators:  =, <, <=, >, >=</p>",
 
   "lines": [10],
 
