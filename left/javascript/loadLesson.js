@@ -1,14 +1,14 @@
 /* global ace approved author createEditor resetTime verifying */
 // The current lesson (the lesson students see)
 var currentLesson;
-// Base lession (the lesson to be sent to WebIDE)
+// Base lesson (the lesson to be sent to WebIDE)
 var baseLesson;
 var baseLessonCode;
 var baseLessonCodeLines;
 function loadLesson(filePath) {
     $.getJSON(filePath, function(data) {
         currentLesson = data;
-        // If the lesson has a base lession, load it.
+        // If the lesson has a base lesson, load it.
         if( data.base != null ){
             // Load base lesson json
             $.get(data.base, function (data) {
@@ -38,7 +38,11 @@ function loadLesson(filePath) {
                 });
 
         } else if (data.type == "lesson" || data.type == "challenge") {
-            $("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
+        	if(data.activity == null){
+        		$("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
+        	} else{
+        		$("#left .activity td").html(data.activity);                
+        	} 
             $("#right .headette").removeClass("button");
             $("#right .headette td").html("").off("click");
 
@@ -51,6 +55,7 @@ function loadLesson(filePath) {
             $("#right .headette td").html("").off("click");
         }
 
+        
         $.get(data.code, function (data) {
             createEditor.setValue(data);
             createEditor.selection.moveCursorToPosition({
