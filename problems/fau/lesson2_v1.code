@@ -1,0 +1,10 @@
+// I and J are integers
+
+// Let I = #I
+// Let J = #J
+
+   I := I + 1;
+   J := J - 1;
+      
+// What is I + J in terms of #I and #J?
+        I + J = /*expression*/;

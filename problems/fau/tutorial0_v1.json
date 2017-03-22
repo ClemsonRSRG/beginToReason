@@ -18,5 +18,7 @@
 
   "lines": [10],
 
-  "replaces": ["K = /*expression*/;"]
+  "replaces": ["K = /*expression*/;"],
+  
+  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/tutorial0.html"
 }

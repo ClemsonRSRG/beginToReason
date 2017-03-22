@@ -1,0 +1,25 @@
+{
+  "type": "tutorial",
+  "self": "problems/fau/lesson1_v1.json",
+  "code": "problems/fau/lesson1_v1.code",
+  "module": "section1",
+
+  "lesson": "Lesson 1 - Sequence of assignments",
+  
+  "base": "problems/section1/lesson1.json",
+
+  "previousLesson": "problems/fau/lesson0_v1.json",
+  "nextLessonOnFailure": "problems/fau/lesson1_v1.json",
+  "nextLessonOnSuccess": "problems/fau/lesson2_v1.json",
+  
+  "solution": "The correct answer is I < J.",
+
+  "activity": "<p>Replace /*relational*/ with the correct relational operator, then check correctness.</p>",
+
+  "referenceMaterial": "<p>:= is the assignment operator<p>Relational operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
+  
+  "lines": [7],
+  
+  "replaces": ["I /*conditional*/ J;"]
+
+  }

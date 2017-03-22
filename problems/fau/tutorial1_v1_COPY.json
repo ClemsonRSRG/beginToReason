@@ -2,10 +2,9 @@
   "type": "tutorial",
   "self": "problems/fau/tutorial1_v1.json",
   "code": "problems/fau/tutorial1_v1.code",
-  "module": "fau",
 
-  "lesson": "Tutorial 1 - Relating Values of Variables",
-  
+  "lesson": "Tutorial 1 - Relating Values of Variables</b>",
+
   "base": "problems/section1/tutorial1.json",
 
   "previousLesson": "problems/fau/tutorial0_v1.json",
@@ -13,13 +12,11 @@
   "nextLessonOnSuccess": "problems/fau/tutorial2_v1.json",
   "solution": "The correct answer is I > #I.",
 
-  "activity": "<p>Replace /*relational*/ with the correct relational operator, then check correctness.</p>",
+  "activity": "<p>Please replace /*relational*/ with the correct relational operator, then check correctness.</p>",
 
   "referenceMaterial": "<p>The initial values of variables such as I and J are assumed to be #I and #J.</p><p>:=  is the assignment operator</p><p>Relational operators are: =, <, <=, >, >=</p>",
-  
-  "lines": [8],
-  
-  "replaces": ["I /*conditional*/ #I;"],
 
-  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/tutorial1.html"
+  "lines": [8],
+
+  "replaces": ["I /*conditional*/ #I;"]
 }

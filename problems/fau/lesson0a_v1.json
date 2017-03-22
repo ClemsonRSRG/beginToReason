@@ -1,0 +1,24 @@
+{
+  "type": "lesson",
+  "self": "problems/fau/lesson0a_v1.json",
+  "code": "problems/fau/lesson0a_v1.code",
+  "module": "section1",
+
+  "lesson": "Lesson 0a - Constants and assignments",
+  
+  "base": "problems/section1/lesson0a.json",
+
+  "previousLesson": "problems/fau/lesson0_v1.json",
+  "nextLessonOnFailure": "problems/fau/lesson0a_v1.json",
+  "nextLessonOnSuccess": "problems/fau/lesson1_v1.json",
+  "solution": "The correct answers are J = 3 and I = 0.",
+
+  "activity": "<p>Replace each occurrence of /*relational*/ with the correct relational operator, then check correctness.</p>",
+
+  "referenceMaterial": "<p>:= is the assignment operator<p>Relational operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
+  
+  "lines": [10,15],
+  
+  "replaces": ["J = /*expression*/;", "I = /*expression*/;"]
+  
+  }

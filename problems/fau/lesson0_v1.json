@@ -1,0 +1,25 @@
+{
+  "type": "tutorial",
+  "self": "problems/fau/lesson0_v1.json",
+  "code": "problems/fau/lesson0_v1.code",
+  "module": "section1",
+
+  "lesson": "Lesson 0 - Constants and assignments",
+  
+  "base": "problems/section1/lesson0.json",
+
+  "previousLesson": "problems/fau/tutorial2_v1.json",
+  "nextLessonOnFailure": "problems/fau/lesson0a_v1.json",
+  "nextLessonOnSuccess": "problems/fau/lesson1_v1.json",
+  "solution": "The correct answer is I = 0.",
+
+  "activity": "<p>Replace /*expression*/ with an actual expression, then check correctness.</p>",
+
+  "referenceMaterial": "<p>An expression is formed by combining one or more variables or numbers using arithmetic operators.</p><p>Arithmetic operators: +, -</p>",
+  
+  "lines": [11],
+  
+  "replaces": ["I = /*expression*/;"],
+
+  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/lesson0.html"
+  }

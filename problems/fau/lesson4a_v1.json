@@ -1,0 +1,25 @@
+{
+  "type": "tutorial",
+  "self": "problems/fau/lesson4a_v1.json",
+  "code": "problems/fau/lesson4a_v1.code",
+  "module": "section1",
+
+  "lesson": "Lesson 4a - If statements",
+  
+  "base": "problems/section1/lesson4a.json",
+
+  "previousLesson": "problems/fau/lesson4_v1.json",
+  "nextLessonOnFailure": "problems/fau/lesson4a_v1.json",
+  "nextLessonOnSuccess": "problems/fau/lesson5_v1.json",
+  "solution": "The correct answers are K >= I, K >= I and K>= J.",
+
+  "activity": "Replace each occurrence of /*relational*/ with the correct relational operator, then check correctness.</p>",
+
+  "referenceMaterial": "<p>:= is the assignment operator<p>Relational operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
+  
+  "lines": [7, 8, 9],
+  
+  "replaces": ["K /*conditional*/ J;", "K /*conditional*/ I;", "K /*conditional*/ J;"],
+
+  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/lesson4.html"
+  }

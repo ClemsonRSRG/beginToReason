@@ -1,0 +1,8 @@
+// I is an integer
+
+// Let I = #I
+
+   I := I + 1;
+
+// What is the value of I?
+        I = /*expression*/;

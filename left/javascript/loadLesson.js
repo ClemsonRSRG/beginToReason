@@ -7,7 +7,7 @@ var baseLessonCode;
 var baseLessonCodeLines;
 function loadLesson(filePath) {
     $.getJSON(filePath, function(data) {
-        currentLesson = data;        
+        currentLesson = data;
         // If the lesson has a base lession, load it.
         if( data.base != null ){
             // Load base lesson json
@@ -101,7 +101,6 @@ function nextLessonAndSuccess() {
     if (currentLesson.nextLessonOnSuccess == "") {
         return;
     }
-
     loadLesson(currentLesson.nextLessonOnSuccess);
     resetTime();
 }

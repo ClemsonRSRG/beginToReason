@@ -1,0 +1,25 @@
+{
+  "type": "tutorial",
+  "self": "problems/fau/challenge1_v1.json",
+  "code": "problems/fau/challenge1_v1.code",
+  "module": "section1",
+
+  "lesson": "Challenge 1 - Loop statements",
+  
+  "base": "problems/section1/challenge1.json",
+
+  "previousLesson": "problems/fau/lesson6_v1.json",
+  "nextLessonOnFailure": "problems/fau/challenge1_v1.json",
+  "nextLessonOnSuccess": "problems/fau/challenge2_v1.json",
+  "solution": "The correct answer is I >= K.",
+
+  "activity": "Replace /*relational*/ with a relational operator, then check correctness.",
+
+  "referenceMaterial": "/= means not equals<p>Relational operators are =, <, <=, >, >=</p>",
+  
+  "lines": [8],
+  
+  "replaces": ["I /* conditional */ K;"],
+
+  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/challenge1.html"
+  }

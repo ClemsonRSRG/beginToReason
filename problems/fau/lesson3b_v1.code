@@ -1,0 +1,14 @@
+// I and J are integers
+
+// Let I = #I
+// Let J = #J
+
+   I := I + J;
+
+// What is the value of I?
+          I = /*expression*/;
+
+   J := I - J;
+
+// What is the value of J?
+          J = /*expression*/;
