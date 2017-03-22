@@ -13,9 +13,9 @@
   "nextLessonOnSuccess": "problems/fau/lesson1_v1.json",
   "solution": "The correct answers are J = 3 and I = 0.",
 
-  "activity": "<p>Replace each occurrence of /*relational*/ with the correct relational operator, then check correctness.</p>",
+  "activity": "<p>Replace each occurrence of /*expression*/ with an actual expression, then check correctness.</p>",
 
-  "referenceMaterial": "<p>:= is the assignment operator<p>Relational operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
+  "referenceMaterial": "<p>An expression is formed by combining one or more variables or numbers using arithmetic operators.</p><p>Arithmetic operators: +, -</p>",
   
   "lines": [10,15],
   
