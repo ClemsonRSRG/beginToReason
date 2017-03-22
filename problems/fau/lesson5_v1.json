@@ -15,7 +15,7 @@
 
   "activity": "Replace each occurrence of /*expression*/ with an actual expression and each occurrence of /*relational*/ with a relational operator, then check correctness.",
 
-  "referenceMaterial": "<p>Expressions are formed by combining one or more variables or numbers using arithmetic operators</p><p>Arithmetic operators: +, -</p><p>Relational operators are =, <, <=, >, >=</p>",
+  "referenceMaterial": "Expressions are formed by combining one or more variables or numbers using arithmetic operators.<p>Arithmetic operators: +, -</p><p>Relational operators are =, <, <=, >, >=</p>",
   
   "lines": [7],
   
