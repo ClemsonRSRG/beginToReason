@@ -2,7 +2,8 @@
   "type": "tutorial",
   "self": "problems/fau/tutorial0_v1.json",
   "code": "problems/fau/tutorial0_v1.code",
-
+  "module": "fau",
+  
   "lesson": "Tutorial 0 - Variables and Values</b>",
 
   "base": "problems/section1/tutorial0.json",
