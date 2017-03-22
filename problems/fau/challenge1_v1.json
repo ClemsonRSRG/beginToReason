@@ -1,10 +1,10 @@
 {
-  "type": "tutorial",
+  "type": "challenge",
   "self": "problems/fau/challenge1_v1.json",
   "code": "problems/fau/challenge1_v1.code",
   "module": "section1",
 
-  "lesson": "Challenge 1 - Loop statements",
+  "lesson": "Challenge 1 - Loop Statement",
   
   "base": "problems/section1/challenge1.json",
 
