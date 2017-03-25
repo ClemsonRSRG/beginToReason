@@ -1,4 +1,6 @@
-/* global baseLesson baseLessonCode baseLessonCodeLines createEditor currentLesson */
+/* global addVCMarkers approved baseLesson baseLessonCode baseLessonCodeLines createEditor
+   currentLesson decode encode nextLessonAndFailure nextLessonAndSuccess
+   removeAllVCMarkers resetTime succeed sendData toJSON */
 
 var VCs;
 var verifying = false;
@@ -7,12 +9,13 @@ var contentToServer;
 var replacedLines = [];
 function submitAnswer() {
     /* Protect against multiple requests */
-    if(verifying)
+    if (verifying) {
         return;
+    }
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
-    
-    // Check if this lesson has a base lesson.    
+
+    // Check if this lesson has a base lesson.
     if (currentLesson.base !== null) {
         // If it does, the base lesson content with replaced lines will be sent to WebIDE.
         contentToServer = baseLessonCode;

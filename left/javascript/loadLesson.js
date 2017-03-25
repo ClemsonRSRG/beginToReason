@@ -7,24 +7,24 @@ var baseLesson;
 var baseLessonCode;
 var baseLessonCodeLines;
 function loadLesson(filePath) {
-    $.getJSON(filePath, function(data) {
+    $.getJSON(filePath, function (data) {
         currentLesson = data;
         // If the lesson has a base lesson, load it.
-        if( data.base != null ){
+        if (data.base !== null) {
             // Load base lesson json
             $.get(data.base, function (data) {
                 baseLesson = data;         
                 if(baseLesson != null){
                     // Load base lesson code
                     $.get(baseLesson.code, function (data) {
-                        baseLessonCode = data;      
-                        baseLessonCodeLines = baseLessonCode.split('\n');                           
+                        baseLessonCode = data;
+                        baseLessonCodeLines = baseLessonCode.split("\n");
                     });
-                }       
+                }
             });
 
         }
-        
+
         $("#left .header td").html(data.lesson);
 
         $("#left .reference td").html(data.referenceMaterial);
@@ -39,11 +39,11 @@ function loadLesson(filePath) {
                 });
 
         } else if (data.type == "lesson" || data.type == "challenge") {
-        	if(data.activity == null){
-        		$("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
-        	} else{
-        		$("#left .activity td").html(data.activity);                
-        	} 
+            if (data.activity === null) {
+                $("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
+            } else {
+                $("#left .activity td").html(data.activity);              
+            }
             $("#right .headette").removeClass("button");
             $("#right .headette td").html("").off("click");
 
@@ -56,7 +56,6 @@ function loadLesson(filePath) {
             $("#right .headette td").html("").off("click");
         }
 
-        
         $.get(data.code, function (data) {
             createEditor.setValue(data);
             createEditor.selection.moveCursorToPosition({
@@ -123,11 +122,12 @@ function prevLesson() {
 
 function checkLines() {
     var rowNum = createEditor.getCursorPosition().row + 1;
-    
-    if (createEditor.selection.isMultiLine())
+
+    if (createEditor.selection.isMultiLine()) {
         createEditor.setReadOnly(true);
-    else if ($.inArray(rowNum, currentLesson.lines) != -1)
+    } else if ($.inArray(rowNum, currentLesson.lines) != -1) {
         createEditor.setReadOnly(false);
-    else
+    } else {
         createEditor.setReadOnly(true);
+    }
 }

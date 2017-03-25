@@ -1,4 +1,4 @@
-/* global ace removeAllVCMarkers */
+/* global ace currentLesson removeAllVCMarkers */
 
 var createEditor;
 var author;
@@ -51,7 +51,7 @@ function checkEdit(change) {
 
         // If the line does not have "Confirm" in it somewhere
         // or it's not configured in the "lines". (added by the FAU team)
-        if( currentLesson.lines != null ){
+        if (currentLesson.lines !== null) {
             var rowNum = change.start.row + 1;
             if (!currentLesson.lines.includes(rowNum)) {
                 manager.undo(true);
@@ -63,7 +63,7 @@ function checkEdit(change) {
                 manager.undo(true);
                 return;
             }
-        }        
+        }
         // Make sure we do not collate undos. Downside: there is no real undo functionality
         manager.reset();
     }, 0);
