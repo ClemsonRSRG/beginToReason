@@ -13,7 +13,7 @@ function loadLesson(filePath) {
         if (data.base !== null) {
             // Load base lesson json
             $.get(data.base, function (data) {
-                baseLesson = data;       
+                baseLesson = data;
                 if (baseLesson !== null) {
                     // Load base lesson code
                     $.get(baseLesson.code, function (data) {

@@ -13,5 +13,5 @@ function sendData() {
     data.correct = approved;
     data.points = "0";
 
-    $.post("https://resolve.cs.clemson.edu/testing/bydesign", JSON.stringify(data));
+    $.post("https://resolve.cs.clemson.edu/teaching/bydesign", JSON.stringify(data));
 }
