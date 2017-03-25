@@ -13,8 +13,8 @@ function loadLesson(filePath) {
         if (data.base !== null) {
             // Load base lesson json
             $.get(data.base, function (data) {
-                baseLesson = data;         
-                if(baseLesson != null){
+                baseLesson = data;       
+                if (baseLesson !== null) {
                     // Load base lesson code
                     $.get(baseLesson.code, function (data) {
                         baseLessonCode = data;
@@ -42,7 +42,7 @@ function loadLesson(filePath) {
             if (data.activity === null) {
                 $("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
             } else {
-                $("#left .activity td").html(data.activity);              
+                $("#left .activity td").html(data.activity);
             }
             $("#right .headette").removeClass("button");
             $("#right .headette td").html("").off("click");

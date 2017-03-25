@@ -1,6 +1,6 @@
 /* global addVCMarkers approved baseLesson baseLessonCode baseLessonCodeLines createEditor
    currentLesson decode encode nextLessonAndFailure nextLessonAndSuccess
-   removeAllVCMarkers resetTime succeed sendData toJSON */
+   removeAllVCMarkers resetTime succeed sendData toJSON updateMarker */
 
 var VCs;
 var verifying = false;
