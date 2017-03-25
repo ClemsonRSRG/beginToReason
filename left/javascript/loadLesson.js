@@ -1,4 +1,5 @@
 /* global ace approved author createEditor resetTime verifying */
+
 // The current lesson (the lesson students see)
 var currentLesson;
 // Base lesson (the lesson to be sent to WebIDE)

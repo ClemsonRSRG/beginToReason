@@ -1,3 +1,5 @@
+/* global baseLesson baseLessonCode baseLessonCodeLines createEditor currentLesson */
+
 var VCs;
 var verifying = false;
 // The content to be sent to WebIDE
@@ -11,31 +13,31 @@ function submitAnswer() {
     $("#right .footette").attr("class", "footetteDisabled");
     
     // Check if this lesson has a base lesson.    
-    if(currentLesson.base != null){
+    if (currentLesson.base !== null) {
         // If it does, the base lesson content with replaced lines will be sent to WebIDE.
         contentToServer = baseLessonCode;
         // This index starts from 0
-        var currentLessonReplaceContentIndex = 0;        
+        var currentLessonReplaceContentIndex = 0;
         // Iterat through the base lesson line by line
         $.each(baseLessonCodeLines, function (index, obj) {
             // If a line contains the text needed to be replaced,
-            if( obj.includes(currentLesson.replaces[currentLessonReplaceContentIndex]) ){
+            if (obj.includes(currentLesson.replaces[currentLessonReplaceContentIndex])) {
                 // Step 1: find the line used to replace
                 var replaceLine = createEditor.session.getLine(currentLesson.lines[currentLessonReplaceContentIndex] - 1);
                 // Step 2: replace the line
-                contentToServer = contentToServer.replace(currentLesson.replaces[currentLessonReplaceContentIndex], replaceLine);                            
+                contentToServer = contentToServer.replace(currentLesson.replaces[currentLessonReplaceContentIndex], replaceLine);
                 // Step 3: record the line that gets replaced
                 replacedLines.push(index);
                 // Step 4: increase the index pointing to current lession
                 currentLessonReplaceContentIndex++;
             }
         });
-               
+
     } else {
         // If not, the content in the editor will be sent to WebIDE.
         contentToServer = createEditor.getValue();
     }
-    
+
     if (checkForTrivials(contentToServer)) {
         getVCLines(contentToServer);
     } else {
@@ -146,13 +148,16 @@ function getVCLines(content) {
         VCs = [];
         $.each(message.vcs, function (index, obj) {
             // Push to VCs only if that line is not "undefined" and it's one of the replaced lines.
-            if (typeof obj.vc != "undefined" && replacedLines.includes(parseInt(obj.lineNum) - 1)) {
+            // - YS: parseInt() function requires a radix parameter that helps it determine what kind of
+            //       integer we are trying to parse. Although we know our line numbers are always a decimal,
+            //       it is best to put it in!
+            if (typeof obj.vc != "undefined" && replacedLines.includes(parseInt(obj.lineNum, 10) - 1)) {
                 // Set the line number to be the line in current lesson, so that this line will be highlighted.
                 obj.lineNum = currentLesson.lines[index];
                 VCs.push(obj);
             }
         });
-        
+
         addVCMarkers();
         verifyVCs(contentToServer);
     };
@@ -201,7 +206,7 @@ function verifyVCs(content) {
                 nextLessonAndFailure();
             } else {
                 if (currentLesson.type == "tutorial") {
-                    if( currentLesson.base != null ){
+                    if (currentLesson.base !== null) {
                         $("#dialog-message").html("Sorry, not correct. Try again! " + baseLesson.solution);
                     } else {
                         $("#dialog-message").html("Sorry, not correct. Try again! " + currentLesson.solution);
