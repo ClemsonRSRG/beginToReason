@@ -158,8 +158,10 @@ function getVCLines(content) {
                 if (typeof currentLesson.base !== "undefined" && replacedLines.includes(parseInt(obj.lineNum, 10), -1)) {
                     // Set the line number to be the line in current lesson, so that this line will be highlighted.
                     obj.lineNum = currentLesson.lines[index];
+                    VCs.push(obj);
+                } else if (typeof currentLesson.base === "undefined") {
+                    VCs.push(objs);
                 }
-                VCs.push(obj);
             }
         });
 
