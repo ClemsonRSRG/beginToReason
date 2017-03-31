@@ -43,7 +43,7 @@ function checkEdit(change) {
     // Must wait for the change to filter through the event system. There is
     // probably a way to catch it, but I couldn't find it.
     setTimeout(function () {
-        // If it is a multiline change, including removing a line break
+        // If it is a multiline change, including removing or adding a line break
         if (change.lines.length > 1) {
             manager.undo(true);
             return;
@@ -51,7 +51,7 @@ function checkEdit(change) {
 
         // If the line does not have "Confirm" in it somewhere
         // or it's not configured in the "lines". (added by the FAU team)
-        if (currentLesson.lines !== null) {
+        if ((typeof currentLesson.lines) !== "undefined") {
             var rowNum = change.start.row + 1;
             if (!currentLesson.lines.includes(rowNum)) {
                 manager.undo(true);

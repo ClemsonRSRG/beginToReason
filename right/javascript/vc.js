@@ -16,12 +16,12 @@ function submitAnswer() {
     $("#right .footette").attr("class", "footetteDisabled");
 
     // Check if this lesson has a base lesson.
-    if (currentLesson.base !== null) {
+    if (typeof currentLesson.base !== "undefined") {
         // If it does, the base lesson content with replaced lines will be sent to WebIDE.
         contentToServer = baseLessonCode;
         // This index starts from 0
         var currentLessonReplaceContentIndex = 0;
-        // Iterat through the base lesson line by line
+        // Iterate through the base lesson line by line
         $.each(baseLessonCodeLines, function (index, obj) {
             // If a line contains the text needed to be replaced,
             if (obj.includes(currentLesson.replaces[currentLessonReplaceContentIndex])) {
