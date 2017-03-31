@@ -154,9 +154,11 @@ function getVCLines(content) {
             // - YS: parseInt() function requires a radix parameter that helps it determine what kind of
             //       integer we are trying to parse. Although we know our line numbers are always a decimal,
             //       it is best to put it in!
-            if (typeof obj.vc !== "undefined" && replacedLines.includes(parseInt(obj.lineNum, 10) - 1)) {
-                // Set the line number to be the line in current lesson, so that this line will be highlighted.
-                obj.lineNum = currentLesson.lines[index];
+            if (typeof obj.vc !== "undefined") {
+                if (typeof currentLesson.base !== "undefined" && replacedLines.includes(parseInt(obj.lineNum, 10) -1)) {
+                    // Set the line number to be the line in current lesson, so that this line will be highlighted.
+                    obj.lineNum = currentLesson.lines[index];
+                }
                 VCs.push(obj);
             }
         });
