@@ -51,7 +51,7 @@ function checkEdit(change) {
 
         // If the line does not have "Confirm" in it somewhere
         // or it's not configured in the "lines". (added by the FAU team)
-        if ((typeof currentLesson.lines) !== "undefined") {
+        if (typeof currentLesson.lines !== "undefined") {
             var rowNum = change.start.row + 1;
             if (!currentLesson.lines.includes(rowNum)) {
                 manager.undo(true);
