@@ -10,7 +10,7 @@ function loadLesson(filePath) {
     $.getJSON(filePath, function (data) {
         currentLesson = data;
         // If the lesson has a base lesson, load it.
-        if (data.base !== null) {
+        if (typeof data.base !== "undefined") {
             // Load base lesson json
             $.get(data.base, function (data) {
                 baseLesson = data;
@@ -39,7 +39,7 @@ function loadLesson(filePath) {
                 });
 
         } else if (data.type == "lesson" || data.type == "challenge") {
-            if (data.activity === null) {
+            if (typeof data.activity === "undefined") {
                 $("#left .activity td").html("Please complete the <b>Confirm</b> assertion(s) and check correctness.");
             } else {
                 $("#left .activity td").html(data.activity);
