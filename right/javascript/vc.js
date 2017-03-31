@@ -160,7 +160,7 @@ function getVCLines(content) {
                     obj.lineNum = currentLesson.lines[index];
                     VCs.push(obj);
                 } else if (typeof currentLesson.base === "undefined") {
-                    VCs.push(objs);
+                    VCs.push(obj);
                 }
             }
         });
