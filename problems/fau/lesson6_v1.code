@@ -1,8 +1,8 @@
 // I, J, K are integers
 
-// Let I = #I
-// Let J = #J
-// Let K = #K
+// Assume I = #I
+// Assume J = #J
+// Assume K = #K
 
    If (I <= K) then K := I;
    If (J <= K) then K := J;

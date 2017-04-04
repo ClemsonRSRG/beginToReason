@@ -1,7 +1,7 @@
 // I and J are integers
 
-// Let I = #I
-// Let J = #J
+// Assume I = #I
+// Assume J = #J
 
    I := I + J;
 

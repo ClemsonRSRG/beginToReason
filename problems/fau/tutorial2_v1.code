@@ -1,6 +1,6 @@
 // I is an integer
 
-// Let I = #I
+// Assume I = #I
 
    I := I + 1;
 
