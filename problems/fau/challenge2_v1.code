@@ -1,4 +1,4 @@
-// I, J, K are integers
+/* I, J, K are integers */
 
    If (I <= K) then
        While (I /= K)
@@ -8,5 +8,5 @@
        While (I /= K)
            I := I - 1;
 
-// What is the value of I?
+/* What is the value of I? */
         I = /* expression */;

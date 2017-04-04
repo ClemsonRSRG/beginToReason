@@ -1,8 +1,8 @@
-// I is an integer
+/* I is an integer */
 
-// Assume I = #I (at this point in the code, I = #I)
+/* Assume I = #I (at this point in the code, I = #I) */
 
         I := I + 1;
 
-// Fill in the relationship(s) below.
+/* Fill in the relationship(s) below. */
         I /*relational*/ #I;

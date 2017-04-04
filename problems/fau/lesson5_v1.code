@@ -1,7 +1,7 @@
-// I, J are integers
+/* I, J are integers */
 
    If (I <= 0) then I := - I;
    J := I;
 
-// Fill in the relational operator and the expression below.
+/* Fill in the relational operator and the expression below. */
        J /*relational*/ /*expression*/;

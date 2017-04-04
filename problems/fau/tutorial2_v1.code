@@ -1,8 +1,8 @@
-// I is an integer
+/* I is an integer */
 
-// Assume I = #I
+/* Assume I = #I */
 
    I := I + 1;
 
-// What is the value of I?
+/* What is the value of I? */
         I = /*expression*/;
