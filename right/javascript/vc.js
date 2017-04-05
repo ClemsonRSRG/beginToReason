@@ -1,22 +1,48 @@
-/* global addVCMarkers approved createEditor currentLesson decode encode nextLessonAndSuccess nextLessonAndFailure
-   removeAllVCMarkers resetTime sendData succeed toJSON updateMarker */
+/* global addVCMarkers approved baseLesson baseLessonCode baseLessonCodeLines createEditor
+   currentLesson decode encode nextLessonAndFailure nextLessonAndSuccess
+   removeAllVCMarkers resetTime succeed sendData toJSON updateMarker */
 
 var VCs;
 var verifying = false;
-
+// The content to be sent to WebIDE
+var contentToServer;
+var replacedLines = [];
 function submitAnswer() {
     /* Protect against multiple requests */
     if (verifying) {
         return;
     }
-
     verifying = true;
     $("#right .footette").attr("class", "footetteDisabled");
 
-    var content = createEditor.getValue();
+    // Check if this lesson has a base lesson.
+    if (typeof currentLesson.base !== "undefined") {
+        // If it does, the base lesson content with replaced lines will be sent to WebIDE.
+        contentToServer = baseLessonCode;
+        // This index starts from 0
+        var currentLessonReplaceContentIndex = 0;
+        // Iterate through the base lesson line by line
+        $.each(baseLessonCodeLines, function (index, obj) {
+            // If a line contains the text needed to be replaced,
+            if (obj.includes(currentLesson.replaces[currentLessonReplaceContentIndex])) {
+                // Step 1: find the line used to replace
+                var replaceLine = createEditor.session.getLine(currentLesson.lines[currentLessonReplaceContentIndex] - 1);
+                // Step 2: replace the line
+                contentToServer = contentToServer.replace(currentLesson.replaces[currentLessonReplaceContentIndex], replaceLine);
+                // Step 3: record the line that gets replaced
+                replacedLines.push(index);
+                // Step 4: increase the index pointing to current lession
+                currentLessonReplaceContentIndex++;
+            }
+        });
 
-    if (checkForTrivials(content)) {
-        getVCLines(content);
+    } else {
+        // If not, the content in the editor will be sent to WebIDE.
+        contentToServer = createEditor.getValue();
+    }
+
+    if (checkForTrivials(contentToServer)) {
+        getVCLines(contentToServer);
     } else {
         $("#dialog-message").html("Sorry, not the intended answer. Try again!");
         $("#dialog-box").dialog("open");
@@ -124,13 +150,23 @@ function getVCLines(content) {
         // Simplify the VC information
         VCs = [];
         $.each(message.vcs, function (index, obj) {
+            // Push to VCs only if that line is not "undefined" and it's one of the replaced lines.
+            // - YS: parseInt() function requires a radix parameter that helps it determine what kind of
+            //       integer we are trying to parse. Although we know our line numbers are always a decimal,
+            //       it is best to put it in!
             if (typeof obj.vc !== "undefined") {
-                VCs.push(obj);
+                if (typeof currentLesson.base !== "undefined" && replacedLines.includes(parseInt(obj.lineNum, 10) - 1)) {
+                    // Set the line number to be the line in current lesson, so that this line will be highlighted.
+                    obj.lineNum = currentLesson.lines[index];
+                    VCs.push(obj);
+                } else if (typeof currentLesson.base === "undefined") {
+                    VCs.push(obj);
+                }
             }
         });
 
         addVCMarkers();
-        verifyVCs(createEditor.getValue());
+        verifyVCs(contentToServer);
     };
 
     content = encode(content);
@@ -177,7 +213,11 @@ function verifyVCs(content) {
                 nextLessonAndFailure();
             } else {
                 if (currentLesson.type == "tutorial") {
-                    $("#dialog-message").html("Sorry, not correct. Try again! " + currentLesson.solution);
+                    if (typeof currentLesson.base !== "undefined") {
+                        $("#dialog-message").html("Sorry, not correct. Try again! " + baseLesson.solution);
+                    } else {
+                        $("#dialog-message").html("Sorry, not correct. Try again! " + currentLesson.solution);
+                    }
                 } else {
                     $("#dialog-message").html("Sorry, not correct. Try again!");
                 }

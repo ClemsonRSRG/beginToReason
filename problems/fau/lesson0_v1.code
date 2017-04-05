@@ -1,0 +1,11 @@
+/* I, J, K are integers */
+
+   I := 1;
+   J := 2;
+   K := 3;
+
+   J := I + J;
+   I := J - K;
+
+/* What is the value of I? */
+        I = /*expression*/;

@@ -1,0 +1,8 @@
+/* I, J, K are integers */
+
+If (I <= K) then
+     While (I /= K)        
+        I := I + 1;
+
+/* Fill in the relationship(s) below. */
+       I /*relational*/ K;

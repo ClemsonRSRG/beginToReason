@@ -1,0 +1,8 @@
+/* I, J, K are integers */
+
+   K := J;
+   If (I >= K) then K := I;
+
+/* Fill in the relationship(s) below. */
+        K /*relational*/ I; 
+        K /*relational*/ J;

@@ -1,0 +1,17 @@
+/* I and J are integers */
+
+/* Assume I = #I */
+/* Assume J = #J */
+
+   I := I + 1;
+
+/* What is the value of I? */
+        I = /*expression*/;
+
+   J := J - 1;
+
+/* What is the value of J? */
+        J = /*expression*/;
+
+/* What is the value of I + J in terms of #I and #J? */
+        I + J = /*expression*/;

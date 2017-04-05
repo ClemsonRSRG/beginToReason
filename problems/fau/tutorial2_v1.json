@@ -1,0 +1,25 @@
+{
+  "type": "tutorial",
+  "self": "problems/fau/tutorial2_v1.json",
+  "code": "problems/fau/tutorial2_v1.code",
+  "module": "section1",
+
+  "lesson": "Tutorial 2 - Asserting Values of Variables",
+  
+  "base": "problems/section1/tutorial2.json",
+
+  "previousLesson": "problems/fau/tutorial1_v1.json",
+  "nextLessonOnFailure": "problems/fau/tutorial2_v1.json",
+  "nextLessonOnSuccess": "problems/fau/lesson0_v1.json",
+  "solution": "The correct answer is I = #I + 1.",
+
+  "activity": "<p>Replace /*expression*/ with an actual expression, then check correctness.</p>",
+
+  "referenceMaterial": "<p>An expression is formed by combining one or more variables or numbers using arithmetic operators.</p><p>Arithmetic operators: +, -</p>",
+  
+  "lines": [8],
+  
+  "replaces": ["I = /*expression*/;"],
+
+  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/tutorial2.html"
+}
