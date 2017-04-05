@@ -109,7 +109,7 @@ function checkForTrivials(content) {
 }
 
 function getVCLines(content) {
-    var socket = new WebSocket("wss://resolve.cs.clemson.edu/testing/Compiler?job=genVCs&project=Teaching_Project");
+    var socket = new WebSocket("wss://resolve.cs.clemson.edu/teaching/Compiler?job=genVCs&project=Teaching_Project");
     removeAllVCMarkers();
 
     socket.onmessage = function (message) {
@@ -178,7 +178,7 @@ function getVCLines(content) {
 }
 
 function verifyVCs(content) {
-    var socket = new WebSocket("wss://resolve.cs.clemson.edu/testing/Compiler?job=verify2&project=Teaching_Project");
+    var socket = new WebSocket("wss://resolve.cs.clemson.edu/teaching/Compiler?job=verify2&project=Teaching_Project");
 
     socket.onmessage = function (message) {
         message = JSON.parse(message.data);
