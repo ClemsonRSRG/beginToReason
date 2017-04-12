@@ -2,7 +2,7 @@
   "type": "tutorial",
   "self": "problems/fau/tutorial2_v1.json",
   "code": "problems/fau/tutorial2_v1.code",
-  "module": "section1",
+  "module": "fau",
 
   "lesson": "Tutorial 2 - Asserting Values of Variables",
   
