@@ -2,7 +2,7 @@
   "type": "challenge",
   "self": "problems/fau/challenge1_v1.json",
   "code": "problems/fau/challenge1_v1.code",
-  "module": "section1",
+  "module": "fau",
 
   "lesson": "Challenge 1 - Loop Statement",
   
