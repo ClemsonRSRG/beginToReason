@@ -12,8 +12,8 @@ function injectCreate(id) {
             // Reuse the same author ID
             author = localStorage.getItem("author");
         } else {
-            // Generate a random number from 1 to 10000
-            author = Math.floor(Math.random() * 10000 + 1);
+            // Generate a random number from 1 to 1000000000
+            author = Math.floor(Math.random() * 1000000000);
             localStorage.setItem("author", author);
         }
     });
