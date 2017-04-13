@@ -1,6 +1,4 @@
-/* global approved createEditor currentLesson getTime */
-
-var author = Math.floor(Math.random() * 1000000000);
+/* global approved author createEditor currentLesson getTime */
 
 function sendData() {
     var data = {};
