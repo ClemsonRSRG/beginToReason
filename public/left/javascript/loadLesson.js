@@ -6,9 +6,11 @@ var currentLesson;
 var baseLesson;
 var baseLessonCode;
 var baseLessonCodeLines;
-function loadLesson(filePath) {
-    $.getJSON(filePath, function (data) {
+function loadLesson(module, problem) {
+    var url = "problems/" + module + "/" + problem + "/json";
+    $.getJSON(url , function (data) {
         currentLesson = data;
+        
         // If the lesson has a base lesson, load it.
         if (typeof data.base !== "undefined") {
             // Load base lesson json
@@ -56,7 +58,8 @@ function loadLesson(filePath) {
             $("#right .headette td").html("").off("click");
         }
 
-        $.get(data.code, function (data) {
+        url = "problems/" + module + "/" + problem + "/code"
+        $.get(url, function (data) {
             createEditor.setValue(data);
             createEditor.selection.moveCursorToPosition({
                 row: 0,
@@ -75,7 +78,7 @@ function endSurvey() {
 }
 
 function reloadLesson() {
-    loadLesson(currentLesson.self);
+    loadLesson(currentLesson.module, currentLesson.self);
 }
 
 function nextLessonButton() {
@@ -98,7 +101,7 @@ function nextLessonAndFailure() {
         return;
     }
 
-    loadLesson(currentLesson.nextLessonOnFailure);
+    loadLesson(currentLesson.module, currentLesson.nextLessonOnFailure);
     resetTime();
 }
 
@@ -106,7 +109,7 @@ function nextLessonAndSuccess() {
     if (currentLesson.nextLessonOnSuccess == "") {
         return;
     }
-    loadLesson(currentLesson.nextLessonOnSuccess);
+    loadLesson(currentLesson.module, currentLesson.nextLessonOnSuccess);
     resetTime();
 }
 
@@ -116,7 +119,7 @@ function prevLesson() {
         return;
     }
 
-    loadLesson(currentLesson.previousLesson);
+    loadLesson(currentLesson.module, currentLesson.previousLesson);
     resetTime(); // Might need to remove this when we change the "next" button.
 }
 

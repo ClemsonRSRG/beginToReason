@@ -1,14 +1,13 @@
 {
   "type": "lesson",
-  "self": "problems/section1/lesson3b.json",
-  "code": "problems/section1/lesson3b.code",
   "module": "section1",
+  "self": "lesson3b",
 
   "lesson": "Lesson 3b - Assignments with a purpose",
 
-  "previousLesson": "problems/section1/lesson2.json",
-  "nextLessonOnSuccess": "problems/section1/lesson4.json",
-  "nextLessonOnFailure": "problems/section1/lesson3b.json",
+  "previousLesson": "lesson2",
+  "nextLessonOnSuccess": "lesson4",
+  "nextLessonOnFailure": "lesson3b",
 
   "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>"
 }
