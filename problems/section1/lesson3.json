@@ -10,5 +10,5 @@
   "title": "Lesson 3 - Assignments with a purpose",
   "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>",
 
-  "code": ""
+  "code": "Facility BeginToReason;\n    uses Integer_Ext_Theory;\n\n    Operation Main();\n    Procedure\n        Var I, J: Integer;\n        Read(I);\n        Read(J);\n\n        Remember;\n\n        I := I + J;\n        J := I - J;\n        I := I - J;\n\n        Confirm I = /* expression */;\n        Confirm J = /* expression */;\n    end Main;\nend BeginToReason;"
 }

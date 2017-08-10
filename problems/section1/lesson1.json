@@ -10,5 +10,5 @@
   "title": "Lesson 1 - Sequence of assignments",
   "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
 
-  "code": ""
+  "code": "Facility BeginToReason;\n    uses Integer_Ext_Theory;\n\n    Operation Main();\n    Procedure\n        Var I, J: Integer;\n        Read(I);\n\n        J := I;\n        I := I - 1;\n\n        Confirm I /*conditional*/ J;\n    end Main;\nend BeginToReason;"
 }

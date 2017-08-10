@@ -10,5 +10,5 @@
   "title": "Lesson 0 - Constants and assignments",
   "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p>",
 
-  "code": ""
+  "code": "Facility BeginToReason;\n    uses Integer_Ext_Theory;\n\n    Operation Main();\n    Procedure\n        Var I, J, K: Integer;\n        \n        I := 1;\n        J := 2;\n        K := 3;\n\n        J := I + J;\n        I := J - K;\n\n        Confirm I = /*expression*/;\n    end Main;\nend BeginToReason;"
 }

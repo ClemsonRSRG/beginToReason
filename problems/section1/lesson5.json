@@ -10,5 +10,5 @@
   "title": "Lesson 5 - If Statements",
   "referenceMaterial": "<p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
 
-  "code": ""
+  "code": "Facility BeginToReason;\n    uses Integer_Ext_Theory;\n\n    Operation Main();\n    Procedure\n        Var I, J: Integer;\n        Read(I);\n\n        If I <= 0 then\n            I := - I;\n        end;\n        J := I;\n\n        Confirm J /*conditional*/ /*expression*/;\n    end Main;\nend BeginToReason;"
 }
