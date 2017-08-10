@@ -1,13 +1,14 @@
 {
   "type": "challenge",
   "module": "section1",
-  "self": "challenge1",
+  "name": "challenge1",
 
-  "lesson": "Challenge 1 - Loop Statement",
+  "previous": "lesson6",
+  "success": "challenge2",
+  "failure": "challenge1",
 
-  "previousLesson": "lesson6",
-  "nextLessonOnSuccess": "challenge2",
-  "nextLessonOnFailure": "challenge1",
+  "title": "Challenge 1 - Loop Statement",
+  "referenceMaterial": "<p><em>changing</em> statement - contains a list of variables whose values are changed by execution of the  loop body</p><p><em>decreasing</em> expression - an expression whose value decreases after each pass through the loop body</p>",
 
-  "referenceMaterial": "<p><em>changing</em> statement - contains a list of variables whose values are changed by execution of the  loop body</p><p><em>decreasing</em> expression - an expression whose value decreases after each pass through the loop body</p>"
+  "code": ""
 }

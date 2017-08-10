@@ -1,13 +1,14 @@
 {
   "type": "lesson",
   "module": "section1",
-  "self": "lesson3aa",
+  "name": "lesson3aa",
 
-  "lesson": "Lesson 3aa - Assignments with a purpose",
+  "previous": "lesson2",
+  "success": "lesson4",
+  "failure": "lesson3aa",
 
-  "previousLesson": "lesson2",
-  "nextLessonOnSuccess": "lesson4",
-  "nextLessonOnFailure": "lesson3aa",
+  "title": "Lesson 3aa - Assignments with a purpose",
+  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>",
 
-  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>"
+  "code": ""
 }

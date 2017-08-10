@@ -1,13 +1,14 @@
 {
   "type": "lesson",
   "module": "section1",
-  "self": "lesson0",
+  "name": "lesson0",
 
-  "lesson": "Lesson 0 - Constants and assignments",
+  "previous": "tutorial2",
+  "success": "lesson1",
+  "failure": "lesson0a",
 
-  "previousLesson": "tutorial2",
-  "nextLessonOnSuccess": "lesson1",
-  "nextLessonOnFailure": "lesson0a",
+  "title": "Lesson 0 - Constants and assignments",
+  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p>",
 
-  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p>"
+  "code": ""
 }

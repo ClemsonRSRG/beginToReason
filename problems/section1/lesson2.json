@@ -1,13 +1,14 @@
 {
   "type": "lesson",
   "module": "section1",
-  "self": "lesson2",
+  "name": "lesson2",
 
-  "lesson": "Lesson 2 - Sequence of Assignments",
+  "previous": "lesson1",
+  "success": "lesson3",
+  "failure": "lesson2a",
 
-  "previousLesson": "lesson1",
-  "nextLessonOnSuccess": "lesson3",
-  "nextLessonOnFailure": "lesson2a",
-  
-  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>"
+  "title": "Lesson 2 - Sequence of Assignments",
+  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>",
+
+  "code": ""
 }

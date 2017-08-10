@@ -1,18 +1,17 @@
 {
   "type": "tutorial",
   "module": "section1",
-  "self": "tutorial2",
+  "name": "tutorial2",
 
-  "lesson": "Tutorial 2 - Asserting Values of Variables",
+  "previous": "tutorial1",
+  "success": "lesson0",
+  "failure": "tutorial2",
 
-  "previousLesson": "tutorial1",
-  "nextLessonOnFailure": "tutorial2",
-  "nextLessonOnSuccess": "lesson0",
+  "title": "Tutorial 2 - Asserting Values of Variables",
+  "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by entering an expression for /* expression */, then check correctness.</p>",
+  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>",
+  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/tutorial2.html",
   "solution": "The correct is I = #I + 1.",
 
-  "activity": "<p>Please complete the <b>Confirm</b> assertion(s) by entering an expression for /* expression */, then check correctness.</p>",
-
-  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p>",
-
-  "screenCapture": "http://pages.iu.edu/~jholly/BeginToReason/tutorial2.html"
+  "code": ""
 }

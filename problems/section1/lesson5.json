@@ -1,13 +1,14 @@
 {
   "type": "lesson",
   "module": "section1",
-  "self": "lesson5",
+  "name": "lesson5",
 
-  "lesson": "Lesson 5 - If Statements",
+  "previous": "lesson4",
+  "success": "lesson6",
+  "failure": "lesson5",
 
-  "previousLesson": "lesson4",
-  "nextLessonOnSuccess": "lesson6",
-  "nextLessonOnFailure": "lesson5",
+  "title": "Lesson 5 - If Statements",
+  "referenceMaterial": "<p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
 
-  "referenceMaterial": "<p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
+  "code": ""
 }

@@ -1,13 +1,14 @@
 {
   "type": "lesson",
   "module": "section1",
-  "self": "lesson1",
+  "name": "lesson1",
 
-  "lesson": "Lesson 1 - Sequence of assignments",
+  "previous": "lesson0",
+  "success": "lesson2",
+  "failure": "lesson1",
 
-  "previousLesson": "lesson0",
-  "nextLessonOnSuccess": "lesson2",
-  "nextLessonOnFailure": "lesson1",
+  "title": "Lesson 1 - Sequence of assignments",
+  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
 
-  "referenceMaterial": "<p><code>:= </code> is the <em>assignment operator</em></p><p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
+  "code": ""
 }

@@ -1,13 +1,14 @@
 {
   "type": "lesson",
   "module": "section1",
-  "self": "lesson6",
+  "name": "lesson6",
 
-  "lesson": "Lesson 6 - Multiple If Statements",
+  "previous": "lesson5",
+  "success": "challenge1",
+  "failure": "lesson6",
 
-  "previousLesson": "lesson5",
-  "nextLessonOnSuccess": "challenge1",
-  "nextLessonOnFailure": "lesson6",
+  "title": "Lesson 6 - Multiple If Statements",
+  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p> <p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>",
 
-  "referenceMaterial": "<p>At the place marked by <b>Remember</b>, values of variables such as I and J are assumed to be #I and #J.</p> <p>Conditional operators are<br />=, &lt;, &lt;=, &gt;, &gt;=</p>"
+  "code": ""
 }
