@@ -7,7 +7,7 @@ var baseLesson;
 var baseLessonCode;
 var baseLessonCodeLines;
 function loadLesson(module, problem) {
-    var url = "problems/" + module + "/" + problem + "/json";
+    var url = "problems/" + module + "/" + problem;
     $.getJSON(url , function (data) {
         currentLesson = data;
         
