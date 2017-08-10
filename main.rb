@@ -19,7 +19,13 @@ end
 
 # Code of the problem
 get "/problems/:module/:problem/code" do
-	File.read("problems/#{params['module']}/#{params['problem']}.code")
+	client = Mongo::Client.new(['localhost:27017'], :database => 'resolve', :user => 'admin', :password => 'R3solveGr0up')
+	problems = client[:problems]
+	filter = {'module' => params['module'], 'name' => params['problem']}
+	projection = {"code" => 1, "_id" => 0}
+	problem = problems.find(filter, projection).limit(1).first
+	
+	problem["code"]
 end
 
 # Description of the previous problem
