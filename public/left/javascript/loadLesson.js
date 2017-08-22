@@ -6,11 +6,47 @@ var currentLesson;
 var baseLesson;
 var baseLessonCode;
 var baseLessonCodeLines;
-function loadLesson(module, problem) {
-    var url = "problems/" + module + "/" + problem;
+
+function loadLesson(module, name) {
+	var url = "problems/" + module + "/" + name;
+	loadLessonFromUrl(url);
+}
+
+function nextLessonAndFailure() {
+    if (currentLesson.failure == null) {
+        return;
+    }
+
+    if (currentLesson.failure == currentLesson.name) {
+        return;
+    }
+
+    loadLessonFromUrl("problems/" + currentLesson.module + "/" + currentLesson.name + "/failure");
+    resetTime();
+}
+
+function nextLessonAndSuccess() {
+    if (currentLesson.success == null) {
+        return;
+    }
+    loadLessonFromUrl("problems/" + currentLesson.module + "/" + currentLesson.name + "/success");
+    resetTime();
+}
+
+function prevLesson() {
+    verifying = false;
+    if (currentLesson.previous == null) {
+        return;
+    }
+
+    loadLessonFromUrl("problems/" + currentLesson.module + "/" + currentLesson.name + "/previous");
+    resetTime(); // Might need to remove this when we change the "next" button.
+}
+
+function loadLessonFromUrl(url) {
     $.getJSON(url , function (data) {
         currentLesson = data;
-        
+
         // If the lesson has a base lesson, load it.
         if (typeof data.base !== "undefined") {
             // Load base lesson json
@@ -27,7 +63,7 @@ function loadLesson(module, problem) {
 
         }
 
-        $("#left .header td").html(data.lesson);
+        $("#left .header td").html(data.title);
 
         $("#left .reference td").html(data.referenceMaterial);
         if (data.type == "tutorial") {
@@ -58,7 +94,7 @@ function loadLesson(module, problem) {
             $("#right .headette td").html("").off("click");
         }
 
-        url = "problems/" + module + "/" + problem + "/code"
+        url = "problems/" + currentLesson.module + "/" + currentLesson.name + "/code"
         $.get(url, function (data) {
             createEditor.setValue(data);
             createEditor.selection.moveCursorToPosition({
@@ -78,7 +114,7 @@ function endSurvey() {
 }
 
 function reloadLesson() {
-    loadLesson(currentLesson.module, currentLesson.self);
+    loadLesson(currentLesson.module, currentLesson.name);
 }
 
 function nextLessonButton() {
@@ -90,37 +126,6 @@ function nextLessonButton() {
     }
 
     nextLessonAndSuccess();
-}
-
-function nextLessonAndFailure() {
-    if (currentLesson.nextLessonOnFailure == "") {
-        return;
-    }
-
-    if (currentLesson.nextLessonOnFailure == currentLesson.self) {
-        return;
-    }
-
-    loadLesson(currentLesson.module, currentLesson.nextLessonOnFailure);
-    resetTime();
-}
-
-function nextLessonAndSuccess() {
-    if (currentLesson.nextLessonOnSuccess == "") {
-        return;
-    }
-    loadLesson(currentLesson.module, currentLesson.nextLessonOnSuccess);
-    resetTime();
-}
-
-function prevLesson() {
-    verifying = false;
-    if (currentLesson.previousLesson == "") {
-        return;
-    }
-
-    loadLesson(currentLesson.module, currentLesson.previousLesson);
-    resetTime(); // Might need to remove this when we change the "next" button.
 }
 
 function checkLines() {
