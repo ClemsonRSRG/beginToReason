@@ -42,6 +42,7 @@ function submitAnswer() {
     }
 
     if (checkForTrivials(contentToServer)) {
+    	newPost(author, getTime(), contentToServer);
         getVCLines(contentToServer);
     } else {
         $("#dialog-message").html("Sorry, not the intended answer. Try again!");
@@ -50,6 +51,14 @@ function submitAnswer() {
         $("#right .footetteDisabled").attr("class", "footette");
         createEditor.focus();
     }
+}
+
+function newPost(authorID, seconds, code) {
+	data = {};
+	data.authorID = authorID;
+	data.seconds = seconds;
+	data.code = code;
+	$.post("/verify", JSON.stringify(data));
 }
 
 function checkForTrivials(content) {
