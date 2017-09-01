@@ -3,10 +3,12 @@ require 'mongo'
 
 set :bind, '0.0.0.0'
 
+# Main page
 get '/' do
 	redirect to '/section1dry'
 end
 
+# The various sections, with randomized words to prevent switching sections
 get '/section1dry' do
 	@section = 'section1'
 	erb :index
@@ -25,6 +27,20 @@ end
 get '/section4red' do
 	@section = 'section4'
 	erb :index
+end
+
+# Log the data
+post '/log' do
+	data = JSON.parse(request.body.read)
+	if (data.key?('type') and data.key?('module') and data.key?('name') and
+		data.key?('author') and data.key?('code') and data.key?('time') and data.key?('correct'))
+
+		collection = client[:data]
+		collection.insert_one(data)
+		status 200
+	else
+		status 400
+	end
 end
 
 # Description of the problem
