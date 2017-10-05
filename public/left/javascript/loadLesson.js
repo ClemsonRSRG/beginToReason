@@ -8,12 +8,12 @@ var baseLessonCode;
 var baseLessonCodeLines;
 
 function loadLesson(module, name) {
-	var url = "problems/" + module + "/" + name;
-	loadLessonFromUrl(url);
+    var url = "problems/" + module + "/" + name;
+    loadLessonFromUrl(url);
 }
 
 function nextLessonAndFailure() {
-    if (currentLesson.failure == null) {
+    if (currentLesson.failure === null) {
         return;
     }
 
@@ -26,7 +26,7 @@ function nextLessonAndFailure() {
 }
 
 function nextLessonAndSuccess() {
-    if (currentLesson.success == null) {
+    if (currentLesson.success === null) {
         return;
     }
     loadLessonFromUrl("problems/" + currentLesson.module + "/" + currentLesson.name + "/success");
@@ -35,7 +35,7 @@ function nextLessonAndSuccess() {
 
 function prevLesson() {
     verifying = false;
-    if (currentLesson.previous == null) {
+    if (currentLesson.previous === null) {
         return;
     }
 
@@ -44,7 +44,7 @@ function prevLesson() {
 }
 
 function loadLessonFromUrl(url) {
-    $.getJSON(url , function (data) {
+    $.getJSON(url, function (data) {
         currentLesson = data;
 
         // If the lesson has a base lesson, load it.
@@ -94,7 +94,7 @@ function loadLessonFromUrl(url) {
             $("#right .headette td").html("").off("click");
         }
 
-        url = "problems/" + currentLesson.module + "/" + currentLesson.name + "/code"
+        url = "problems/" + currentLesson.module + "/" + currentLesson.name + "/code";
         $.get(url, function (data) {
             createEditor.setValue(data);
             createEditor.selection.moveCursorToPosition({
