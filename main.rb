@@ -3,6 +3,12 @@ require 'mongo'
 
 set :bind, '0.0.0.0'
 
+# Connect to Mongo
+configure do
+        db = Mongo::Client.new(['172.19.48.55:27017'], :database => 'resolve', :user => 'admin', :password => 'R3solveGr0up')
+        set :mongo, db
+end
+
 # Main page
 get '/' do
 	redirect to '/section1dry'
@@ -35,7 +41,8 @@ post '/log' do
 	if (data.key?('type') and data.key?('module') and data.key?('name') and
 		data.key?('author') and data.key?('code') and data.key?('time') and data.key?('correct'))
 
-		collection = client[:data]
+		data['timestamp'] = Time.now.utc.iso8601
+		collection = settings.mongo[:data]
 		collection.insert_one(data)
 		status 200
 	else
@@ -45,7 +52,7 @@ end
 
 # Description of the problem
 get '/problems/:module/:problem' do
-	problems = client[:problems]
+	problems = settings.mongo[:problems]
 
 	filter = {'module' => params['module'], 'name' => params['problem']}
 	problem = problems.find(filter, problemProjection).limit(1).first
@@ -55,7 +62,7 @@ end
 
 # Code of the problem
 get '/problems/:module/:problem/code' do
-	problems = client[:problems]
+	problems = settings.mongo[:problems]
 
 	filter = {'module' => params['module'], 'name' => params['problem']}
 	projection = {'code' => 1, '_id' => 0}
@@ -66,7 +73,7 @@ end
 
 # Description of the previous problem
 get '/problems/:module/:problem/previous' do
-	problems = client[:problems]
+	problems = settings.mongo[:problems]
 
 	filter = {'module' => params['module'], 'name' => params['problem']}
 	problem = problems.find(filter, problemProjection).limit(1).first
@@ -79,7 +86,7 @@ end
 
 # Description of the next problem on success
 get '/problems/:module/:problem/success' do
-	problems = client[:problems]
+	problems = settings.mongo[:problems]
 
 	filter = {'module' => params['module'], 'name' => params['problem']}
 	problem = problems.find(filter, problemProjection).limit(1).first
@@ -92,7 +99,7 @@ end
 
 # Description of the next problem on failure
 get '/problems/:module/:problem/failure' do
-	problems = client[:problems]
+	problems = settings.mongo[:problems]
 
 	filter = {'module' => params['module'], 'name' => params['problem']}
 	problem = problems.find(filter, problemProjection).limit(1).first
@@ -104,10 +111,6 @@ get '/problems/:module/:problem/failure' do
 end
 
 # Helper functions
-
-def client
-	Mongo::Client.new(['localhost:27017'], :database => 'resolve', :user => 'admin', :password => 'R3solveGr0up')
-end
 
 # If a field does not exist in a document, Mongo does not return it. So, we can
 # use the same projection for every problem.
