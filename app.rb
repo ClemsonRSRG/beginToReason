@@ -1,5 +1,5 @@
 # This file is the entry point for Sinatra. It sets up a few global settings,
-# connects to Mongo, then loads the route groups. It also handles the base
+# connects to Mongo, and loads the route groups. It also handles the base
 # route.
 
 require 'sinatra'
