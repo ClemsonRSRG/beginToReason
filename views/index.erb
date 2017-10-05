@@ -64,9 +64,8 @@
 
 <script>
     $(document).ready(function () {
-        injectTeach("left", "problems/section3/tutorial0.json");
+        injectTeach("left", "<%= @section %>", "tutorial0");
         injectCreate("right");
-
         teachResize();
         createResize();
     });

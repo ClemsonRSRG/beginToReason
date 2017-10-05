@@ -1,7 +1,7 @@
 /* global loadLesson */
 
-function injectTeach(id, lessonLink) {
+function injectTeach(id, module, problem) {
     $("#" + id).load("left/html/leftHTML", function () {
-        loadLesson(lessonLink);
+        loadLesson(module, problem);
     });
 }
