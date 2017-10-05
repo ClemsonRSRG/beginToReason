@@ -1,54 +1,9 @@
+# Handles everything to do with the problems.
+
 require 'sinatra'
 require 'mongo'
 
 set :bind, '0.0.0.0'
-
-# Connect to Mongo
-configure do
-        db = Mongo::Client.new(['172.19.48.55:27017'], :database => 'resolve', :user => 'admin', :password => 'R3solveGr0up')
-        set :mongo, db
-end
-
-# Main page
-get '/' do
-	redirect to '/section1dry'
-end
-
-# The various sections, with randomized words to prevent switching sections
-get '/section1dry' do
-	@section = 'section1'
-	erb :index
-end
-
-get '/section2bat' do
-	@section = 'section2'
-	erb :index
-end
-
-get '/section3pop' do
-	@section = 'section3'
-	erb :index
-end
-
-get '/section4red' do
-	@section = 'section4'
-	erb :index
-end
-
-# Log the data
-post '/log' do
-	data = JSON.parse(request.body.read)
-	if (data.key?('type') and data.key?('module') and data.key?('name') and
-		data.key?('author') and data.key?('code') and data.key?('time') and data.key?('correct'))
-
-		data['timestamp'] = Time.now.utc.iso8601
-		collection = settings.mongo[:data]
-		collection.insert_one(data)
-		status 200
-	else
-		status 400
-	end
-end
 
 # Description of the problem
 get '/problems/:module/:problem' do
