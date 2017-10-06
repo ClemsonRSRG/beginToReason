@@ -25,14 +25,13 @@ translated to Java and run on the JVM.
 
 The creation and continual evolution of the RESOLVE language is owed to an
 ongoing joint effort between Clemson University, The Ohio State University, and
-countless educators and researchers from a variety of [other]
-(https://www.cs.clemson.edu/resolve/about.html) institutions.
+countless educators and researchers from a variety of [other](https://www.cs.clemson.edu/resolve/about.html) 
+institutions.
 
 Developers of this particular test/working-iteration of the BeginToReason tutor 
 include:
 
-* [The Resuable Software Research Group (RSRG)]
-(https://www.cs.clemson.edu/resolve/) - School of Computing, Clemson University
+* [The Resuable Software Research Group (RSRG)](https://www.cs.clemson.edu/resolve/) - School of Computing, Clemson University
 * [Florida Atlantic University](http://www.fau.edu/research/)
 * [Indiana University Southeast](https://www.ius.edu/)
 
