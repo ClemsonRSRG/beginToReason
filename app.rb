@@ -13,8 +13,9 @@ set :bind, '0.0.0.0'
 
 # Connect to Mongo
 configure do
-        db = Mongo::Client.new(['172.19.48.55:27017'], :database => 'resolve', :user => 'admin', :password => 'R3solveGr0up')
-        set :mongo, db
+		password = IO.read('.password').strip
+		db = Mongo::Client.new(['172.19.48.55:27017'], :database => 'resolve', :user => 'admin', :password => password)
+		set :mongo, db
 end
 
 # Main page
