@@ -1,6 +1,6 @@
 /* global addVCMarkers approved baseLesson baseLessonCode baseLessonCodeLines createEditor
    currentLesson decode encode nextLessonAndFailure nextLessonAndSuccess
-   removeAllVCMarkers resetTime succeed sendData toJSON updateMarker */
+   removeAllVCMarkers resetTime succeed sendData toJSON updateMarker addVCMarker */
 
 var VCs;
 var verifying = false;
@@ -53,22 +53,36 @@ function submitAnswer() {
 }
 
 function checkForTrivials(content) {
-    // Find all the confirm statements
+    // Find all the confirm statements, with their line numbers
     var regex = new RegExp("Confirm [^;]*;", "mg");
-    var confirms = content.match(regex);
+    var lines = content.split("\n");
+    var confirms = [];
+    var i;
+    for (i = 0; i < lines.length; i++) {
+        var confirm = lines[i].match(regex);
+        if (confirm) {
+            var obj = {
+                line: i + 1,
+                text: confirm[0]
+            };
+            confirms.push(obj);
+        }
+    }
     if (confirms.length == 0) {
         return false;
     }
 
-    var i;
     for (i = 0; i < confirms.length; i++) {
         // Remove the "Confirm " so that we can find the variable names
-        var statement = confirms[i];
+        var statement = confirms[i].text;
         statement = statement.substr(8);
 
         // Search for an illegal "/="
         regex = new RegExp("/=");
         if (statement.search(regex) > -1) {
+            addVCMarker({
+                lineNum: confirms[i].line
+            }, "vc_failed");
             return false;
         }
 
@@ -76,11 +90,17 @@ function checkForTrivials(content) {
         regex = new RegExp(">=|<=");
         var parts = statement.split(regex);
         if (parts.length > 2) {
+            addVCMarker({
+                lineNum: confirms[i].line
+            }, "vc_failed");
             return false;
         } else if (parts.length == 1) { // If there is no >= or <=
             regex = new RegExp("[<>=]");
             parts = statement.split(regex);
             if (parts.length != 2) {
+                addVCMarker({
+                    lineNum: confirms[i].line
+                }, "vc_failed");
                 return false;
             }
         }
@@ -100,6 +120,9 @@ function checkForTrivials(content) {
             var variable = variables[j];
             regex = new RegExp("[^#]" + variable, "g");
             if (right.search(regex) > -1) {
+                addVCMarker({
+                    lineNum: confirms[i].line
+                }, "vc_failed");
                 return false;
             }
         }
