@@ -1,0 +1,32 @@
+/*
+ * These are the CSS for the BeginToReason Admin Pages
+ * Created by: Yu-Shan Sun
+ * Last Modified: 10/13/2017
+ */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+	/* Leaving space for footer */
+    margin-bottom: 60px;
+}
+
+#page-header {
+	height: 60px;
+}
+
+#page-header .navbar {
+	background-color: #522D80;
+}
+
+#page-footer {
+	/* Sticky footer */
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    background-color: #3A4958;
+    opacity: 0.75;
+}
