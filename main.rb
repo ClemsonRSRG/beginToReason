@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'mongo'
 
+require './routes/admin.rb'
+
 set :bind, '0.0.0.0'
 
 # Connect to Mongo
