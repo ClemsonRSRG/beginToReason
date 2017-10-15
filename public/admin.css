@@ -22,6 +22,10 @@ body {
 	background-color: #522D80;
 }
 
+#page-sidebar {
+	background-color: #522D80;
+}
+
 #page-footer {
 	/* Sticky footer */
     position: absolute;
