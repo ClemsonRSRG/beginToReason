@@ -20,7 +20,30 @@ body {
 }
 
 #page-sidebar {
-	background-color: #522D80;
+	position: fixed;
+	top: 60px;
+	bottom: 60px;
+	left: 0;
+	z-index: 1000;
+	padding: 20px;
+	overflow-x: hidden; /* No overflow on the x axis */
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+#page-sidebar .nav-link {
+	margin-bottom: 5px;
+	color: #522D80;
+	background-color: #F6F6F6;
+	border-left: 0.2em solid #522D80;
+	border-right: 0.2em solid #522D80;
+}
+
+#page-sidebar .nav-link:hover {
+	background-color: #FFFFFF;
+	color: #F66733;
+	border-left: 0.5em solid #F66733;
+	border-right: 0.5em solid #F66733;
+	transition: all 300ms ease-in-out;
 }
 
 #page-footer {
