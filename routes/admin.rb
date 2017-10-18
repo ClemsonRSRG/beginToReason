@@ -4,9 +4,9 @@ require 'sinatra'
 
 # The different routes to the different admin subpages.
 get '/admin' do
-	redirect to '/admin/dashboard'
+	redirect to '/admin/overview'
 end
 
-get '/admin/dashboard' do
-	erb :"admin/index"
+get '/admin/overview' do
+	erb :"admin/layout"
 end

@@ -1,9 +1,10 @@
 /*
  * These are the CSS for the BeginToReason Admin Pages
  * Created by: Yu-Shan Sun
- * Last Modified: 10/13/2017
+ * Last Modified: 10/18/2017
  */
 
+/* General CSS */
 html {
     position: relative;
     min-height: 100%;
@@ -14,6 +15,7 @@ body {
     margin-bottom: 60px;
 }
 
+/* Header-Related CSS */
 #page-header {
 	height: 60px;
 	background-color: #522D80;
@@ -27,6 +29,7 @@ body {
 	color: #FFFFFF;
 }
 
+/* Sidebar-Related CSS */
 #page-sidebar {
 	position: fixed;
 	top: 60px;
@@ -36,6 +39,10 @@ body {
 	padding: 20px;
 	overflow-x: hidden; /* No overflow on the x axis */
 	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+#page-sidebar .nav {
+	margin-bottom: 20px;
 }
 
 #page-sidebar .nav-link {
@@ -54,6 +61,7 @@ body {
 	transition: all 300ms ease-in-out;
 }
 
+/* Footer-Related CSS */
 #page-footer {
 	/* Sticky footer */
     position: absolute;
