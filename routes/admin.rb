@@ -8,5 +8,5 @@ get '/admin' do
 end
 
 get '/admin/overview' do
-	erb :"admin/layout"
+	erb :"admin/overview" , :layout => :"admin/layout"
 end
