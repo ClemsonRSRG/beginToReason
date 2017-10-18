@@ -19,6 +19,14 @@ body {
 	background-color: #522D80;
 }
 
+#page-header .nav-link {
+	color: #D4C99E;
+}
+
+#page-header .nav-link:hover {
+	color: #FFFFFF;
+}
+
 #page-sidebar {
 	position: fixed;
 	top: 60px;
