@@ -1,3 +1,24 @@
 <h3>Overview</h3>
 <hr>
-<section class="row text-center"></section>
+<section class="row">
+	<div class="card-deck m-auto text-center">
+  		<div class="card m-2 border-success overview-card">
+    		<div class="card-body">
+				<h5 class="card-title text-success">Total # of Users</h5>
+				<p class="card-text"><%= @totalUsers %></p>
+			</div>
+		</div>
+		<div class="card m-2 border-info overview-card">
+			<div class="card-body">
+				<h5 class="card-title text-info">Total # of Attempts</h5>
+				<p class="card-text"><%= @totalEntries %></p>
+			</div>
+		</div>
+		<div class="card m-2 border-success overview-card">
+			<div class="card-body">
+				<h5 class="card-title text-success">Total # of Correct Answers</h5>
+				<p class="card-text"><%= @totalCorrectEntries %></p>
+			</div>
+		</div>
+	</div>
+</section>

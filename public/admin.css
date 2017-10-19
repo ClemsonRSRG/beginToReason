@@ -17,7 +17,7 @@ body {
 
 /* Header-Related CSS */
 #page-header {
-	height: 60px;
+	min-height: 60px;
 	background-color: #522D80;
 }
 
@@ -59,6 +59,11 @@ body {
 	border-left: 0.5em solid #F66733;
 	border-right: 0.5em solid #F66733;
 	transition: all 300ms ease-in-out;
+}
+
+/* Overview-Page CSS */
+.overview-card {
+	width: 300px;
 }
 
 /* Footer-Related CSS */
