@@ -18,25 +18,16 @@
 </head>
 <body>
 	<!-- Page Header -->
-	<header id="page-header" class="w-100">
-		<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-			<h1 class="navbar-brand mb-0">BeginToReason</h1>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#general-nav" aria-controls="general-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="general-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="<%= url('/') %>"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>&nbsp; Logout</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+	<header id="page-header" class="navbar navbar-expand navbar-dark flex-column flex-md-row">
+		<h1 class="navbar-brand mb-0">BeginToReason</h1>
+		<ul class="navbar-nav flex-row ml-md-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="<%= url('/') %>"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>&nbsp; Logout</a>
+			</li>
+		</ul>
 	</header>
 	
 	<!-- Container Block -->
