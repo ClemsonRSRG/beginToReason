@@ -1,7 +1,7 @@
 /*
  * These are the CSS for the BeginToReason Admin Pages
  * Created by: Yu-Shan Sun
- * Last Modified: 10/18/2017
+ * Last Modified: 10/20/2017
  */
 
 /* General CSS */
@@ -31,8 +31,8 @@ body {
 
 /* Sidebar-Related CSS */
 #page-sidebar {
-	position: fixed;
-	top: 60px;
+	position: relative;
+	top: 0px;
 	bottom: 60px;
 	left: 0;
 	z-index: 1000;
@@ -41,11 +41,11 @@ body {
 	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
-#page-sidebar .nav {
+#page-sidebar-nav {
 	margin-bottom: 20px;
 }
 
-#page-sidebar .nav-link {
+#page-sidebar-nav .nav-link {
 	margin-bottom: 5px;
 	color: #522D80;
 	background-color: #F6F6F6;
@@ -53,12 +53,34 @@ body {
 	border-right: 0.2em solid #522D80;
 }
 
-#page-sidebar .nav-link:hover {
+#page-sidebar-nav .nav-link:hover {
 	background-color: #FFFFFF;
 	color: #F66733;
 	border-left: 0.5em solid #F66733;
 	border-right: 0.5em solid #F66733;
 	transition: all 300ms ease-in-out;
+}
+
+/* Sidebar-Related Media Query */
+@media (min-width: 768px) {
+	/* Set the max-width/height and draw a right border when screen size is md up */
+	#page-sidebar {
+		height: calc(100vh - 120px);
+		max-width: 270px;
+		border-right: 1px solid rgba(0,0,0,.1);
+	}
+
+	/* Make sure we display the navigation */
+	#page-sidebar-nav {
+    	display: block !important;
+    }
+}
+
+@media (max-width: 768px) {
+	/* Draw a bottom border when it is less than md */
+	#page-sidebar {
+		border-bottom: 1px solid rgba(0,0,0,.1);
+	}
 }
 
 /* Overview-Page CSS */
