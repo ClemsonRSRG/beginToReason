@@ -3,8 +3,6 @@
 require 'sinatra'
 require 'mongo'
 
-set :bind, '0.0.0.0'
-
 # Description of the problem
 get '/problems/:module/:problem' do
 	problems = settings.mongo[:problems]
