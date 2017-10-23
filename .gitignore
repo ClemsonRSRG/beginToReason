@@ -2,7 +2,8 @@
 # Custom Files #
 ################
 
-.password
+# ignore the machine-specific config file
+conf/config.yml
 
 
 ###################
