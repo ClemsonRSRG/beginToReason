@@ -1,3 +1,11 @@
+################
+# Custom Files #
+################
+
+# ignore the machine-specific config file
+conf/config.yml
+
+
 ###################
 # Temporary Files #
 ###################
