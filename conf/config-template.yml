@@ -1,0 +1,18 @@
+# This file is a template for setting up the application on your local system.
+# Start by making a copy of this file called config.yml and edit any of settings
+# below for your local system. The file is ignored by git so your configurations
+# won't be shared with other users.
+
+development: &common_settings
+    # Change these values for development. 
+    # These will be the default values used by production and test unless you override them.
+    db_host: ''         # Mongo host url and port information
+    db_table: ''        # Mongo database table name
+    db_user: ''         # Mongo user name
+    db_password: ''     # Mongo user password
+production:
+    <<: *common_settings
+    # Override any of the default values from development for production here.
+test:
+    <<: *common_settings
+    # Override any of the default values from development for test here.

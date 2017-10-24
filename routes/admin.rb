@@ -1,6 +1,8 @@
 # Handles everything to do with the admin page.
 
 require 'sinatra'
+require 'mongo'
+
 # The different routes to the different admin subpages.
 get '/admin' do
 	redirect to '/admin/overview'
