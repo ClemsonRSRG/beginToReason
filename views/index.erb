@@ -64,7 +64,7 @@
 
 <script>
     $(document).ready(function () {
-        injectTeach("left", "<%= @section %>", "tutorial0");
+        injectTeach("left", "<%= @section %>", "<%= @initialProblem %>");
         injectCreate("right");
         teachResize();
         createResize();

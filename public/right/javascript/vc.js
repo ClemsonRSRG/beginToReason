@@ -53,7 +53,7 @@ function submitAnswer() {
 }
 
 function checkForTrivials(content) {
-    // Find all the confirm statements, with their line numbers
+	// Find all the confirm statements, with their line numbers
     var regex = new RegExp("Confirm [^;]*;", "mg");
     var lines = content.split("\n");
     var confirms = [];
@@ -67,9 +67,6 @@ function checkForTrivials(content) {
             };
             confirms.push(obj);
         }
-    }
-    if (confirms.length == 0) {
-        return false;
     }
 
     for (i = 0; i < confirms.length; i++) {
@@ -94,8 +91,19 @@ function checkForTrivials(content) {
                 lineNum: confirms[i].line
             }, "vc_failed");
             return false;
-        } else if (parts.length == 1) { // If there is no >= or <=
-            regex = new RegExp("[<>=]");
+        }
+        if (parts.length == 1) { // If there is no >= or <=
+            regex = new RegExp("[=]");
+            parts = statement.split(regex);
+            if (parts.length > 2) {
+                addVCMarker({
+                    lineNum: confirms[i].line
+                }, "vc_failed");
+                return false;
+            }
+        }
+        if (parts.length == 1) { // If there is no >=, <=, or =
+            regex = new RegExp("[<>]");
             parts = statement.split(regex);
             if (parts.length != 2) {
                 addVCMarker({
@@ -118,7 +126,7 @@ function checkForTrivials(content) {
         var j;
         for (j = 0; j < variables.length; j++) {
             var variable = variables[j];
-            regex = new RegExp("[^#]" + variable, "g");
+            regex = new RegExp(" " + variable + " ", "g");
             if (right.search(regex) > -1) {
                 addVCMarker({
                     lineNum: confirms[i].line
@@ -143,6 +151,7 @@ function getVCLines(content) {
         // Extract the array of VCs from the message (trust me, this works)
         message = JSON.parse(message.data);
         if (message.status == "error") {
+        	console.log(message);
             $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
             $("#dialog-box").dialog("open");
             verifying = false;
