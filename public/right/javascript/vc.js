@@ -53,7 +53,7 @@ function submitAnswer() {
 }
 
 function checkForTrivials(content) {
-	// Find all the confirm statements, with their line numbers
+    // Find all the confirm statements, with their line numbers
     var regex = new RegExp("Confirm [^;]*;", "mg");
     var lines = content.split("\n");
     var confirms = [];
@@ -151,7 +151,6 @@ function getVCLines(content) {
         // Extract the array of VCs from the message (trust me, this works)
         message = JSON.parse(message.data);
         if (message.status == "error") {
-        	console.log(message);
             $("#dialog-message").html("Sorry, can't parse your answer. Try again!");
             $("#dialog-box").dialog("open");
             verifying = false;
