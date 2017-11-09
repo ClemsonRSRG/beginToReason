@@ -59,7 +59,7 @@ function checkEdit(change) {
             }
         } else {
             var line = createEditor.getSession().getLine(change.start.row);
-            if (!line.includes("Confirm")) {
+            if (!line.includes("Confirm") && !line.includes("requires") && !line.includes("ensures")) {
                 manager.undo(true);
                 return;
             }

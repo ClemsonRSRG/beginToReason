@@ -7,11 +7,13 @@ require 'sinatra'
 # The various sections, with randomized words to prevent switching sections
 get '/section1dry' do
 	@section = 'section1'
+	@initialProblem = 'tutorial0'
 	erb :index
 end
 
 get '/section2bat' do
 	@section = 'section2'
+	@initialProblem = 'lesson1'
 	erb :index
 end
 
