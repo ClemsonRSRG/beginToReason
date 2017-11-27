@@ -54,7 +54,7 @@ function submitAnswer() {
 
 function checkForTrivials(content) {
     // Find all the confirm statements, with their line numbers
-    var regex = new RegExp("Confirm [^;]*;", "mg");
+    var regex = new RegExp("Confirm [^;]*;|ensures [^;]*;", "mg");
     var lines = content.split("\n");
     var confirms = [];
     var i;
@@ -93,7 +93,7 @@ function checkForTrivials(content) {
             return false;
         }
         if (parts.length == 1) { // If there is no >= or <=
-            regex = new RegExp("[=]");
+            regex = new RegExp("=");
             parts = statement.split(regex);
             if (parts.length > 2) {
                 addVCMarker({
@@ -103,7 +103,7 @@ function checkForTrivials(content) {
             }
         }
         if (parts.length == 1) { // If there is no >=, <=, or =
-            regex = new RegExp("[<>]");
+            regex = new RegExp(">|<");
             parts = statement.split(regex);
             if (parts.length != 2) {
                 addVCMarker({
@@ -126,7 +126,7 @@ function checkForTrivials(content) {
         var j;
         for (j = 0; j < variables.length; j++) {
             var variable = variables[j];
-            regex = new RegExp(" " + variable + " ", "g");
+            regex = new RegExp(" " + variable, "g");
             if (right.search(regex) > -1) {
                 addVCMarker({
                     lineNum: confirms[i].line
