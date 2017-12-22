@@ -6,8 +6,6 @@
 
 Main page, redirects to /section1---
 
------
-
 ## problems.rb
 
 ### GET /sectionx---
@@ -34,8 +32,6 @@ Gets the next problem on success.
 
 Gets the next problem on failure.
 
------
-
 ## verify.rb
 
 ### POST /verify
@@ -54,15 +50,11 @@ The route then submits the code to the verification engine, and sends back a res
 
 When completed, this route will deprecate the `log` route and most of the `problem` routes.
 
------
-
 ## log.rb
 
 ### POST /log
 
 A route for the client-side JS to post to. This will be deprecated in the future, when the server side handles all the interaction with the verification engine.
-
------
 
 ## admin.rb
 
