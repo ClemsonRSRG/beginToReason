@@ -1,7 +1,11 @@
-BeginToReason
-==============
+# BeginToReason
 
-(* Description of `BeginToReason` goes here *)
+BeginToReason is a tool that utilizes the RESOLVE programming language to
+pinpoint difficulties CS students have with learning how to rigorously trace
+the code they encounter. It is a Sinatra app that uses Bootstrap and
+communicates with the RESOLVE verification engine.
+
+A long term goal of BeginToReason is to be a Reactive, RESTful API.
 
 ## What is RESOLVE?
 
