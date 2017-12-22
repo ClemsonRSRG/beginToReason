@@ -2,39 +2,39 @@
 
 ## app.rb
 
-### GET /
+### `GET /`
 
 Main page, redirects to /section1---
 
 ## problems.rb
 
-### GET /sectionx---
+### `GET /sectionx---`
 
 Various verses of the tool for the students to do
 
-### GET /problems/:module/:problem
+### `GET /problems/:module/:problem`
 
 Gets all the data required for the client side to display the problem
 
-### GET /problems/:module/:problem/code
+### `GET /problems/:module/:problem/code`
 
 Deprecated. Gets the code of the problem. This is now included in the above route.
 
-### GET /problems/:module/:problem/previous
+### `GET /problems/:module/:problem/previous`
 
 Gets the previous problem.
 
-### GET /problems/:module/:problem/success
+### `GET /problems/:module/:problem/success`
 
 Gets the next problem on success.
 
-### GET /problems/:module/:problem/failure
+### `GET /problems/:module/:problem/failure`
 
 Gets the next problem on failure.
 
 ## verify.rb
 
-### POST /verify
+### `POST /verify`
 
 Takes a json string with these fields:
 
@@ -52,17 +52,17 @@ When completed, this route will deprecate the `log` route and most of the `probl
 
 ## log.rb
 
-### POST /log
+### `POST /log`
 
 A route for the client-side JS to post to. This will be deprecated in the future, when the server side handles all the interaction with the verification engine.
 
 ## admin.rb
 
-### GET /admin
+### `GET /admin`
 
 Redirects to /admin/overview
 
-### GET /admin/overview
+### `GET /admin/overview`
 
 Entry point for the admin console
 
