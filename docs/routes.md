@@ -10,7 +10,7 @@ Main page, redirects to /section1---
 
 ### `GET /sectionx---`
 
-Various verses of the tool for the students to do
+Various versions of the tool for the students to do
 
 ### `GET /problems/:module/:problem`
 
@@ -39,7 +39,7 @@ Gets the next problem on failure.
 Takes a json string with these fields:
 
 * authorID - The integer ID assigned to the attempt, created by the client JS.
-* seconds - The number of seconds the user took to make the attempt.
+* milliseconds - The number of milliseconds the user took to make the attempt.
 * code - The code of the user's attempt.
 
 The route then submits the code to the verification engine, and sends back a response to the client with these fields:

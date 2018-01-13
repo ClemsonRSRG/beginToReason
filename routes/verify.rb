@@ -6,52 +6,80 @@ require 'websocket-client-simple'
 register Sinatra::Async
 
 # Verify and log an attempt
-post '/verify' do
+apost '/verify' do
 	json = JSON.parse(request.body.read)
 	if not json.key?("authorID")
-		response = {"success" => false, "message" => "Request body does not contain an authorID field."}
-	elsif not json.key?("seconds")
-		response = {"success" => false, "message" => "Request body does not contain a milliseconds field."}
+		result = {"success" => "false", "message" => "Request body does not contain an authorID field."}
+		body result.to_s
+	elsif not json.key?("milliseconds")
+		result = {"success" => "false", "message" => "Request body does not contain a milliseconds field."}
+		body result.to_s
 	elsif not json.key?("code")
-		response = {"success" => false, "message" => "Request body does not contain a code field."}
+		result = {"success" => "false", "message" => "Request body does not contain a code field."}
+		body result.to_s
 	else
 		puts ''
+		puts 'Request received'
 		puts json['authorID']
-		puts json['seconds']
+		puts json['milliseconds']
 		puts json['code']
-		
-		response = {"status" => "success", "VCs" => []}
-		
-		# Correctly formed request, so send it to the verifier
-		ws = WebSocket::Client::Simple.connect('wss://resolve.cs.clemson.edu/teaching/Compiler?job=genVCs&project=Teaching_Project')
-		
-		ws.on :message do |message|
-			puts ''
-			puts "Message: #{message}"
-		end
-		
-		ws.on :open do
-			puts ''
-			puts 'Opened the socket'
-			
-			puts encode(json['code'])
-			
-			ws.send encode(json['code'])
-		end
-		
-		ws.on :close do |error|
-			puts ''
-			puts 'The socket is closed.'
-			puts "Error message: #{error}"
-		end
-		
-		ws.on :error do |error|
-			puts ''
-			puts "Error. Message: #{error}"
-		end
-		
-		# Now log it
-	end
 
-	response.to_json
+		url = 'wss://resolve.cs.clemson.edu/teaching/Compiler?job=verify2&project=Teaching_Project'
+		message = encode(json['code'])
+
+		result = '';
+		b = binding
+
+		WebSocket::Client::Simple.connect(url) do |ws|
+			ws.on :open do
+				puts 'WS open'
+				
+				ws.send message
+				puts 'Sent: ' + message
+			end
+		
+			ws.on :message do |message|
+				puts 'Got message:' + message.to_s
+				hash = decode(message.to_s)
+				if hash['status'] == 'complete'
+					puts 'Success!'
+					result = {'status' => 'success', 'problem' => 'Coming soon...'}
+					result = result.to_s
+					EM.schedule { b.eval " body result " }
+				end
+			end
+		
+			puts 'Connecting to WS...'
+		end
+	end
+end
+
+
+
+# Helper functions
+
+def encode(code)
+	# First encode the data for some reason
+	content = URI.escape(code)
+	
+	# Then wrap it in JSON with these parameters
+	request = {}
+	request['name'] = 'BeginToReason'
+	request['pkg'] = 'User'
+	request['project'] = 'Teaching_Project'
+	request['content'] = content
+	request['parent'] = 'undefined'
+	request['type'] = 'f'
+	
+	return request.to_json
+end
+
+def decode(response)
+	# First unencode the data
+	j = URI.unescape(response)
+	
+	# Then parse it
+	json = JSON.parse(response)
+	
+	return json
 end

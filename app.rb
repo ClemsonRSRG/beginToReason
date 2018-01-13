@@ -9,9 +9,12 @@ require 'mongo'
 
 # Routes for this application
 require './routes/index.rb'
-require './routes/admin.rb'
 require './routes/problems.rb'
 require './routes/log.rb'
+require './routes/verify.rb'
+require './routes/admin.rb'
+
+require './routes/test.rb'
 
 # Configurations for the application
 configure do
