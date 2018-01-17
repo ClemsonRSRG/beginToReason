@@ -18,13 +18,7 @@ apost '/verify' do
 		result = {"success" => "false", "message" => "Request body does not contain a code field."}
 		body result.to_s
 	else
-		puts ''
-		puts 'Request received'
-		puts json['authorID']
-		puts json['milliseconds']
-		puts json['code']
-
-		url = 'wss://resolve.cs.clemson.edu/teaching/Compiler?job=verify2&project=Teaching_Project'
+		url = 'wss://resolve.cs.clemson.edu/teaching/Compiler?job=genVCs&project=Teaching_Project'
 		message = encode(json['code'])
 
 		result = '';
@@ -40,16 +34,15 @@ apost '/verify' do
 		
 			ws.on :message do |message|
 				puts 'Got message:' + message.to_s
+				
 				hash = decode(message.to_s)
-				if hash['status'] == 'complete'
-					puts 'Success!'
+				if hash['status'] == 'processing'
+				elsif hash['status'] == 'complete'
 					result = {'status' => 'success', 'problem' => 'Coming soon...'}
 					result = result.to_s
 					EM.schedule { b.eval " body result " }
 				end
 			end
-		
-			puts 'Connecting to WS...'
 		end
 	end
 end
