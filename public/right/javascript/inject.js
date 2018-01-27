@@ -4,7 +4,7 @@ var createEditor;
 var author;
 
 function injectCreate(id) {
-    $("#" + id).load("right/html/rightHTML", function () {
+    $("#" + id).load("/right/html/rightHTML", function () {
         injectCreateEditor();
 
         // Check to see if we already have an author ID

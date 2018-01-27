@@ -25,11 +25,13 @@ app.use('/admin', admin)
 
 // Set configs
 app.use(express.static('public'))
+app.set('view engine', 'ejs')
+app.set('views', './views')
 // TODO load Mongo settings
 
 // Base route
 app.get('/', (req, res) => {
-	res.redirect('/section1dry')
+	res.redirect('/section/1dry')
 })
 
 // Listen on port 3000
