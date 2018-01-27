@@ -1,0 +1,17 @@
+{
+  "name": "begin-to-reason",
+  "version": "1.0.0",
+  "description": "BeginToReason is a tool that utilizes the RESOLVE programming language to pinpoint difficulties CS students have with learning how to rigorously trace the code they encounter. It is a Sinatra app that uses Bootstrap and communicates with the RESOLVE verification engine.",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "RSRG team",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

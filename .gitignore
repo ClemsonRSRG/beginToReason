@@ -5,6 +5,8 @@
 # ignore the machine-specific config file
 conf/config.yml
 
+# ignore the npm node_modules directory
+node_modules/*
 
 ###################
 # Temporary Files #
