@@ -15,14 +15,15 @@ app.set('views', './views')
 app.use(bodyParser.json())
 
 // Connect to Mongo
-// TODO: load config file
-const host = '172.19.48.55:27017'
-const database = 'resolve'
-const user = 'admin'
-const pass = 'R3solveGr0up'
-const uri = 'mongodb://' + user + ':' + pass + '@' + host + '/' + database
-app.use(mongo(uri))
-console.log('Connected to mongo')
+try {
+	var configs = require('./conf/config.js')
+	app.use(mongo(configs.uri))
+	console.log('Connected to mongo')
+} catch (ex) {
+	console.log('Could not load configs, or maybe could not connect to mongo:')
+	console.log(ex)
+	process.exit()
+}
 
 // Load routes
 var sections = require('./routes/sections.js')
