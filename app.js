@@ -16,13 +16,13 @@ app.use(bodyParser.json())
 
 // Connect to Mongo
 try {
-	var configs = require('./conf/config.js')
-	app.use(mongo(configs.uri))
-	console.log('Connected to mongo')
+    var configs = require('./conf/config.js')
+    app.use(mongo(configs.uri))
+    console.info('Connected to mongo')
 } catch (ex) {
-	console.log('Could not load configs, or maybe could not connect to mongo:')
-	console.log(ex)
-	process.exit()
+    console.error('Could not load configs, or maybe could not connect to mongo:')
+    console.error(ex)
+    process.exit()
 }
 
 // Load routes
@@ -43,11 +43,11 @@ app.use('/admin', admin)
 
 // Base route
 app.get('/', (req, res) => {
-	res.redirect('/section/1dry')
+    res.redirect('/section/1dry')
 })
 
 // Listen on port 3000
 var port = 3000
 app.listen(port, () => {
-	console.log('Listening on port ' + port + '...')
+    console.info('Listening on port ' + port + '...')
 })

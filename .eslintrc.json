@@ -1,7 +1,7 @@
 {
   "env": {
     "es6": true,
-    "browser": true,
+    "node": true,
     "jquery": true
   },
   "extends": "eslint:recommended",
@@ -9,7 +9,7 @@
     // Possible Errors
     "no-extra-parens": "error",
     "no-unsafe-negation": "error",
-	
+
     // Best Practices
     "array-callback-return": "error",
     "consistent-return": "error",
@@ -94,6 +94,7 @@
     "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 5 }],
     "no-array-constructor": "error",
     "no-bitwise": "error",
+    "no-console": "off",
     "no-continue": "off",
     "no-inline-comments": "off",
     "no-lonely-if": "off",
@@ -119,10 +120,10 @@
     "operator-linebreak": "off",
     "padded-blocks": "off",
     "quote-props": ["error", "as-needed"],
-    "quotes": ["error", "double"],
+    "quotes": "off",
     "require-jsdoc": "off",
     "semi-spacing": "error",
-    "semi": ["error", "always"],
+    "semi": "off",
     "sort-keys": "off",
     "sort-vars": "error",
     "space-before-blocks": "error",

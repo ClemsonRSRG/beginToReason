@@ -35,4 +35,4 @@ swift:
 # ESLint (JavaScript)
 eslint:
   enabled: true
-  config_file: .eslintrc
+  config_file: .eslintrc.json
