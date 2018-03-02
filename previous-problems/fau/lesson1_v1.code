@@ -1,7 +1,0 @@
-/* I and J are integers */
-
-   J := I;
-   I := I - 1;
-
-/* Fill in the relationship(s) below. */
-        I /*relational*/ J;
