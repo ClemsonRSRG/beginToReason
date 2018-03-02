@@ -3,8 +3,10 @@
 ################
 
 # ignore the machine-specific config file
-conf/config.yml
+conf/config.js
 
+# ignore the npm node_modules directory
+node_modules/*
 
 ###################
 # Temporary Files #

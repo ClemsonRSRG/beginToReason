@@ -9,7 +9,7 @@
     // Possible Errors
     "no-extra-parens": "error",
     "no-unsafe-negation": "error",
-	
+
     // Best Practices
     "array-callback-return": "error",
     "consistent-return": "error",

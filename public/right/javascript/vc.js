@@ -1,6 +1,7 @@
-/* global addVCMarkers approved baseLesson baseLessonCode baseLessonCodeLines createEditor
-   currentLesson decode encode nextLessonAndFailure nextLessonAndSuccess
-   removeAllVCMarkers resetTime succeed sendData toJSON updateMarker addVCMarker */
+/* global addVCMarkers approved author baseLesson baseLessonCode
+   baseLessonCodeLines createEditor currentLesson decode encode getTime
+   nextLessonAndFailure nextLessonAndSuccess removeAllVCMarkers resetTime
+   succeed sendData toJSON updateMarker addVCMarker */
 
 var VCs;
 var verifying = false;
@@ -42,6 +43,7 @@ function submitAnswer() {
     }
 
     if (checkForTrivials(contentToServer)) {
+        newPost(author, getTime(), contentToServer);
         getVCLines(contentToServer);
     } else {
         $("#dialog-message").html("Sorry, not the intended answer. Try again!");
@@ -50,6 +52,14 @@ function submitAnswer() {
         $("#right .footetteDisabled").attr("class", "footette");
         createEditor.focus();
     }
+}
+
+function newPost(authorID, seconds, code) {
+    var data = {};
+    data.authorID = authorID;
+    data.seconds = seconds;
+    data.code = code;
+    $.post("/verify", JSON.stringify(data));
 }
 
 function checkForTrivials(content) {
