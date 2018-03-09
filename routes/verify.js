@@ -1,5 +1,6 @@
 var express = require('express')
 var router = express.Router()
+var WebSocket = require('ws')
 
 router.post('/verify', (req, res) => {
     // Check for all necessary fields
@@ -24,6 +25,15 @@ router.post('/verify', (req, res) => {
     }
 
     // Get VC lines
+    var ws = new WebSocket('wss://resolve.cs.clemson.edu/teaching/Compiler?job=genVCs&project=Teaching_Project')
+    ws.on('open', () => {
+        console.log('Opened connection. Sending message...')
+        ws.send(encode(req.body.code))
+    })
+
+    ws.on('message', (data) => {
+        console.log(data)
+    })
 
     // Verify VCs
 
@@ -34,6 +44,8 @@ router.post('/verify', (req, res) => {
         'problem': ''
     })
 })
+
+
 
 /*
     Checks for any trivial answers the student may provide, such as "Confirm
@@ -131,6 +143,36 @@ function checkForTrivials(content) {
     }
 
     return {confirms: confirms, allCorrect: allCorrect}
+}
+
+// Don't ask, just accept.
+function encode(data) {
+    var lsRegExp = new RegExp(" ", "gim");
+    var lsRegExp2 = /\+/g;
+
+    var content = String(escape(data)).replace(lsRegExp, "%20");
+    content = content.replace(lsRegExp2, "%2B");
+
+    var json = {}
+
+    json.name = "BeginToReason";
+    json.pkg = "User";
+    json.project = "Teaching_Project";
+    json.content = content;
+    json.parent = "undefined";
+    json.type = "f";
+
+    return JSON.stringify(json)
+}
+
+function decode(data) {
+    var lsRegExp = /%20/g;
+    var lsRegExp2 = /%2B/g;
+
+    var content = String(unescape(data)).replace(lsRegExp, " ");
+    content = content.replace(lsRegExp2, "+");
+
+    return content;
 }
 
 module.exports = router
