@@ -27,22 +27,23 @@ router.post('/verify', (req, res) => {
     // Get VC lines
     var ws = new WebSocket('wss://resolve.cs.clemson.edu/teaching/Compiler?job=genVCs&project=Teaching_Project')
     ws.on('open', () => {
-        console.log('Opened connection. Sending message...')
         ws.send(encode(req.body.code))
     })
 
-    ws.on('message', (data) => {
-        console.log(data)
+    ws.on('message', (message) => {
+        message = JSON.parse(message)
+        if (message.status == "complete") {
+            var vcs = decode(message.result)
+            res.json({
+                'status': 'success',
+                'message': 'Correct. On to the next lesson!',
+                'problem': vcs
+            })
+        }
     })
 
     // Verify VCs
 
-    // Send response
-    res.json({
-        'status': 'success',
-        'message': 'Correct. On to the next lesson!',
-        'problem': ''
-    })
 })
 
 
@@ -147,32 +148,42 @@ function checkForTrivials(content) {
 
 // Don't ask, just accept.
 function encode(data) {
-    var lsRegExp = new RegExp(" ", "gim");
-    var lsRegExp2 = /\+/g;
+    var regex1 = new RegExp(" ", "g")
+    var regex2 = new RegExp("/+", "g")
 
-    var content = String(escape(data)).replace(lsRegExp, "%20");
-    content = content.replace(lsRegExp2, "%2B");
+    var content = encodeURIComponent(data)
+    content = content.replace(regex1, "%20")
+    content = content.replace(regex2, "%2B")
 
     var json = {}
 
-    json.name = "BeginToReason";
-    json.pkg = "User";
-    json.project = "Teaching_Project";
-    json.content = content;
-    json.parent = "undefined";
-    json.type = "f";
+    json.name = "BeginToReason"
+    json.pkg = "User"
+    json.project = "Teaching_Project"
+    json.content = content
+    json.parent = "undefined"
+    json.type = "f"
 
     return JSON.stringify(json)
 }
 
 function decode(data) {
-    var lsRegExp = /%20/g;
-    var lsRegExp2 = /%2B/g;
+    var regex1 = new RegExp("%20", "g")
+    var regex2 = new RegExp("%2B", "g")
+    var regex3 = new RegExp("<vcFile>(.*)</vcFile>", "g")
+    var regex4 = new RegExp("\n", "g")
 
-    var content = String(unescape(data)).replace(lsRegExp, " ");
-    content = content.replace(lsRegExp2, "+");
+    var content = decodeURIComponent(data)
+    content = content.replace(regex1, " ")
+    content = content.replace(regex2, "+")
+    content = content.replace(regex3, "$1")
+    content = decodeURIComponent(content)
+    content = decodeURIComponent(content)
+    content = content.replace(regex4, "")
 
-    return content;
+    var obj = JSON.parse(content)
+
+    return obj;
 }
 
 module.exports = router
