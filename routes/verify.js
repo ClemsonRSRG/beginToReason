@@ -12,11 +12,9 @@ router.post('/verify', (req, res) => {
 
     // Check for trivials
     var trivials = checkForTrivials(req.body.code)
-    if (!trivials.allCorrect) {
-        res.status(400)
+    if (trivials.overall == 'failure') {
         res.json({
-            'status': 'failure',
-            'message': 'Sorry, not the intended answer. Try again!',
+            'status': 'trivial',
             'lines': trivials.confirms,
             'problem': ''
         })
@@ -24,26 +22,44 @@ router.post('/verify', (req, res) => {
         return
     }
 
-    // Get VC lines
-    var ws = new WebSocket('wss://resolve.cs.clemson.edu/teaching/Compiler?job=genVCs&project=Teaching_Project')
+    // Verify VCs
+    var vcs = {}
+    var ws = new WebSocket('wss://resolve.cs.clemson.edu/teaching/Compiler?job=verify2&project=Teaching_Project')
+
     ws.on('open', () => {
         ws.send(encode(req.body.code))
     })
 
     ws.on('message', (message) => {
         message = JSON.parse(message)
-        if (message.status == "complete") {
-            var vcs = decode(message.result)
+        if (message.status == 'error' || message.status == '') {
             res.json({
-                'status': 'success',
-                'message': 'Correct. On to the next lesson!',
-                'problem': vcs
+                'status': 'unparsable',
+                'problem': ''
             })
+            ws.close()
+        }
+        else if (message.status == 'processing') {
+            var regex = new RegExp('^Proved')
+            if (regex.test(message.result.result)) {
+                vcs[message.result.id] = 'success'
+            } else {
+                vcs[message.result.id] = 'failure'
+            }
+        }
+        else if (message.status == 'complete') {
+            var lineNums = decode(message.result)
+
+            var lines = mergeVCsAndLineNums(vcs, lineNums.vcs)
+
+            res.json({
+                'status': lines.overall,
+                'lines': lines.lines,
+                'problem': ''
+            })
+            ws.close()
         }
     })
-
-    // Verify VCs
-
 })
 
 
@@ -57,7 +73,7 @@ router.post('/verify', (req, res) => {
 function checkForTrivials(content) {
     var lines = content.split("\n")
     var confirms = []
-    var allCorrect = true
+    var overall = 'success'
     var regex
     var i
 
@@ -66,17 +82,12 @@ function checkForTrivials(content) {
     for (i = 0; i < lines.length; i++) {
         var confirm = lines[i].match(regex)
         if (confirm) {
-            var obj = {
-                line: i + 1,
-                text: confirm[0],
-                status: "success"
-            }
-            confirms.push(obj)
+            confirms.push({lineNum: i+1, text: confirm[0], status: 'success'})
         }
     }
 
     if (confirms.length == 0) {
-        return {confirms: [], allCorrect: false}
+        return {confirms: [], overall: 'failure'}
     }
 
     for (i = 0; i < confirms.length; i++) {
@@ -87,7 +98,7 @@ function checkForTrivials(content) {
         // Search for an illegal "/="
         regex = new RegExp("/=")
         if (statement.search(regex) > -1) {
-            allCorrect = false
+            overall = 'failure'
             confirms[i].status = "failure"
             continue
         }
@@ -96,24 +107,28 @@ function checkForTrivials(content) {
         regex = new RegExp(">=|<=")
         var parts = statement.split(regex)
         if (parts.length > 2) {
-            allCorrect = false
+            overall = 'failure'
             confirms[i].status = "failure"
             continue
         }
-        if (parts.length == 1) { // If there is no >= or <=
+
+        // If there is no >= or <=
+        if (parts.length == 1) {
             regex = new RegExp("=")
             parts = statement.split(regex)
             if (parts.length > 2) {
-                allCorrect = false
+                overall = 'failure'
                 confirms[i].status = "failure"
                 continue
             }
         }
-        if (parts.length == 1) { // If there is no >=, <=, or =
+
+        // If there is no >=, <=, or =
+        if (parts.length == 1) {
             regex = new RegExp(">|<")
             parts = statement.split(regex)
             if (parts.length != 2) {
-                allCorrect = false
+                overall = 'failure'
                 confirms[i].status = "failure"
                 continue
             }
@@ -125,8 +140,8 @@ function checkForTrivials(content) {
         regex = new RegExp("[a-zA-Z]", "g")
         var variables = left.match(regex)
         if (variables === null) {
+            overall = 'failure'
             confirms[i].status = "failure"
-            allCorrect = false
             continue
         }
 
@@ -136,17 +151,55 @@ function checkForTrivials(content) {
             var variable = variables[j]
             regex = new RegExp(" " + variable, "g")
             if (right.search(regex) > -1) {
-                allCorrect = false
+                overall = 'failure'
                 confirms[i].status = "failure"
                 continue
             }
         }
     }
 
-    return {confirms: confirms, allCorrect: allCorrect}
+    // Get rid of the text field
+    for (var confirm of confirms) {
+        delete confirm.text
+    }
+
+    return {confirms: confirms, overall: overall}
 }
 
-// Don't ask, just accept.
+/*
+    Take the output of all the "processing" steps of the verifier, and combine
+    it with the output of the "complete" step. The result is an object with two
+    fields: overall and lines. overall tells you if all the VCs proved. lines is
+    an array of objects with two fields each, lineNum and status. If there are
+    multiple VCs on one line, then it only says the line is proven if all of
+    the VCs on that line are proven.
+*/
+function mergeVCsAndLineNums(provedList, lineNums) {
+    var overall = 'success'
+    var lines = {}
+
+    for (var vc of lineNums) {
+        if (provedList[vc.vc] != 'success') {
+            overall = 'failure'
+        }
+
+        if (lines[vc.lineNum] != 'failure') {
+            lines[vc.lineNum] = provedList[vc.vc]
+        }
+    }
+
+    // Convert from hashtable to array
+    var lineArray = []
+    for (var entry of Object.entries(lines)) {
+        lineArray.push({'lineNum': entry[0], 'status': entry[1]})
+    }
+
+    return {'overall': overall, 'lines': lineArray}
+}
+
+/*
+    Don't ask, just accept.
+*/
 function encode(data) {
     var regex1 = new RegExp(" ", "g")
     var regex2 = new RegExp("/+", "g")
