@@ -4,9 +4,15 @@ var WebSocket = require('ws')
 
 router.post('/verify', (req, res) => {
     // Check for all necessary fields
-    if ( !('authorID' in req.body && 'milliseconds' in req.body && 'code' in req.body) ) {
+    if (!(
+        'module' in req.body &&
+        'name' in req.body &&
+        'authorID' in req.body &&
+        'milliseconds' in req.body &&
+        'code' in req.body
+    )) {
         res.status(400)
-        res.send('Requires authorID, milliseconds, and code fields.')
+        res.send('Requires module, name, authorID, milliseconds, and code fields.')
         return
     }
 
@@ -18,6 +24,7 @@ router.post('/verify', (req, res) => {
             'lines': trivials.confirms,
             'problem': ''
         })
+        log(req, 'trivial')
 
         return
     }
@@ -37,6 +44,7 @@ router.post('/verify', (req, res) => {
                 'status': 'unparsable',
                 'problem': ''
             })
+            log(req, 'unparsable')
             ws.close()
         }
         else if (message.status == 'processing') {
@@ -57,6 +65,7 @@ router.post('/verify', (req, res) => {
                 'lines': lines.lines,
                 'problem': ''
             })
+            log(req, lines.overall)
             ws.close()
         }
     })
@@ -164,6 +173,17 @@ function checkForTrivials(content) {
     }
 
     return {confirms: confirms, overall: overall}
+}
+
+/*
+    Log the result.
+*/
+function log(req, status) {
+    var time = new Date()
+    req.body.timestamp = time.toISOString() // Note that this is an ISO 8601 timestamp, which does not account for time zone
+    req.body.status = status
+    var data = req.db.collection('data')
+    data.insertOne(req.body)
 }
 
 /*
