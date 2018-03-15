@@ -11,7 +11,8 @@ var host = '--- host name or ip address ---'
 var db = '--- database name ---'
 var user = '--- username ---'
 var pass = '--- password ---'
-config.mongoURI = 'mongodb://' + user + ':' + pass + '@' + host + '/' + db
+
+config.uri = 'mongodb://' + user + ':' + pass + '@' + host + '/' + db
 
 module.exports = config
 
