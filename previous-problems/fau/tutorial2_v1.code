@@ -1,8 +1,0 @@
-/* I is an integer */
-
-/* Assume I = #I */
-
-   I := I + 1;
-
-/* What is the value of I? */
-        I = /*expression*/;

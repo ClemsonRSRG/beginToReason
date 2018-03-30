@@ -1,8 +1,0 @@
-/* I is an integer */
-
-/* Assume I = #I (at this point in the code, I = #I) */
-
-        I := I + 1;
-
-/* Fill in the relationship(s) below. */
-        I /*relational*/ #I;

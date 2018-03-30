@@ -29,12 +29,6 @@ try {
 var sections = require('./routes/sections.js')
 app.use('/section', sections)
 
-var problems = require('./routes/problems.js')
-app.use('/problem', problems)
-
-var log = require('./routes/log.js')
-app.use('/', log)
-
 var verify = require('./routes/verify.js')
 app.use('/', verify)
 
