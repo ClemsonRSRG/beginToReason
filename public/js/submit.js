@@ -1,4 +1,4 @@
-/* global addVCMarkers author createEditor currentLesson
+/* global addVCMarkers author createEditor currentLesson parseLesson
    removeAllVCMarkers updateMarker addVCMarker */
 
 var verifying = false;
@@ -33,7 +33,6 @@ function submit() {
             unlock("Correct! On to the next lesson.");
             parseLesson(results.problem);
         } else {
-            console.log(results);
             unlock("Something went wrong.");
         }
     });
@@ -68,11 +67,11 @@ function getTime() {
 */
 $.postJSON = (url, data, callback) => {
     return $.ajax({
-        "type": "POST",
-        "url": url,
-        "contentType": "application/json",
-        "data": JSON.stringify(data),
-        "dataType": "json",
-        "success": callback
+        type: "POST",
+        url: url,
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        dataType: "json",
+        success: callback
     });
 };

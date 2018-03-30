@@ -44,11 +44,6 @@ function initial(req, res, module, problem) {
     })
 }
 
-/*
-    The problem projection is used in two places in the code, so I thought I'd
-    make it into its own file.
-*/
-
 const problemProjection = {
     _id: 0,
     type: 1,
