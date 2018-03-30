@@ -7,12 +7,14 @@ router.post('/verify', (req, res) => {
     if (!(
         'module' in req.body &&
         'name' in req.body &&
-        'authorID' in req.body &&
+        'author' in req.body &&
         'milliseconds' in req.body &&
         'code' in req.body
     )) {
+        console.log("Bad request. Request body:")
+        console.log(req.body)
         res.status(400)
-        res.send('Requires module, name, authorID, milliseconds, and code fields.')
+        res.send('Requires module, name, author, milliseconds, and code fields.')
         return
     }
 
@@ -22,7 +24,6 @@ router.post('/verify', (req, res) => {
         res.json({
             'status': 'trivial',
             'lines': trivials.confirms,
-            'problem': ''
         })
         log(req, 'trivial')
 
@@ -42,7 +43,6 @@ router.post('/verify', (req, res) => {
         if (message.status == 'error' || message.status == '') {
             res.json({
                 'status': 'unparsable',
-                'problem': ''
             })
             log(req, 'unparsable')
             ws.close()
@@ -60,11 +60,33 @@ router.post('/verify', (req, res) => {
 
             var lines = mergeVCsAndLineNums(vcs, lineNums.vcs)
 
-            res.json({
-                'status': lines.overall,
-                'lines': lines.lines,
-                'problem': ''
+            //Find the next lesson to send
+            req.db.collection('problems').aggregate([
+                { $lookup: {
+                    from: 'problems',
+                    localField: lines.overall,
+                    foreignField: 'name',
+                    as: 'next'
+                }},
+                { $match: {
+                    module: req.body.module,
+                    name: req.body.name
+                }}
+            ]).next((err, result) => {
+                // I'm certain there is a way to do this through Mongo's projections and aggregates and unwinding, but I couldnt figure it out
+                var problem = result.next[0]
+                delete problem.failure
+                delete problem.previous
+                delete problem.success
+                delete problem._id
+                res.json({
+                    'status': lines.overall,
+                    'lines': lines.lines,
+                    'problem': problem
+                })
             })
+
+
             log(req, lines.overall)
             ws.close()
         }
@@ -218,7 +240,8 @@ function mergeVCsAndLineNums(provedList, lineNums) {
 }
 
 /*
-    Don't ask, just accept.
+    Don't ask, just accept. This is how the Resolve Web API works at the
+    moment. If you want to fix this, PLEASE DO.
 */
 function encode(data) {
     var regex1 = new RegExp(" ", "g")

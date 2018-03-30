@@ -14,25 +14,20 @@
     <script src="/ace/mode-resolve.js" type="text/javascript" charset="utf-8"></script>
 
     <!-- CSS Inclusion -->
-    <link href="/style.css" rel="stylesheet">
-    <link href="/left/style.css" rel="stylesheet">
-    <link href="/right/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/left.css" rel="stylesheet">
+    <link href="/css/right.css" rel="stylesheet">
 
     <!-- JavaScripts -->
-    <script src="/left/javascript/leftResize.js"></script>
-    <script src="/left/javascript/inject.js"></script>
-    <script src="/left/javascript/loadLesson.js"></script>
+    <script src="/js/injectLeft.js"></script>
+    <script src="/js/injectRight.js"></script>
+    <script src="/js/resizeLeft.js"></script>
+    <script src="/js/resizeRight.js"></script>
+    <script src="/js/loadLesson.js"></script>
+    <script src="/js/submit.js"></script>
+    <script src="/js/markers.js"></script>
+    <script src="/js/editorUpdate.js"></script>
 
-    <script src="/right/javascript/rightResize.js"></script>
-    <script src="/right/javascript/editorUpdate.js"></script>
-    <script src="/right/javascript/format.js"></script>
-    <script src="/right/javascript/inject.js"></script>
-    <script src="/right/javascript/markers.js"></script>
-    <script src="/right/javascript/vc.js"></script>
-
-    <script src="/backend/sendData.js"></script>
-    <script src="/backend/time.js"></script>
-	
 	<script>
 	$( function() {
 		$( "#dialog-box" ).dialog({
@@ -64,7 +59,7 @@
 
 <script>
     $(document).ready(function () {
-        injectTeach("left", "<%= section %>", "<%= initialProblem %>");
+        injectTeach("left", "<%= module %>");
         injectCreate("right");
         teachResize();
         createResize();
