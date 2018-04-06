@@ -18,6 +18,10 @@ function submit() {
     data.milliseconds = getTime();
     data.code = createEditor.getValue();
     $.postJSON("/verify", data, (results) => {
+        if (results.lines !== undefined) {
+            addLines(results.lines);
+        }
+
         if (results.status == "trivial") {
             unlock("Sorry, not the intended answer. Try again!");
         } else if (results.status == "unparsable") {
