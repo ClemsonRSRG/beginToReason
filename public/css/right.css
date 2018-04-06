@@ -44,21 +44,6 @@
 }
 
 /* VC Markers Colors */
-.vc_unverified{
-    box-sizing: border-box;
-    position:absolute;
-    background: orange;
-    opacity: 0.3;
-    pointer-events: auto;
-//    cursor: pointer;
-    z-index:5000;
-}
-
-.vc_unverified:hover{
-    background: darkorange;
-    opacity: 0.3;
-}
-
 .vc_proved{
     box-sizing: border-box;
     position:absolute;

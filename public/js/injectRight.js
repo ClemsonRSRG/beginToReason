@@ -1,4 +1,4 @@
-/* global ace currentLesson removeAllVCMarkers */
+/* global ace currentLesson removeMarkers */
 
 var createEditor;
 var author;
@@ -33,7 +33,7 @@ function injectCreateEditor() {
     // createEditor.$blockScrolling = Infinity;
 
     createEditor.setFontSize(18);
-    createEditor.on("change", removeAllVCMarkers);
+    createEditor.on("change", removeMarkers);
     createEditor.on("change", checkEdit);
 }
 

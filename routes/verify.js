@@ -57,7 +57,6 @@ router.post('/verify', (req, res) => {
         }
         else if (message.status == 'complete') {
             var lineNums = decode(message.result)
-
             var lines = mergeVCsAndLineNums(vcs, lineNums.vcs)
 
             //Find the next lesson to send
@@ -73,17 +72,26 @@ router.post('/verify', (req, res) => {
                     name: req.body.name
                 }}
             ]).next((err, result) => {
-                // I'm certain there is a way to do this through Mongo's projections and aggregates and unwinding, but I couldnt figure it out
                 var problem = result.next[0]
-                delete problem.failure
-                delete problem.previous
-                delete problem.success
-                delete problem._id
-                res.json({
-                    'status': lines.overall,
-                    'lines': lines.lines,
-                    'problem': problem
-                })
+
+                // Don't send a new lesson if we want them to repeat it
+                if (req.body.name == problem.name) {
+                    res.json({
+                        'status': lines.overall,
+                        'lines': lines.lines
+                    })
+                } else {
+                    // I'm certain there is a way to do this through Mongo's projections and aggregates and unwinding, but I couldnt figure it out
+                    delete problem.failure
+                    delete problem.previous
+                    delete problem.success
+                    delete problem._id
+                    res.json({
+                        'status': lines.overall,
+                        'lines': lines.lines,
+                        'problem': problem
+                    })
+                }
             })
 
 
