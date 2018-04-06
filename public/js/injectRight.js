@@ -1,4 +1,4 @@
-/* global ace currentLesson removeAllVCMarkers */
+/* global ace currentLesson removeMarkers */
 
 var createEditor;
 var author;

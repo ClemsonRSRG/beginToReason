@@ -1,5 +1,4 @@
-/* global addVCMarkers author createEditor currentLesson parseLesson
-   removeAllVCMarkers updateMarker addVCMarker */
+/* global addLines author createEditor currentLesson parseLesson */
 
 var verifying = false;
 var time = new Date();
