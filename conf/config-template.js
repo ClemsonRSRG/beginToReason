@@ -5,14 +5,19 @@
 
 var config = {}
 
+// port to run on
+
+const port = 3000
+
 // mongo configs
 
-var host = '--- host name or ip address ---'
-var db = '--- database name ---'
-var user = '--- username ---'
-var pass = '--- password ---'
+const host = '--- host name or ip address ---'
+const db = '--- database name ---'
+const user = '--- username ---'
+const pass = '--- password ---'
 
 config.uri = 'mongodb://' + user + ':' + pass + '@' + host + '/' + db
+config.port = port
 
 module.exports = config
 
