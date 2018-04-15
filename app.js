@@ -8,6 +8,15 @@ var app = express()
 var bodyParser = require('body-parser')
 var mongo = require('express-mongo-db')
 
+// Load configs
+try {
+    var configs = require('./conf/config.js')
+} catch (ex) {
+    console.error('Could not load configs. Did you forget to create them?')
+    console.error(ex)
+    process.exit()
+}
+
 // Set app configs
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
@@ -16,11 +25,10 @@ app.use(bodyParser.json())
 
 // Connect to Mongo
 try {
-    var configs = require('./conf/config.js')
     app.use(mongo(configs.uri))
     console.info('Connected to mongo')
 } catch (ex) {
-    console.error('Could not load configs, or maybe could not connect to mongo:')
+    console.error('Could not connect to mongo:')
     console.error(ex)
     process.exit()
 }
@@ -40,8 +48,7 @@ app.get('/', (req, res) => {
     res.redirect('/section/1dry')
 })
 
-// Listen on port 3000
-var port = 3000
-app.listen(port, () => {
-    console.info('Listening on port ' + port + '...')
+// Listen on port in the configs
+app.listen(configs.port, () => {
+    console.info('Listening on port ' + configs.port + '...')
 })
