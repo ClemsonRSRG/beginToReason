@@ -59,44 +59,43 @@ router.post('/verify', (req, res) => {
             var lineNums = decode(message.result)
             var lines = mergeVCsAndLineNums(vcs, lineNums.vcs)
 
-            //Find the next lesson to send
-            req.db.collection('problems').aggregate([
-                { $lookup: {
-                    from: 'problems',
-                    localField: lines.overall,
-                    foreignField: 'name',
-                    as: 'next'
-                }},
-                { $match: {
-                    module: req.body.module,
-                    name: req.body.name
-                }}
-            ]).next((err, result) => {
-                var problem = result.next[0]
+            log(req, lines.overall)
+            ws.close()
 
-                // Don't send a new lesson if we want them to repeat it
-                if (req.body.name == problem.name) {
+            //Find the next lesson to send
+            var problems = req.db.collection('problems')
+            problems.find({
+                'module': req.body.module,
+                'name': req.body.name
+            })
+            .project({
+                'module': 1,
+                'success': 1,
+                'failure': 1
+            })
+            .next((err, result) => {
+                // Don't send a new problem if we want them to repeat it
+                if (lines.overall == 'failure' && !('failure' in result)) {
                     res.json({
-                        'status': lines.overall,
+                        'status': 'failure',
                         'lines': lines.lines
                     })
                 } else {
-                    // I'm certain there is a way to do this through Mongo's projections and aggregates and unwinding, but I couldnt figure it out
-                    delete problem.failure
-                    delete problem.previous
-                    delete problem.success
-                    delete problem._id
-                    res.json({
-                        'status': lines.overall,
-                        'lines': lines.lines,
-                        'problem': problem
+                    // Otherwise, find the new problem
+                    problems.find({
+                        'module' : result.module,
+                        'name': result[lines.overall]
+                    })
+                    .project(problemProjection)
+                    .next((err, result) => {
+                        res.json({
+                            'status': lines.overall,
+                            'lines': lines.lines,
+                            'problem': result
+                        })
                     })
                 }
             })
-
-
-            log(req, lines.overall)
-            ws.close()
         }
     })
 })
@@ -288,6 +287,19 @@ function decode(data) {
     var obj = JSON.parse(content)
 
     return obj;
+}
+
+const problemProjection = {
+    _id: 0,
+    type: 1,
+    module: 1,
+    name: 1,
+    title: 1,
+    activity: 1,
+    referenceMaterial: 1,
+    screenCapture: 1,
+    solution: 1,
+    code: 1
 }
 
 module.exports = router
