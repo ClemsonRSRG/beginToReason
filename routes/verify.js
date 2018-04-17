@@ -124,7 +124,8 @@ function checkForTrivials(content) {
         }
     }
 
-    if (confirms.length == 0) {
+    regex = new RegExp("requires [^;]*;" ,"g")
+    if (confirms.length == 0 && !regex.test(content)) {
         return {confirms: [], overall: 'failure'}
     }
 
@@ -175,7 +176,7 @@ function checkForTrivials(content) {
         // Find the variables used on the left side. If there are none, mark it correct.
         var left = parts[0]
         var right = parts[1]
-        regex = new RegExp("[a-zA-Z]", "g")
+        regex = new RegExp("[a-np-zA-QS-Z]", "g") // Temporary fix to allow Reverse(#S) o #T on section2, lesson6
         var variables = left.match(regex)
         if (variables === null) {
             overall = 'failure'
