@@ -19,11 +19,16 @@ router.get('/2bat/initial', (req, res) => {
     initial(req, res, 'section2', 'lesson1')
 })
 
-// Unused sections
 router.get('/3pop', (req, res) => {
-    res.send('Section 3')
+    var context = {module: '3pop'}
+    res.render('index.ejs', context)
 })
 
+router.get('/3pop/initial', (req, res) => {
+    initial(req, res, 'section2', 'lesson1')
+})
+
+// Unused sections
 router.get('/4red', (req, res) => {
     res.send('Section 4')
 })
