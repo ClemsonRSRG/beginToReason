@@ -1,12 +1,12 @@
 # BeginToReason
 [![License](https://img.shields.io/badge/license-BSD-blue.svg)](https://raw.githubusercontent.com/ClemsonRSRG/beginToReason/master/LICENSE.txt)
 
-BeginToReason is a tool that utilizes the RESOLVE programming language to
+`BeginToReason` is a tool that utilizes the RESOLVE programming language to
 pinpoint difficulties CS students have with learning how to rigorously trace
-the code they encounter. It is a Sinatra app that uses Bootstrap and
+the code they encounter. It is a NodeJS app that uses Bootstrap and
 communicates with the RESOLVE verification engine.
 
-A long term goal of BeginToReason is to be a Reactive, RESTful API.
+A long term goal of `BeginToReason` is to be a Reactive, RESTful API.
 
 ## What is RESOLVE?
 
@@ -33,18 +33,17 @@ ongoing joint effort between Clemson University, The Ohio State University, and
 countless educators and researchers from a variety of [other](https://www.cs.clemson.edu/resolve/about.html) 
 institutions.
 
-Developers of this particular test/working-iteration of the BeginToReason tutor 
+Developers of this particular test/working-iteration of the `BeginToReason`  
 include:
 
-* [The Resuable Software Research Group (RSRG)](https://www.cs.clemson.edu/resolve/) - School of Computing, Clemson University
+* [RESOLVE Software Research Group (RSRG)](https://www.cs.clemson.edu/resolve/) - School of Computing, Clemson University
 * [Florida Atlantic University](http://www.fau.edu/research/)
 * [Indiana University Southeast](https://www.ius.edu/)
 
 ## Copyright and license
 
-Copyright (c) Clemson University, 2018. All rights reserved. The use and
-distribution terms for this software are covered by the BSD 3-clause license
-which can be found in the file `LICENSE.txt` at the root of this repository.
+Copyright © 2018, [RESOLVE Software Research Group (RSRG)](https://www.cs.clemson.edu/resolve/). All rights reserved. The use and distribution terms for this software are covered by the BSD 3-clause 
+license which can be found in the file `LICENSE.txt` at the root of this repository.
 By using this software in any fashion, you are agreeing to be bound by the terms
 of this license. You must not remove this notice, or any other, from this
 software.
