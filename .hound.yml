@@ -35,4 +35,11 @@ swift:
 # ESLint (JavaScript)
 eslint:
   enabled: true
-  config_file: .eslintrc.json
+  config_file: .eslintrc
+  ignore_file: .eslintignore
+
+# stylelint (CSS)
+stylelint:
+  enabled: true
+  config_file: .stylelintrc
+  ignore_file: .houndignore
