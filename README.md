@@ -21,7 +21,7 @@ Developers of this particular test/working-iteration of the `BeginToReason` incl
 
 * [RESOLVE Software Research Group (RSRG)](https://www.cs.clemson.edu/resolve/) - School of Computing, Clemson University
 * [Florida Atlantic University](http://www.fau.edu/research/)
-* [Indiana University Southeast](https://www.ius.edu/)
+* [Rose-Hulman Institute of Technology](https://www.rose-hulman.edu/)
 
 ## Copyright and license
 
