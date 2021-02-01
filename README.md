@@ -5,6 +5,10 @@
 
 A long term goal of `BeginToReason` is to be a Reactive, RESTful API.
 
+## This project is no longer maintained!
+
+The new version of the tool can be found here: [BeginToReason2](https://github.com/ClemsonRSRG/beginToReason2).
+
 ## What is RESOLVE?
 
 RESOLVE (REusable SOftware Language with VErification) is a programming and specification language designed for verifying correctness of object oriented programs.
